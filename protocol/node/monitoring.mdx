@@ -20,7 +20,7 @@ fairyringd query slashing signing-info $(fairyringd tendermint show-validator)
 
 | Metric | What to Watch |
 | --- | --- |
-| `catching_up` | Should be `false` — node is synced |
+| `catching_up` | Should be `false`: node is synced |
 | `latest_block_height` | Should increase with each block |
 | `missed_blocks_counter` | Should stay at 0 for validators |
 | DKG participation | Validator should participate in each epoch's DKG |

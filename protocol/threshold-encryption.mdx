@@ -3,14 +3,14 @@ title: "Threshold Encryption"
 description: "Condition-based decryption requiring validator quorum"
 ---
 
-Threshold encryption ensures that encrypted data can only be decrypted when a sufficient number of validators collaborate — no single validator can decrypt alone.
+Threshold encryption ensures that encrypted data can only be decrypted when a sufficient number of validators collaborate: no single validator can decrypt alone.
 
 ## Mechanism
 
-1. **Encrypt** — data is encrypted with the Master Public Key and a condition (e.g., block height, auction ID)
-2. **Condition triggers** — when the condition is met, each validator derives their keyshare for that specific condition
-3. **Threshold reached** — once enough keyshares are submitted onchain, the decryption key is aggregated
-4. **Decrypt** — the data is decrypted and the result is executed or made available
+1. **Encrypt**: data is encrypted with the Master Public Key and a condition (e.g., block height, auction ID)
+2. **Condition triggers**: when the condition is met, each validator derives their keyshare for that specific condition
+3. **Threshold reached**: once enough keyshares are submitted onchain, the decryption key is aggregated
+4. **Decrypt**: the data is decrypted and the result is executed or made available
 
 ## Condition Types
 

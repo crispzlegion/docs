@@ -3,21 +3,18 @@ title: "Quickstart"
 description: "Get started with Fairblock in under 5 minutes"
 ---
 
-
-Choose your path based on what you want to build:
-
 <CardGroup cols={2}>
   <Card title="Integrate Confidential Transfers" icon="lock" href="/confidential-transfers/stabletrust-sdk">
-    Add encrypted stablecoin transfers to your application using the Stabletrust SDK. No blockchain setup required.
+    Add encrypted stablecoin transfers to your app using the Stabletrust SDK.
   </Card>
-  <Card title="Build a cApp on FairyRing" icon="bolt" href="/build/start-a-capp">
-    Create a confidential application leveraging FairyRing's native encryption — auctions, prediction markets, limit orders, and more.
+  <Card title="Build a cApp" icon="bolt" href="/build/start-a-capp">
+    Create a confidential application on FairyRing or EVM.
   </Card>
-  <Card title="Build on EVM" icon="ethereum" href="/build/evm-precompiles">
-    Integrate Fairblock into your EVM smart contracts using precompiled contracts and FairyKit.
+  <Card title="EVM Integration" icon="ethereum" href="/build/evm-precompiles">
+    Use precompiled contracts and FairyKit in your smart contracts.
   </Card>
-  <Card title="Explore the Protocol" icon="book" href="/protocol/overview">
-    Deep dive into FairyRing's architecture, cryptographic primitives, and module system.
+  <Card title="Protocol Deep Dive" icon="book" href="/protocol/overview">
+    Explore FairyRing's architecture, modules, and cryptographic primitives.
   </Card>
 </CardGroup>
 
@@ -37,40 +34,33 @@ pnpm add @fairblock/stabletrust
 ```
 </CodeGroup>
 
-## Quick Example
-
-Send a confidential stablecoin transfer in just a few lines:
+## Send a Confidential Transfer
 
 ```typescript
 import { ConfidentialTransferClient } from "@fairblock/stabletrust";
 
-// Initialize the client
 const client = new ConfidentialTransferClient({
   network: "ethereum-sepolia",
   signer: walletSigner,
 });
 
-// Set up your confidential account (one-time)
 await client.setupAccount();
 
-// Deposit tokens into the confidential layer
 await client.deposit({
   token: "USDC",
   amount: "1000",
 });
 
-// Send a confidential transfer — amount and balance are encrypted
 await client.transfer({
   to: "0xRecipientAddress",
   amount: "250",
 });
 
-// Check your encrypted balance
 const balance = await client.getBalance("USDC");
-console.log("Decrypted balance:", balance.decrypted);
+console.log("Balance:", balance.decrypted);
 ```
 
-## Supported Networks (Testnet)
+## Supported Networks
 
 | Network | Status |
 | --- | --- |
@@ -80,7 +70,3 @@ console.log("Decrypted balance:", balance.decrypted);
 | Stable Testnet | Live |
 | Arc | Live |
 | Tempo | Live |
-
-<Card title="Apply to the Confidential Builders Program" icon="users" href="https://build.fairblock.network">
-  Get early access, dedicated support, and grants for building with Fairblock.
-</Card>

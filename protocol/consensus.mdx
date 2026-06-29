@@ -29,13 +29,13 @@ Validators run the `fairyringclient` alongside the node software:
 
 | Behavior | Consequence |
 | --- | --- |
-| Submitting incorrect keyshares | Slashed — detected via onchain verification |
+| Submitting incorrect keyshares | Slashed: detected via onchain verification |
 | Withholding keyshares | Penalized after timeout |
 | Skipping DKG rounds | Excluded from active validator set |
 | Double signing | Standard CometBFT slashing |
 
 ## Network Security
 
-- **Byzantine fault tolerance** — tolerates up to 1/3 malicious validators
-- **Epoch-based rotation** — key material is refreshed regularly
-- **Onchain verification** — all keyshare submissions are verified before acceptance
+- **Byzantine fault tolerance**: tolerates up to 1/3 malicious validators
+- **Epoch-based rotation**: key material is refreshed regularly
+- **Onchain verification**: all keyshare submissions are verified before acceptance

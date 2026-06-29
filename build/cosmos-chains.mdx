@@ -8,7 +8,7 @@ Cosmos chains integrate with FairyRing natively via IBC (Inter-Blockchain Commun
 
 ## Architecture
 
-Communication uses light-client verification — relayers merely transport IBC packets without validation capabilities. This provides trust-minimized cross-chain confidential computing.
+Communication uses light-client verification: relayers merely transport IBC packets without validation capabilities. This provides trust-minimized cross-chain confidential computing.
 
 ## Integration Steps
 
@@ -60,7 +60,7 @@ msg := &types.MsgSubmitEncryptedTx{
 
 ## FairyKit Features
 
-- **Encrypted transaction submission** — send encrypted txs to FairyRing via IBC
-- **Key distribution** — receive Master Public Keys and derived private keys
-- **Callback execution** — automatically execute decrypted transactions on your chain
-- **Custom conditions** — define application-specific decryption conditions
+- **Encrypted transaction submission**: send encrypted txs to FairyRing via IBC
+- **Key distribution**: receive Master Public Keys and derived private keys
+- **Callback execution**: automatically execute decrypted transactions on your chain
+- **Custom conditions**: define application-specific decryption conditions

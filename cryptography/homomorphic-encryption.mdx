@@ -3,7 +3,7 @@ title: "Homomorphic Encryption"
 description: "Twisted ElGamal and lightweight HE for confidential transfers"
 ---
 
-Fairblock uses **Twisted ElGamal** — a fast additive homomorphic encryption scheme — to power confidential stablecoin transfers.
+Fairblock uses **Twisted ElGamal**: a fast additive homomorphic encryption scheme: to power confidential stablecoin transfers.
 
 ## Why Twisted ElGamal
 
@@ -34,7 +34,7 @@ To add a transfer amount `t` to an encrypted balance:
 C_new = C_old + Encrypt(t)
 ```
 
-The blockchain performs this addition on ciphertexts — it never sees the plaintext values.
+The blockchain performs this addition on ciphertexts: it never sees the plaintext values.
 
 ### Decryption
 
@@ -50,8 +50,8 @@ The discrete log is recovered via a precomputed lookup table for practical balan
 
 Each confidential transfer includes lightweight zero-knowledge proofs:
 
-- **Range proof** — the transfer amount is non-negative and within bounds
-- **Balance proof** — the sender has sufficient encrypted balance
-- **Well-formedness proof** — the ciphertext is correctly constructed
+- **Range proof**: the transfer amount is non-negative and within bounds
+- **Balance proof**: the sender has sufficient encrypted balance
+- **Well-formedness proof**: the ciphertext is correctly constructed
 
 These proofs are verified onchain by FairyRing without revealing any values.

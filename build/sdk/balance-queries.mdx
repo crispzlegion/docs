@@ -13,7 +13,7 @@ console.log("Decrypted (local):", balance.decrypted);
 console.log("Pending deposits:", balance.pending);
 ```
 
-Balances are decrypted locally using your secret key — the plaintext value never leaves your device.
+Balances are decrypted locally using your secret key: the plaintext value never leaves your device.
 
 ## Multi-Token Balances
 
@@ -34,7 +34,7 @@ const history = await client.getTransactionHistory({
 });
 
 for (const tx of history) {
-  console.log(`${tx.type}: ${tx.decryptedAmount} ${tx.token} — ${tx.status}`);
+  console.log(`${tx.type}: ${tx.decryptedAmount} ${tx.token}: ${tx.status}`);
 }
 ```
 
