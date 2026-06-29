@@ -1,0 +1,45 @@
+---
+title: "Protected Trading"
+description: "Confidential execution with encrypted orders, intents, and bids"
+---
+
+Protected Trading enables confidential execution on decentralized exchanges — encrypted orders, intents, and bids for better price discovery without centralized intermediaries.
+
+## The Problem
+
+On public DEXs, order flow is fully visible:
+
+- **MEV extraction** — sandwich attacks and front-running drain value from traders
+- **Information leakage** — large orders signal intent before execution
+- **Adverse selection** — market makers widen spreads to compensate for toxic flow
+
+## Fairblock's Solution
+
+Fairblock encrypts orders at submission time using threshold IBE. Orders remain encrypted in the mempool and are only decrypted after inclusion in a block — eliminating MEV and front-running opportunities.
+
+## How It Works
+
+<Steps>
+  <Step title="Encrypt Order">
+    The trader encrypts their order (type, amount, price) using FairyRing's Master Public Key. The encrypted order is submitted to the destination chain.
+  </Step>
+  <Step title="Block Inclusion">
+    The encrypted order is included in a block. Validators and MEV searchers cannot read the order contents.
+  </Step>
+  <Step title="Decryption">
+    FairyRing validators derive the decryption key for the block height. The order is decrypted and executed at the fair price.
+  </Step>
+</Steps>
+
+## Applications
+
+| Use Case | Description |
+| --- | --- |
+| **Limit orders** | Hidden limit orders that can't be front-run |
+| **Intent matching** | Confidential intent-based trading with optimal execution |
+| **Sealed-bid auctions** | Token sales, NFT auctions, and liquidation auctions |
+| **Dark pools** | Institutional-grade confidential execution |
+
+## Integrations
+
+Protected Trading is available on CowSwap, Uniswap, and custom DEX implementations through FairyKit.

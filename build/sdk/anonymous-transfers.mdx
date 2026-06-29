@@ -1,0 +1,40 @@
+---
+title: "Anonymous Transfers"
+description: "SDK guide for unlinkable confidential transactions"
+---
+
+Anonymous transfers use the Fairycloak relay to conceal both transaction amounts and wallet addresses.
+
+## Enable Anonymous Mode
+
+```typescript
+const client = new ConfidentialTransferClient({
+  network: "ethereum-sepolia",
+  signer: walletSigner,
+  anonymous: true,
+});
+```
+
+## Create an Anonymous Account
+
+```typescript
+const accountId = await client.createAnonymousAccount();
+console.log("Your anonymous account ID:", accountId); // e.g., 12345
+```
+
+## Transfer to an Anonymous Account
+
+```typescript
+await client.transfer({
+  to: 12345, // Numeric account ID
+  amount: "500",
+});
+```
+
+## Receive Funds
+
+Share your numeric account ID with the sender. No EVM address is required or linked.
+
+<Warning>
+  Anonymous transfers are in early access. Apply through the [Confidential Builders Program](https://build.fairblock.network).
+</Warning>

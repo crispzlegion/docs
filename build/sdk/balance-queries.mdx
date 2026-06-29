@@ -1,0 +1,43 @@
+---
+title: "Balance Queries"
+description: "Query and decrypt your confidential balances"
+---
+
+## Query Balance
+
+```typescript
+const balance = await client.getBalance("USDC");
+
+console.log("Encrypted (onchain):", balance.encrypted);
+console.log("Decrypted (local):", balance.decrypted);
+console.log("Pending deposits:", balance.pending);
+```
+
+Balances are decrypted locally using your secret key — the plaintext value never leaves your device.
+
+## Multi-Token Balances
+
+```typescript
+const balances = await client.getAllBalances();
+
+for (const [token, balance] of Object.entries(balances)) {
+  console.log(`${token}: ${balance.decrypted}`);
+}
+```
+
+## Transaction History
+
+```typescript
+const history = await client.getTransactionHistory({
+  token: "USDC",
+  limit: 50,
+});
+
+for (const tx of history) {
+  console.log(`${tx.type}: ${tx.decryptedAmount} ${tx.token} — ${tx.status}`);
+}
+```
+
+<Note>
+  Transaction amounts in history are decrypted locally. Other users cannot see your transaction amounts by querying the chain.
+</Note>

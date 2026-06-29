@@ -1,0 +1,49 @@
+---
+title: "EVM FairyKit"
+description: "Integrate Fairblock into EVM smart contracts"
+---
+
+## Installation
+
+```bash
+npm install @fairblock/fairykit-evm
+```
+
+## Smart Contract Integration
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+import "@fairblock/fairykit-evm/contracts/IFairyKit.sol";
+
+contract SealedBidAuction {
+    IFairyKit public fairykit;
+    mapping(address => bytes) public encryptedBids;
+
+    function submitBid(bytes calldata encryptedBid, uint256 auctionEndBlock) external {
+        encryptedBids[msg.sender] = encryptedBid;
+        fairykit.submitEncrypted(encryptedBid, auctionEndBlock);
+    }
+
+    function onDecrypted(address bidder, bytes calldata decryptedBid) external {
+        // Process revealed bid
+        uint256 bidAmount = abi.decode(decryptedBid, (uint256));
+        // Settlement logic...
+    }
+}
+```
+
+## Client-Side Usage
+
+```typescript
+import { FairyKitEVM } from "@fairblock/fairykit-evm";
+
+const fairykit = new FairyKitEVM({
+  provider: ethersProvider,
+  fairyringRpc: "https://rpc.testnet.fairblock.network",
+});
+
+const mpk = await fairykit.getMasterPublicKey();
+const encrypted = await fairykit.encrypt(bidData, auctionEndBlock);
+```

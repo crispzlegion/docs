@@ -1,0 +1,66 @@
+---
+title: "Cosmos FairyKit"
+description: "Add confidential computing to Cosmos SDK chains"
+---
+
+## Installation
+
+```bash
+go get github.com/Fairblock/fairykit-cosmos
+```
+
+## Module Integration
+
+Add FairyKit to your Cosmos SDK chain:
+
+```go
+import (
+    fairykit "github.com/Fairblock/fairykit-cosmos/module"
+    fairykitkeeper "github.com/Fairblock/fairykit-cosmos/keeper"
+)
+
+type App struct {
+    // ... existing modules
+    FairyKitKeeper fairykitkeeper.Keeper
+}
+
+func NewApp(...) *App {
+    app.FairyKitKeeper = fairykitkeeper.NewKeeper(
+        appCodec,
+        keys[fairykit.StoreKey],
+        app.IBCKeeper.ChannelKeeper,
+    )
+
+    app.ModuleManager.RegisterModules(
+        fairykit.NewAppModule(app.FairyKitKeeper),
+    )
+}
+```
+
+## IBC Configuration
+
+FairyKit communicates with FairyRing via IBC channels:
+
+```go
+// The module automatically handles:
+// - MPK distribution from FairyRing
+// - Encrypted transaction relay
+// - Decrypted data callbacks
+// - Key rotation on epoch changes
+```
+
+## Usage
+
+```go
+// Submit an encrypted transaction
+msg := &types.MsgSubmitEncryptedTx{
+    Creator:           sender,
+    Data:              encryptedData,
+    TargetBlockHeight: targetHeight,
+}
+
+// The FairyKit module handles the rest:
+// 1. Relays to FairyRing via IBC
+// 2. Receives decryption key when condition is met
+// 3. Executes callback on your chain
+```

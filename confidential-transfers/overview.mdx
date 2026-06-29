@@ -1,0 +1,69 @@
+---
+title: "Confidential Transactions"
+sidebarTitle: "Overview"
+description: "Encrypted amounts and balances on public blockchains — confidential by default"
+---
+
+import { Card, CardGroup } from "mintlify/components";
+
+## The Problem
+
+Public blockchains expose every financial detail. Payment amounts, wallet balances, transaction timing, and trading strategies are all visible to anyone watching.
+
+This creates real-world risks:
+
+- **Competitive intelligence** — rivals and adversaries track treasury movements
+- **Front-running** — MEV bots and market makers exploit visible order flow
+- **Whale targeting** — high-value wallets become social engineering and theft targets
+- **Compliance friction** — full transparency conflicts with financial privacy regulations
+
+## Fairblock's Approach
+
+Fairblock implements **confidential by default** finance: amounts and balances are encrypted while addresses stay transparent.
+
+This mirrors traditional finance — amounts are private, identities are known — enabling AML screening, sanctions compliance, and selective disclosure to auditors.
+
+<CardGroup cols={3}>
+  <Card title="Payments & Treasury" icon="building-columns">
+    Confidential salaries, peer-to-peer transfers, and fund management without broadcasting values.
+  </Card>
+  <Card title="DeFi & Trading" icon="chart-line">
+    Encrypted order flow prevents manipulation and frontrunning while protecting position sizes.
+  </Card>
+  <Card title="Institutional" icon="briefcase">
+    VC funds, corporate operations, and M&A activities benefit from confidential onchain settlement.
+  </Card>
+</CardGroup>
+
+## Key Advantages
+
+| Feature | Fairblock | Traditional Privacy |
+| --- | --- | --- |
+| **Interoperability** | Works across existing chains without bridges | Often requires dedicated privacy chains |
+| **Gas Efficiency** | Lower costs than ZK or FHE systems | High computational overhead |
+| **Speed** | Lightweight crypto enables real-time mobile transactions | Heavy computation limits throughput |
+| **Scalability** | Compatible with hardware acceleration | Limited by proof generation |
+| **Compliance** | Selective disclosure for auditors and regulators | All-or-nothing privacy |
+
+## How It Works
+
+<Steps>
+  <Step title="Deposit">
+    Lock tokens on any supported chain. Encrypted balances appear on FairyRing.
+  </Step>
+  <Step title="Transfer">
+    Send encrypted amounts using homomorphic operations and ZK proofs. Neither the amount nor the balance is ever revealed onchain.
+  </Step>
+  <Step title="Withdraw">
+    Redeem confidential balances back to native tokens on your chosen chain.
+  </Step>
+</Steps>
+
+<CardGroup cols={2}>
+  <Card title="Technical Deep Dive" icon="microchip" href="/confidential-transfers/technical-overview">
+    Learn about the cryptographic primitives powering confidential transfers.
+  </Card>
+  <Card title="Stabletrust SDK" icon="code" href="/confidential-transfers/stabletrust-sdk">
+    Start integrating confidential transfers into your application.
+  </Card>
+</CardGroup>

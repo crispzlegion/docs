@@ -1,0 +1,50 @@
+---
+title: "Transfers"
+description: "Send confidential stablecoin transfers"
+---
+
+Send encrypted transfers where neither the amount nor the balance is revealed onchain.
+
+## Basic Transfer
+
+```typescript
+const tx = await client.transfer({
+  to: "0xRecipientAddress",
+  amount: "250",
+});
+
+console.log("Transfer tx:", tx.hash);
+```
+
+## What Happens
+
+1. The SDK generates a ZK proof locally (in-browser via WASM)
+2. The proof verifies:
+   - You have sufficient encrypted balance
+   - The transfer amount is valid and non-negative
+   - The ciphertexts are correctly formed
+3. FairyRing updates encrypted balances using homomorphic addition
+4. Neither the amount nor any balance is ever revealed onchain
+
+## Transfer Options
+
+```typescript
+await client.transfer({
+  to: "0xRecipientAddress",
+  amount: "250",
+  token: "USDC",       // Defaults to USDC
+  memo: "Invoice #123", // Optional encrypted memo
+});
+```
+
+## Batch Transfers
+
+Send multiple transfers in a single transaction:
+
+```typescript
+await client.batchTransfer([
+  { to: "0xAlice", amount: "100" },
+  { to: "0xBob", amount: "200" },
+  { to: "0xCharlie", amount: "300" },
+]);
+```

@@ -1,0 +1,94 @@
+---
+title: "Stabletrust SDK"
+description: "Integrate confidential transfers into your application with the Stabletrust SDK"
+---
+
+The Stabletrust SDK enables developers to add confidential stablecoin transfers using homomorphic encryption and zero-knowledge proofs.
+
+## Installation
+
+<CodeGroup>
+```bash npm
+npm install @fairblock/stabletrust
+```
+
+```bash yarn
+yarn add @fairblock/stabletrust
+```
+
+```bash pnpm
+pnpm add @fairblock/stabletrust
+```
+</CodeGroup>
+
+## Core Operations
+
+The SDK supports three primary operations:
+
+| Operation | Description |
+| --- | --- |
+| **Deposit** | Convert public ERC20 tokens into encrypted confidential balances |
+| **Transfer** | Execute private transfers that hide transaction amounts and wallet balances |
+| **Withdraw** | Move funds from the confidential layer back to public ERC20 tokens |
+
+## Quick Start
+
+```typescript
+import { ConfidentialTransferClient } from "@fairblock/stabletrust";
+
+// 1. Initialize the client
+const client = new ConfidentialTransferClient({
+  network: "ethereum-sepolia",
+  signer: walletSigner,
+});
+
+// 2. Set up your confidential account (one-time)
+await client.setupAccount();
+
+// 3. Deposit tokens
+await client.deposit({
+  token: "USDC",
+  amount: "1000",
+});
+
+// 4. Send a confidential transfer
+await client.transfer({
+  to: "0xRecipientAddress",
+  amount: "250",
+});
+
+// 5. Query your encrypted balance
+const balance = await client.getBalance("USDC");
+console.log("Balance:", balance.decrypted);
+```
+
+## Supported Networks
+
+| Network | Chain ID | Status |
+| --- | --- | --- |
+| Ethereum Sepolia | 11155111 | Live |
+| Arbitrum Sepolia | 421614 | Live |
+| Base Sepolia | 84532 | Live |
+| Stable Testnet | — | Live |
+| Arc | — | Live |
+| Tempo | — | Live |
+
+## Use Cases
+
+- **Confidential payroll** — pay employees in stablecoins without broadcasting salaries
+- **Token launchpads** — private allocation and distribution
+- **Privacy wallets** — web wallets with built-in confidential transfers
+- **Micropayments** — confidential streaming payments
+- **DAO treasury** — manage funds without exposing positions
+
+## Anonymous Transfers
+
+For enhanced privacy, anonymous transfers via the Fairycloak relay conceal both amounts and wallet addresses, using numeric account IDs instead of EVM addresses.
+
+<Warning>
+  Anonymous transfers require approval through the [Confidential Builders Program](https://build.fairblock.network).
+</Warning>
+
+<Card title="Full SDK Reference" icon="book" href="/build/sdk/installation">
+  See the complete SDK documentation with detailed guides for each operation.
+</Card>

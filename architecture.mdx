@@ -1,0 +1,75 @@
+---
+title: "High-Level Architecture"
+sidebarTitle: "Architecture"
+description: "How FairyRing connects with applications across ecosystems"
+---
+
+import { Card, CardGroup, Tabs, Tab } from "mintlify/components";
+
+<Note>
+  Apps refer to applications living on EVMs, and/or blockchains themselves, like those in the Cosmos ecosystem.
+</Note>
+
+## Building Apps on FairyRing
+
+Two critical properties define FairyRing's architecture:
+
+<Steps>
+  <Step title="Native Confidential Computation">
+    FairyRing is a Cosmos chain with novel features. No relayers are needed since confidential computation and contract callbacks are native functions of the hosting chain itself.
+  </Step>
+  <Step title="Frictionless Cross-Chain Integration">
+    FairyRing integrates with any chain. An interconnected environment deepens liquidity and makes the network more robust.
+  </Step>
+</Steps>
+
+## Core Components
+
+When chains integrate with FairyRing, five components work together:
+
+| Component | Description |
+| --- | --- |
+| **FairyRing** | Fairblock's native chain and ecosystem, abstracting intensive cryptographic operations for applications |
+| **FairyKit** | Integration packages that plug into any protocol and application to bring one-click confidentiality |
+| **Encryption SDK** | Off-chain software used to encrypt transactions to be submitted to the destination chain |
+| **Destination Chain** | The chain storing encrypted transactions, receiving public and secret keys from FairyRing, where transactions are executed |
+| **Relayers** | Communication layer that listens and coordinates between FairyRing and destination chains |
+
+## Integration Routes
+
+There are two primary ways chains integrate with Fairblock:
+
+<Tabs>
+  <Tab title="FairyKits">
+    FairyKits are chain-specific integration packages. The partnering network carries out some or all of the decryption and execution.
+
+    There are different FairyKits for **Cosmos**, **EVMs**, and **RustVMs**. Fairblock can integrate with any network.
+  </Tab>
+  <Tab title="Co-Processing">
+    With the co-processing route, FairyRing carries out the decryption, execution, and simply sends the end state to the integrating network.
+
+    This is ideal for chains that want to add confidentiality with minimal changes to their existing infrastructure.
+  </Tab>
+</Tabs>
+
+## Chain-Specific Architecture
+
+<Tabs>
+  <Tab title="EVM Chains">
+    EVM integration uses precompiled contracts and escrow contracts as bridge endpoints. Tokens lock on the EVM chain while encrypted balances appear on FairyRing.
+
+    **Supported:** Ethereum, Arbitrum, Base, Hyperliquid, and any EVM-compatible chain.
+  </Tab>
+  <Tab title="Cosmos Chains">
+    Cosmos chains integrate natively via IBC (Inter-Blockchain Communication). FairyKit modules plug directly into the chain's module system.
+
+    Communication uses light-client verification — relayers merely transport packets without validation capabilities.
+  </Tab>
+  <Tab title="Solana">
+    Solana integration leverages Fairblock's cross-chain messaging layer to bring confidential computing to the Solana ecosystem.
+  </Tab>
+</Tabs>
+
+<Info>
+  All integration methods provide the functionality to interact with FairyRing, and there can be underlying application logic working with these integrations.
+</Info>

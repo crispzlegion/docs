@@ -1,0 +1,63 @@
+---
+title: "FairyRing Native Apps"
+sidebarTitle: "FairyRing Native"
+description: "Build apps directly on FairyRing with native confidential computing"
+---
+
+FairyRing native apps have direct access to all confidential computing primitives without relayers or cross-chain communication overhead.
+
+## Advantages
+
+| Feature | Benefit |
+| --- | --- |
+| **No relayers needed** | Confidential computation and contract callbacks are native functions |
+| **Lowest latency** | Direct execution on FairyRing — no cross-chain delays |
+| **Full primitive access** | All cryptographic operations available natively |
+| **CosmWasm contracts** | Write confidential smart contracts in Rust |
+
+## Architecture
+
+```
+User → Encrypt with MPK → Submit to FairyRing → Condition met → Decrypt & Execute
+```
+
+No intermediaries. No relayers. The entire lifecycle runs on FairyRing.
+
+## Getting Started
+
+### 1. Set Up Your Development Environment
+
+```bash
+# Clone and build FairyRing
+git clone https://github.com/Fairblock/fairyring.git
+cd fairyring
+make install
+
+# Connect to testnet
+fairyringd config chain-id fairyring-testnet-1
+fairyringd config node https://rpc.testnet.fairblock.network:443
+```
+
+### 2. Create a CosmWasm Contract
+
+Your contract can interact with FairyRing's confidential computing modules directly:
+
+- **x/pep** — submit and process encrypted transactions
+- **x/keyshare** — interact with the distributed key generation system
+
+### 3. Deploy and Test
+
+```bash
+# Deploy your contract
+fairyringd tx wasm store contract.wasm --from your-wallet
+
+# Instantiate
+fairyringd tx wasm instantiate $CODE_ID '{}' --from your-wallet --label "my-capp"
+```
+
+## Use Cases
+
+- Sealed-bid auctions with automatic settlement
+- Private governance voting
+- Confidential prediction markets
+- Hidden-information games

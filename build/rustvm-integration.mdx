@@ -1,0 +1,59 @@
+---
+title: "RustVM Integration"
+sidebarTitle: "RustVM / Stylus"
+description: "Build confidential apps with Rust contracts on WASM-compatible environments"
+---
+
+Fairblock integrates with Arbitrum Stylus and other WASM-compatible environments, allowing developers to write confidential smart contracts in Rust.
+
+## What is Arbitrum Stylus?
+
+Arbitrum Stylus is an environment that allows developers to write smart contracts in programming languages that compile to WASM — including Rust, C, and C++. This enables integration with FairyRing for confidential computing with the performance benefits of compiled code.
+
+## Getting Started
+
+### 1. Install Dependencies
+
+```bash
+cargo install cargo-stylus
+cargo install --force cargo-stylus-check
+```
+
+### 2. Create a Confidential Contract
+
+```rust
+use fairykit_rust::FairyKit;
+use stylus_sdk::prelude::*;
+
+#[storage]
+pub struct MyConfidentialApp {
+    fairykit: FairyKit,
+}
+
+#[public]
+impl MyConfidentialApp {
+    pub fn submit_encrypted(&mut self, data: Vec<u8>, target_block: u64) -> Result<(), Vec<u8>> {
+        self.fairykit.submit_encrypted(data, target_block)
+    }
+
+    pub fn on_decrypted(&mut self, data: Vec<u8>) -> Result<(), Vec<u8>> {
+        // Process decrypted data
+        Ok(())
+    }
+}
+```
+
+### 3. Deploy
+
+```bash
+cargo stylus deploy --private-key $PRIVATE_KEY
+```
+
+## Advantages of Rust Contracts
+
+| Feature | Benefit |
+| --- | --- |
+| **Performance** | WASM execution is faster and cheaper than EVM bytecode |
+| **Memory safety** | Rust's type system prevents common vulnerabilities |
+| **Ecosystem** | Access to Rust cryptography crates |
+| **Portability** | Deploy to any WASM-compatible chain |

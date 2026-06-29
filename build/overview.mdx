@@ -1,0 +1,60 @@
+---
+title: "Build on FairyRing"
+sidebarTitle: "Overview"
+description: "Tutorials for developing confidential applications with FairyRing"
+---
+
+import { Card, CardGroup } from "mintlify/components";
+
+Build confidential applications (cApps) that leverage FairyRing's cryptographic primitives across multiple ecosystems.
+
+<Tip>
+  Review the [Start a cApp in 5 Minutes](/build/start-a-capp) guide before diving into ecosystem-specific tutorials.
+</Tip>
+
+## Developer Audiences
+
+<CardGroup cols={2}>
+  <Card title="App Developers" icon="code">
+    Building applications on EVMs and other blockchains. You **don't need** to know how to set up blockchain integrations.
+  </Card>
+  <Card title="Blockchain Developers" icon="link">
+    Creating chains that leverage Fairblock, including RollUps and Cosmos chains. You **don't need** to know how to set up apps.
+  </Card>
+</CardGroup>
+
+## Integration Paths
+
+<CardGroup cols={2}>
+  <Card title="FairyRing Native" icon="star" href="/build/fairyring-native">
+    Build apps directly on FairyRing with native access to all confidential computing primitives.
+  </Card>
+  <Card title="EVM Precompiles" icon="ethereum" href="/build/evm-precompiles">
+    Integrate Fairblock into EVM smart contracts using precompiled contracts and FairyKit.
+  </Card>
+  <Card title="Cosmos Chains" icon="atom" href="/build/cosmos-chains">
+    Add confidential computing to Cosmos SDK chains via IBC and FairyKit modules.
+  </Card>
+  <Card title="RustVM" icon="rust" href="/build/rustvm-integration">
+    Build with Rust contracts on Arbitrum Stylus and other WASM-compatible environments.
+  </Card>
+</CardGroup>
+
+## What You Can Build
+
+Tutorials emphasize MPC and IBE applications:
+
+- **Frontrunning protection** — encrypt transactions until block inclusion
+- **Sealed-bid auctions** — confidential bidding with simultaneous reveal
+- **Prediction markets** — private predictions with fair settlement
+- **Limit orders** — hidden limit orders immune to MEV
+- **Selective disclosure** — controlled data access for compliance
+- **Access control** — condition-based decryption for gated content
+
+## Confidential Transfers
+
+Confidential stablecoin transfers use Homomorphic Encryption and require **no special integration from developers** — everything is handled automatically by Fairblock's smart contracts on each supported chain.
+
+<Card title="Stabletrust SDK" icon="code" href="/build/sdk/installation">
+  Integrate confidential transfers into your application with a few lines of code.
+</Card>

@@ -1,0 +1,66 @@
+---
+title: "Cosmos Chains"
+sidebarTitle: "Cosmos Integration"
+description: "Add confidential computing to Cosmos SDK chains via IBC"
+---
+
+Cosmos chains integrate with FairyRing natively via IBC (Inter-Blockchain Communication) and FairyKit modules.
+
+## Architecture
+
+Communication uses light-client verification — relayers merely transport IBC packets without validation capabilities. This provides trust-minimized cross-chain confidential computing.
+
+## Integration Steps
+
+### 1. Add FairyKit Module
+
+Add the FairyKit Cosmos module to your chain's `app.go`:
+
+```go
+import (
+    fairykit "github.com/Fairblock/fairykit-cosmos/module"
+)
+
+func NewApp(...) *App {
+    // Register FairyKit module
+    app.FairyKitKeeper = fairykit.NewKeeper(...)
+    app.ModuleManager.RegisterModules(
+        fairykit.NewAppModule(app.FairyKitKeeper),
+    )
+}
+```
+
+### 2. Configure IBC Connection
+
+Set up the IBC connection to FairyRing:
+
+```bash
+# Create IBC client
+your-chain tx ibc client create fairyring-testnet-1
+
+# Establish connection
+your-chain tx ibc connection open-init ...
+
+# Create channel for encrypted transactions
+your-chain tx ibc channel open-init ...
+```
+
+### 3. Use Encrypted Transactions
+
+Once connected, your chain can submit and receive encrypted transactions through FairyRing:
+
+```go
+// Submit encrypted transaction via IBC
+msg := &types.MsgSubmitEncryptedTx{
+    Creator:          sender,
+    Data:             encryptedData,
+    TargetBlockHeight: targetHeight,
+}
+```
+
+## FairyKit Features
+
+- **Encrypted transaction submission** — send encrypted txs to FairyRing via IBC
+- **Key distribution** — receive Master Public Keys and derived private keys
+- **Callback execution** — automatically execute decrypted transactions on your chain
+- **Custom conditions** — define application-specific decryption conditions

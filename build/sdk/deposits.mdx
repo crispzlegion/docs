@@ -1,0 +1,49 @@
+---
+title: "Deposits"
+description: "Convert public tokens into confidential balances"
+---
+
+Deposit public ERC20 tokens into the confidential layer. Tokens are locked in escrow and an encrypted balance is created on FairyRing.
+
+## Basic Deposit
+
+```typescript
+const tx = await client.deposit({
+  token: "USDC",
+  amount: "1000", // Amount in token units
+});
+
+console.log("Deposit tx:", tx.hash);
+```
+
+## Deposit Flow
+
+<Steps>
+  <Step title="Approve">
+    The SDK automatically handles ERC20 approval for the escrow contract.
+  </Step>
+  <Step title="Lock">
+    Tokens are locked in the escrow contract on the source chain.
+  </Step>
+  <Step title="Relay">
+    An IBC packet notifies FairyRing of the deposit.
+  </Step>
+  <Step title="Credit">
+    An encrypted balance is created on FairyRing, visible only to you.
+  </Step>
+</Steps>
+
+## Supported Tokens
+
+| Token | Networks |
+| --- | --- |
+| USDC | Ethereum, Arbitrum, Base |
+| USDT | Ethereum, Arbitrum |
+| USDG | FairyRing |
+
+## Check Deposit Status
+
+```typescript
+const status = await client.getDepositStatus(tx.hash);
+console.log("Status:", status); // "pending" | "confirmed" | "credited"
+```

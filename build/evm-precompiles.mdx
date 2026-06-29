@@ -1,0 +1,78 @@
+---
+title: "EVM Precompiles"
+sidebarTitle: "EVM Integration"
+description: "Integrate Fairblock into EVM smart contracts using precompiled contracts"
+---
+
+EVM integration uses precompiled contracts and FairyKit to bring confidential computing to any EVM-compatible chain.
+
+## Architecture
+
+```
+User → Encrypt → Submit to EVM chain → Relayer → FairyRing (decrypt) → Callback to EVM
+```
+
+Or with co-processing:
+
+```
+User → Encrypt → Submit to EVM chain → FairyRing co-processes → End state sent to EVM
+```
+
+## Getting Started
+
+### 1. Install FairyKit for EVM
+
+```bash
+npm install @fairblock/fairykit-evm
+```
+
+### 2. Use Precompiled Contracts
+
+FairyKit provides precompiled contracts that handle encryption, decryption, and verification at native speed:
+
+```solidity
+// SPDX-License-Identifier: MIT
+pragma solidity ^0.8.20;
+
+import "@fairblock/fairykit-evm/contracts/IFairyKit.sol";
+
+contract MyConfidentialApp {
+    IFairyKit public fairykit;
+
+    function submitEncryptedBid(bytes calldata encryptedData, uint256 targetBlock) external {
+        fairykit.submitEncrypted(encryptedData, targetBlock);
+    }
+
+    function onDecrypted(bytes calldata decryptedData) external {
+        // Called by FairyKit when the condition is met
+        // Process the decrypted data
+    }
+}
+```
+
+### 3. Client-Side Encryption
+
+```typescript
+import { FairyKitEVM } from "@fairblock/fairykit-evm";
+
+const fairykit = new FairyKitEVM({
+  provider: ethersProvider,
+  fairyringRpc: "https://rpc.testnet.fairblock.network",
+});
+
+// Fetch the current Master Public Key
+const mpk = await fairykit.getMasterPublicKey();
+
+// Encrypt data for a future block
+const encrypted = await fairykit.encrypt(data, targetBlockHeight);
+
+// Submit to your contract
+await myContract.submitEncryptedBid(encrypted, targetBlockHeight);
+```
+
+## Supported EVM Chains
+
+- Ethereum (Sepolia testnet)
+- Arbitrum (Sepolia testnet)
+- Base (Sepolia testnet)
+- Any EVM-compatible chain with FairyKit integration

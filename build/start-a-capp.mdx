@@ -1,0 +1,94 @@
+---
+title: "Start a cApp in 5 Minutes"
+description: "Create a confidential application with FairyRing"
+---
+
+This guide walks you through creating a Confidential App (cApp), unlocking confidential computation via FairyRing's blockchain. cApps can operate on FairyRing, EVM networks, or independent chains.
+
+## Prerequisites
+
+- Go 1.21+ or Node.js 18+
+- A funded wallet on FairyRing testnet
+
+## Choose Your Path
+
+<Tabs>
+  <Tab title="FairyRing Native">
+    ### 1. Install the FairyRing CLI
+
+    ```bash
+    git clone https://github.com/Fairblock/fairyring.git
+    cd fairyring
+    make install
+    ```
+
+    ### 2. Configure Your Environment
+
+    ```bash
+    fairyringd config chain-id fairyring-testnet-1
+    fairyringd config node https://rpc.testnet.fairblock.network:443
+    ```
+
+    ### 3. Encrypt a Transaction
+
+    ```bash
+    fairyringd tx pep submit-encrypted-tx \
+      --from your-wallet \
+      --target-block-height 1000 \
+      --data "your-transaction-data"
+    ```
+
+    The transaction will remain encrypted until block 1000, then be automatically decrypted and executed.
+  </Tab>
+  <Tab title="EVM Network">
+    ### 1. Install Dependencies
+
+    ```bash
+    npm install @fairblock/fairykit-evm ethers
+    ```
+
+    ### 2. Encrypt and Submit
+
+    ```typescript
+    import { FairyKitEVM } from "@fairblock/fairykit-evm";
+    import { ethers } from "ethers";
+
+    const fairykit = new FairyKitEVM({
+      provider: new ethers.JsonRpcProvider("YOUR_RPC_URL"),
+      fairyringRpc: "https://rpc.testnet.fairblock.network",
+    });
+
+    // Encrypt a transaction for future block execution
+    const encryptedTx = await fairykit.encryptTransaction({
+      targetBlockHeight: 1000,
+      data: yourTransactionData,
+    });
+
+    // Submit the encrypted transaction
+    await fairykit.submitEncryptedTransaction(encryptedTx);
+    ```
+  </Tab>
+</Tabs>
+
+## What Happens Under the Hood
+
+<Steps>
+  <Step title="Encryption">
+    Your transaction is encrypted using FairyRing's Master Public Key (MPK) with the target condition (e.g., block height) as the IBE identity.
+  </Step>
+  <Step title="Submission">
+    The encrypted transaction is stored onchain. Nobody — not validators, not MEV searchers — can read it.
+  </Step>
+  <Step title="Condition Met">
+    When the target block height is reached, FairyRing validators derive the condition-specific decryption key.
+  </Step>
+  <Step title="Decryption & Execution">
+    The transaction is decrypted and executed in the same block, ensuring fair ordering.
+  </Step>
+</Steps>
+
+## Next Steps
+
+- [Build on FairyRing natively](/build/fairyring-native) — full access to all cryptographic primitives
+- [Integrate with EVM chains](/build/evm-precompiles) — use precompiles for gas-efficient confidential computing
+- [Cosmos chain integration](/build/cosmos-chains) — add confidentiality to your Cosmos chain

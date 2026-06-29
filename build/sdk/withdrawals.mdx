@@ -1,0 +1,52 @@
+---
+title: "Withdrawals"
+description: "Redeem confidential balances back to public tokens"
+---
+
+Withdraw funds from the confidential layer back to public ERC20 tokens on any supported chain.
+
+## Basic Withdrawal
+
+```typescript
+const tx = await client.withdraw({
+  token: "USDC",
+  amount: "500",
+  destinationChain: "ethereum-sepolia", // Optional: defaults to deposit chain
+});
+
+console.log("Withdrawal tx:", tx.hash);
+```
+
+## Withdrawal Flow
+
+<Steps>
+  <Step title="Prove">
+    The SDK generates a ZK proof that you own the encrypted balance and the withdrawal amount is valid.
+  </Step>
+  <Step title="Burn">
+    The encrypted balance is reduced on FairyRing.
+  </Step>
+  <Step title="Relay">
+    An IBC packet is sent to the destination chain.
+  </Step>
+  <Step title="Unlock">
+    The escrow contract releases the tokens to your wallet on the destination chain.
+  </Step>
+</Steps>
+
+## Cross-Chain Withdrawals
+
+You can withdraw to a different chain than where you deposited:
+
+```typescript
+// Deposited on Ethereum, withdraw on Arbitrum
+await client.withdraw({
+  token: "USDC",
+  amount: "500",
+  destinationChain: "arbitrum-sepolia",
+});
+```
+
+<Note>
+  Cross-chain withdrawals may take longer due to IBC relay times between chains.
+</Note>

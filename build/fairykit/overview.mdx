@@ -1,0 +1,32 @@
+---
+title: "FairyKit Overview"
+description: "Integration packages for bringing confidentiality to any blockchain"
+---
+
+import { Card, CardGroup } from "mintlify/components";
+
+FairyKit provides chain-specific integration packages that plug into any protocol and application to bring one-click confidentiality.
+
+## Available FairyKits
+
+<CardGroup cols={3}>
+  <Card title="EVM FairyKit" icon="ethereum" href="/build/fairykit/evm">
+    Precompiled contracts and client libraries for Ethereum, Arbitrum, Base, and any EVM chain.
+  </Card>
+  <Card title="Cosmos FairyKit" icon="atom" href="/build/fairykit/cosmos">
+    Native Cosmos SDK modules with IBC integration for any Cosmos chain.
+  </Card>
+  <Card title="Solana FairyKit" icon="bolt" href="/build/fairykit/solana">
+    Cross-chain messaging integration for the Solana ecosystem.
+  </Card>
+</CardGroup>
+
+## What FairyKit Provides
+
+| Feature | Description |
+| --- | --- |
+| **Encryption helpers** | Client-side encryption using FairyRing's Master Public Key |
+| **Contract interfaces** | On-chain contracts for submitting and receiving encrypted data |
+| **Key management** | Automatic MPK fetching and rotation |
+| **Callback system** | Automatic execution of decrypted transactions |
+| **Cross-chain relay** | IBC-based communication with FairyRing |

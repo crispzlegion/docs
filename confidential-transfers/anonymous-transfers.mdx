@@ -1,0 +1,48 @@
+---
+title: "Anonymous Transfers"
+description: "Enhanced privacy with unlinkable confidential transactions"
+---
+
+Anonymous confidential transfers extend Fairblock's privacy model by separating confidential accounts from public wallet addresses.
+
+## How It Works
+
+| Component | Role |
+| --- | --- |
+| **Fairycloak** | Acts as the relay layer for anonymous operations, submitting transactions without linking them to user wallets |
+| **Fairyport** | Handles cross-chain message delivery between FairyRing and destination chains |
+| **Numeric Account IDs** | Replace EVM addresses, breaking the link between identity and onchain activity |
+
+## Standard vs Anonymous Transfers
+
+| Feature | Standard Transfer | Anonymous Transfer |
+| --- | --- | --- |
+| Amount hidden | Yes | Yes |
+| Balance hidden | Yes | Yes |
+| Sender address visible | Yes | No |
+| Account identifier | EVM address | Numeric ID |
+| Compliance | Selective disclosure | Selective disclosure |
+
+## Usage
+
+Anonymous transfers use the same SDK with an additional configuration:
+
+```typescript
+import { ConfidentialTransferClient } from "@fairblock/stabletrust";
+
+const client = new ConfidentialTransferClient({
+  network: "ethereum-sepolia",
+  signer: walletSigner,
+  anonymous: true, // Enable Fairycloak relay
+});
+
+// Transfer using numeric account IDs
+await client.transfer({
+  to: 12345, // Numeric account ID, not an address
+  amount: "500",
+});
+```
+
+<Warning>
+  Anonymous transfers are currently in early access. Apply through the [Confidential Builders Program](https://build.fairblock.network).
+</Warning>

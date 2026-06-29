@@ -1,0 +1,60 @@
+---
+title: "Installation"
+description: "Install and configure the Stabletrust SDK"
+---
+
+## Install
+
+<CodeGroup>
+```bash npm
+npm install @fairblock/stabletrust
+```
+
+```bash yarn
+yarn add @fairblock/stabletrust
+```
+
+```bash pnpm
+pnpm add @fairblock/stabletrust
+```
+</CodeGroup>
+
+## Initialize the Client
+
+```typescript
+import { ConfidentialTransferClient } from "@fairblock/stabletrust";
+import { ethers } from "ethers";
+
+const provider = new ethers.BrowserProvider(window.ethereum);
+const signer = await provider.getSigner();
+
+const client = new ConfidentialTransferClient({
+  network: "ethereum-sepolia", // or "arbitrum-sepolia", "base-sepolia", etc.
+  signer: signer,
+});
+```
+
+## Account Setup
+
+Before making confidential transfers, set up your confidential account (one-time per network):
+
+```typescript
+await client.setupAccount();
+```
+
+This generates your encryption keypair locally and registers your public key onchain.
+
+<Warning>
+  Your secret key is generated and stored locally in the browser. If you clear browser storage, you'll need to re-register. Export your key for backup.
+</Warning>
+
+## Network Configuration
+
+| Network | Config Value | Chain ID |
+| --- | --- | --- |
+| Ethereum Sepolia | `ethereum-sepolia` | 11155111 |
+| Arbitrum Sepolia | `arbitrum-sepolia` | 421614 |
+| Base Sepolia | `base-sepolia` | 84532 |
+| Stable Testnet | `stable-testnet` | — |
+| Arc | `arc` | — |
+| Tempo | `tempo` | — |
