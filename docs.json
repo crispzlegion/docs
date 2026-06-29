@@ -1,6 +1,6 @@
 {
   "$schema": "https://mintlify.com/docs.json",
-  "theme": "mint",
+  "theme": "luma",
   "name": "Fairblock",
   "logo": {
     "light": "/logo/light.svg",
@@ -8,9 +8,19 @@
   },
   "favicon": "/favicon.svg",
   "colors": {
-    "primary": "#6C5CE7",
-    "light": "#A29BFE",
-    "dark": "#5A4BD1"
+    "primary": "#000000",
+    "light": "#ffffff",
+    "dark": "#ffffff"
+  },
+  "font": {
+    "headings": {
+      "family": "Inter",
+      "weight": 600
+    },
+    "body": {
+      "family": "Inter",
+      "weight": 400
+    }
   },
   "navbar": {
     "primary": {
