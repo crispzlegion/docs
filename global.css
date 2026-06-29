@@ -1,0 +1,44 @@
+/* Remove all border radius */
+*,
+*::before,
+*::after {
+  border-radius: 0 !important;
+}
+
+/* Sidebar navigation separators */
+nav [class*="group"] + [class*="group"] {
+  border-top: 1px solid var(--border);
+  padding-top: 12px;
+  margin-top: 12px;
+}
+
+/* Sidebar page items separators */
+nav a[href] {
+  border-bottom: 1px solid var(--border);
+  padding-bottom: 8px;
+}
+
+/* Card separators */
+[class*="Card"] {
+  border: 1px solid var(--border) !important;
+}
+
+/* Table rows */
+table tr {
+  border-bottom: 1px solid var(--border);
+}
+
+/* Tab items */
+[role="tablist"] > * {
+  border-bottom: 1px solid var(--border);
+}
+
+/* Accordion items */
+[class*="Accordion"] {
+  border-bottom: 1px solid var(--border);
+}
+
+/* Code blocks */
+pre {
+  border: 1px solid var(--border) !important;
+}
