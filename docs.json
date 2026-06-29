@@ -10,11 +10,7 @@
   "colors": {
     "primary": "#6C5CE7",
     "light": "#A29BFE",
-    "dark": "#5A4BD1",
-    "anchors": {
-      "from": "#6C5CE7",
-      "to": "#A29BFE"
-    }
+    "dark": "#5A4BD1"
   },
   "topbarLinks": [
     {
@@ -40,145 +36,136 @@
       "url": "api-reference"
     }
   ],
-  "anchors": [
-    {
-      "name": "GitHub",
-      "icon": "github",
-      "url": "https://github.com/Fairblock"
-    },
-    {
-      "name": "Discord",
-      "icon": "discord",
-      "url": "https://discord.gg/fairblock"
-    },
-    {
-      "name": "Blog",
-      "icon": "newspaper",
-      "url": "https://blog.fairblock.network"
-    }
-  ],
-  "navigation": [
-    {
-      "group": "Getting Started",
-      "pages": [
-        "introduction",
-        "architecture",
-        "quickstart"
-      ]
-    },
-    {
-      "group": "Confidential Transfers",
-      "pages": [
-        "confidential-transfers/overview",
-        "confidential-transfers/technical-overview",
-        "confidential-transfers/stabletrust-sdk",
-        "confidential-transfers/stabletrust-app",
-        "confidential-transfers/anonymous-transfers"
-      ]
-    },
-    {
-      "group": "Products",
-      "pages": [
-        "products/stabletrust",
-        "products/fairates",
-        "products/protected-trading"
-      ]
-    },
-    {
-      "group": "Cryptography",
-      "pages": [
-        "cryptography/overview",
-        "cryptography/homomorphic-encryption",
-        "cryptography/identity-based-encryption",
-        "cryptography/multi-party-computation",
-        "cryptography/zero-knowledge-proofs"
-      ]
-    },
-    {
-      "group": "Ecosystem",
-      "pages": [
-        "ecosystem/supported-chains",
-        "ecosystem/partners",
-        "ecosystem/community"
-      ]
-    },
-    {
-      "group": "Build on FairyRing",
-      "pages": [
-        "build/overview",
-        "build/start-a-capp",
-        "build/fairyring-native",
-        "build/evm-precompiles",
-        "build/cosmos-chains",
-        "build/rustvm-integration"
-      ]
-    },
-    {
-      "group": "Stabletrust SDK",
-      "pages": [
-        "build/sdk/installation",
-        "build/sdk/deposits",
-        "build/sdk/transfers",
-        "build/sdk/withdrawals",
-        "build/sdk/balance-queries",
-        "build/sdk/anonymous-transfers"
-      ]
-    },
-    {
-      "group": "FairyKit Integration",
-      "pages": [
-        "build/fairykit/overview",
-        "build/fairykit/evm",
-        "build/fairykit/cosmos",
-        "build/fairykit/solana"
-      ]
-    },
-    {
-      "group": "Protocol",
-      "pages": [
-        "protocol/overview",
-        "protocol/fairyring",
-        "protocol/distributed-key-generation",
-        "protocol/threshold-encryption",
-        "protocol/co-processing",
-        "protocol/consensus"
-      ]
-    },
-    {
-      "group": "Modules",
-      "pages": [
-        "protocol/modules/pep",
-        "protocol/modules/keyshare",
-        "protocol/modules/confidential-transfers"
-      ]
-    },
-    {
-      "group": "Running a Node",
-      "pages": [
-        "protocol/node/requirements",
-        "protocol/node/installation",
-        "protocol/node/testnet",
-        "protocol/node/validator",
-        "protocol/node/monitoring"
-      ]
-    },
-    {
-      "group": "API Reference",
-      "pages": [
-        "api-reference/overview",
-        "api-reference/rpc-endpoints",
-        "api-reference/rest-api"
-      ]
-    },
-    {
-      "group": "Resources",
-      "pages": [
-        "resources/glossary",
-        "resources/faq",
-        "resources/changelog"
-      ]
-    }
-  ],
+  "navigation": {
+    "docs": [
+      {
+        "group": "Getting Started",
+        "pages": [
+          "introduction",
+          "architecture",
+          "quickstart"
+        ]
+      },
+      {
+        "group": "Confidential Transfers",
+        "pages": [
+          "confidential-transfers/overview",
+          "confidential-transfers/technical-overview",
+          "confidential-transfers/stabletrust-sdk",
+          "confidential-transfers/stabletrust-app",
+          "confidential-transfers/anonymous-transfers"
+        ]
+      },
+      {
+        "group": "Products",
+        "pages": [
+          "products/stabletrust",
+          "products/fairates",
+          "products/protected-trading"
+        ]
+      },
+      {
+        "group": "Cryptography",
+        "pages": [
+          "cryptography/overview",
+          "cryptography/homomorphic-encryption",
+          "cryptography/identity-based-encryption",
+          "cryptography/multi-party-computation",
+          "cryptography/zero-knowledge-proofs"
+        ]
+      },
+      {
+        "group": "Ecosystem",
+        "pages": [
+          "ecosystem/supported-chains",
+          "ecosystem/partners",
+          "ecosystem/community"
+        ]
+      },
+      {
+        "group": "Resources",
+        "pages": [
+          "resources/glossary",
+          "resources/faq",
+          "resources/changelog"
+        ]
+      }
+    ],
+    "build": [
+      {
+        "group": "Build on FairyRing",
+        "pages": [
+          "build/overview",
+          "build/start-a-capp",
+          "build/fairyring-native",
+          "build/evm-precompiles",
+          "build/cosmos-chains",
+          "build/rustvm-integration"
+        ]
+      },
+      {
+        "group": "Stabletrust SDK",
+        "pages": [
+          "build/sdk/installation",
+          "build/sdk/deposits",
+          "build/sdk/transfers",
+          "build/sdk/withdrawals",
+          "build/sdk/balance-queries",
+          "build/sdk/anonymous-transfers"
+        ]
+      },
+      {
+        "group": "FairyKit Integration",
+        "pages": [
+          "build/fairykit/overview",
+          "build/fairykit/evm",
+          "build/fairykit/cosmos",
+          "build/fairykit/solana"
+        ]
+      }
+    ],
+    "protocol": [
+      {
+        "group": "Protocol",
+        "pages": [
+          "protocol/overview",
+          "protocol/fairyring",
+          "protocol/distributed-key-generation",
+          "protocol/threshold-encryption",
+          "protocol/co-processing",
+          "protocol/consensus"
+        ]
+      },
+      {
+        "group": "Modules",
+        "pages": [
+          "protocol/modules/pep",
+          "protocol/modules/keyshare",
+          "protocol/modules/confidential-transfers"
+        ]
+      },
+      {
+        "group": "Running a Node",
+        "pages": [
+          "protocol/node/requirements",
+          "protocol/node/installation",
+          "protocol/node/testnet",
+          "protocol/node/validator",
+          "protocol/node/monitoring"
+        ]
+      }
+    ],
+    "api-reference": [
+      {
+        "group": "API Reference",
+        "pages": [
+          "api-reference/overview",
+          "api-reference/rpc-endpoints",
+          "api-reference/rest-api"
+        ]
+      }
+    ]
+  },
   "footerSocials": {
     "x": "https://x.com/0xfairblock",
     "github": "https://github.com/Fairblock",
