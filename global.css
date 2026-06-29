@@ -5,40 +5,71 @@
   border-radius: 0 !important;
 }
 
-/* Sidebar navigation separators */
-nav [class*="group"] + [class*="group"] {
-  border-top: 1px solid var(--border);
+/* Sidebar group dividers */
+sidebar-group + sidebar-group {
+  border-top: 1px solid var(--border-color, #e5e5e5) !important;
   padding-top: 12px;
   margin-top: 12px;
 }
 
-/* Sidebar page items separators */
-nav a[href] {
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 8px;
+/* Sidebar nav items */
+#sidebar-content li + li {
+  border-top: 1px solid var(--border-color, #e5e5e5) !important;
 }
 
-/* Card separators */
-[class*="Card"] {
-  border: 1px solid var(--border) !important;
+#sidebar-content a {
+  border-bottom: 1px solid var(--border-color, #e5e5e5) !important;
+  padding-bottom: 6px;
+}
+
+/* Cards */
+card {
+  border: 1px solid var(--border-color, #e5e5e5) !important;
+}
+
+card-group card + card {
+  border-top: 1px solid var(--border-color, #e5e5e5) !important;
+}
+
+/* Accordion items */
+accordion {
+  border-bottom: 1px solid var(--border-color, #e5e5e5) !important;
+}
+
+/* Steps */
+step + step {
+  border-top: 1px solid var(--border-color, #e5e5e5) !important;
+  padding-top: 16px;
+}
+
+/* Tabs */
+tabs [role="tablist"] > * {
+  border-bottom: 1px solid var(--border-color, #e5e5e5) !important;
+}
+
+/* Code blocks */
+code-block,
+pre {
+  border: 1px solid var(--border-color, #e5e5e5) !important;
 }
 
 /* Table rows */
 table tr {
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border-color, #e5e5e5) !important;
 }
 
-/* Tab items */
-[role="tablist"] > * {
-  border-bottom: 1px solid var(--border);
+/* Nav tabs separator */
+nav-tabs-item + nav-tabs-item {
+  border-left: 1px solid var(--border-color, #e5e5e5) !important;
 }
 
-/* Accordion items */
-[class*="Accordion"] {
-  border-bottom: 1px solid var(--border);
+/* Pagination */
+pagination-prev,
+pagination-next {
+  border: 1px solid var(--border-color, #e5e5e5) !important;
 }
 
-/* Code blocks */
-pre {
-  border: 1px solid var(--border) !important;
+/* TOC items */
+toc-item + toc-item {
+  border-top: 1px solid var(--border-color, #e5e5e5) !important;
 }
