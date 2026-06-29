@@ -22,22 +22,47 @@
     "name": "Launch Stabletrust",
     "url": "https://stabletrust.fairblock.network"
   },
-  "tabs": [
-    {
-      "name": "Build",
-      "url": "build"
-    },
-    {
-      "name": "Protocol",
-      "url": "protocol"
-    },
-    {
-      "name": "API Reference",
-      "url": "api-reference"
-    }
-  ],
   "navigation": {
-    "docs": [
+    "tabs": [
+      {
+        "tab": "Documentation",
+        "href": "/",
+        "icon": "book"
+      },
+      {
+        "tab": "Build",
+        "href": "/build",
+        "icon": "code"
+      },
+      {
+        "tab": "Protocol",
+        "href": "/protocol",
+        "icon": "cubes"
+      },
+      {
+        "tab": "API Reference",
+        "href": "/api-reference",
+        "icon": "plug"
+      }
+    ],
+    "anchors": [
+      {
+        "anchor": "GitHub",
+        "icon": "github",
+        "href": "https://github.com/Fairblock"
+      },
+      {
+        "anchor": "Discord",
+        "icon": "discord",
+        "href": "https://discord.gg/fairblock"
+      },
+      {
+        "anchor": "Blog",
+        "icon": "newspaper",
+        "href": "https://blog.fairblock.network"
+      }
+    ],
+    "groups": [
       {
         "group": "Getting Started",
         "pages": [
@@ -89,9 +114,7 @@
           "resources/faq",
           "resources/changelog"
         ]
-      }
-    ],
-    "build": [
+      },
       {
         "group": "Build on FairyRing",
         "pages": [
@@ -122,9 +145,7 @@
           "build/fairykit/cosmos",
           "build/fairykit/solana"
         ]
-      }
-    ],
-    "protocol": [
+      },
       {
         "group": "Protocol",
         "pages": [
@@ -153,9 +174,7 @@
           "protocol/node/validator",
           "protocol/node/monitoring"
         ]
-      }
-    ],
-    "api-reference": [
+      },
       {
         "group": "API Reference",
         "pages": [
