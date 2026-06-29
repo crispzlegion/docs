@@ -23,6 +23,9 @@
     "url": "https://stabletrust.fairblock.network"
   },
   "navigation": {
+    "pages": [
+      "introduction"
+    ],
     "tabs": [
       {
         "tab": "Documentation",
