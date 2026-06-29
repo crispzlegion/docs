@@ -3,7 +3,6 @@ title: "Cryptography Overview"
 description: "Fairblock's multimodal approach to confidential computing"
 ---
 
-
 > Simplicity is the ultimate form of art. We prioritize simplicity and usability through a multimodal, dynamic design fine-tuning performance and security.
 
 Fairblock avoids one-size-fits-all cryptography. Instead, the right scheme is selected for each use case, balancing performance, security, and usability.
@@ -13,7 +12,7 @@ Fairblock avoids one-size-fits-all cryptography. Instead, the right scheme is se
 | Technology | Abbreviation | Primary Use |
 | --- | --- | --- |
 | Distributed Key Generation | DKG | Joint key pair generation without single-party control |
-| Threshold Identity-Based Encryption | tIBE | Pre-execution confidentiality, sealed-bid auctions |
+| MPC Identity-Based Encryption | MPC-IBE | Pre-execution confidentiality, sealed-bid auctions |
 | Multi-Party Computation | MPC | Collaborative computation without revealing inputs |
 | Homomorphic Encryption | HE | Computation over encrypted data (confidential transfers) |
 | Zero-Knowledge Proofs | ZKP | Proving statements without revealing underlying data |
@@ -22,12 +21,13 @@ Fairblock avoids one-size-fits-all cryptography. Instead, the right scheme is se
 
 <CardGroup cols={2}>
   <Card title="Pre-Execution Confidentiality" icon="eye-slash">
-    **DKG + Threshold IBE**
+    **DKG \+ Threshold IBE**
 
     Sealed-bid auctions, protected trading, selective disclosure, and AI private data marketplaces.
   </Card>
+
   <Card title="Computation Over Encrypted Data" icon="microchip">
-    **MPC + HE**
+    **MPC \+ HE**
 
     Confidential stablecoins, private AI inference, and dark pools using Twisted ElGamal, threshold FHE (CKKS), and SPDZ protocols.
   </Card>
@@ -44,12 +44,15 @@ Two primary schemes are active:
   <Card title="Homomorphic Encryption" icon="lock" href="/cryptography/homomorphic-encryption">
     Deep dive into Twisted ElGamal and how confidential transfers work.
   </Card>
+
   <Card title="Identity-Based Encryption" icon="key" href="/cryptography/identity-based-encryption">
     How threshold IBE enables pre-execution confidentiality.
   </Card>
+
   <Card title="Multi-Party Computation" icon="users" href="/cryptography/multi-party-computation">
     Distributed computation across FairyRing validators.
   </Card>
+
   <Card title="Zero-Knowledge Proofs" icon="shield-check" href="/cryptography/zero-knowledge-proofs">
     Lightweight ZK proofs for balance and range verification.
   </Card>
