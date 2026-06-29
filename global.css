@@ -5,71 +5,51 @@
   border-radius: 0 !important;
 }
 
-/* Sidebar group dividers */
+/* Sidebar group dividers - thin subtle line between groups */
 sidebar-group + sidebar-group {
-  border-top: 1px solid var(--border-color, #e5e5e5) !important;
-  padding-top: 12px;
-  margin-top: 12px;
+  border-top: 1px solid rgba(0, 0, 0, 0.08);
+  padding-top: 8px;
+  margin-top: 8px;
 }
 
-/* Sidebar nav items */
-#sidebar-content li + li {
-  border-top: 1px solid var(--border-color, #e5e5e5) !important;
+:root.dark sidebar-group + sidebar-group {
+  border-top-color: rgba(255, 255, 255, 0.08);
 }
 
-#sidebar-content a {
-  border-bottom: 1px solid var(--border-color, #e5e5e5) !important;
-  padding-bottom: 6px;
-}
-
-/* Cards */
+/* Cards - subtle border */
 card {
-  border: 1px solid var(--border-color, #e5e5e5) !important;
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
 }
 
-card-group card + card {
-  border-top: 1px solid var(--border-color, #e5e5e5) !important;
-}
-
-/* Accordion items */
-accordion {
-  border-bottom: 1px solid var(--border-color, #e5e5e5) !important;
-}
-
-/* Steps */
-step + step {
-  border-top: 1px solid var(--border-color, #e5e5e5) !important;
-  padding-top: 16px;
-}
-
-/* Tabs */
-tabs [role="tablist"] > * {
-  border-bottom: 1px solid var(--border-color, #e5e5e5) !important;
+:root.dark card {
+  border-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 /* Code blocks */
-code-block,
-pre {
-  border: 1px solid var(--border-color, #e5e5e5) !important;
+pre,
+code-block {
+  border: 1px solid rgba(0, 0, 0, 0.08) !important;
+}
+
+:root.dark pre,
+:root.dark code-block {
+  border-color: rgba(255, 255, 255, 0.1) !important;
 }
 
 /* Table rows */
-table tr {
-  border-bottom: 1px solid var(--border-color, #e5e5e5) !important;
+table tr + tr {
+  border-top: 1px solid rgba(0, 0, 0, 0.06);
 }
 
-/* Nav tabs separator */
-nav-tabs-item + nav-tabs-item {
-  border-left: 1px solid var(--border-color, #e5e5e5) !important;
+:root.dark table tr + tr {
+  border-top-color: rgba(255, 255, 255, 0.08);
 }
 
-/* Pagination */
-pagination-prev,
-pagination-next {
-  border: 1px solid var(--border-color, #e5e5e5) !important;
+/* Table header */
+table thead {
+  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
 }
 
-/* TOC items */
-toc-item + toc-item {
-  border-top: 1px solid var(--border-color, #e5e5e5) !important;
+:root.dark table thead {
+  border-bottom-color: rgba(255, 255, 255, 0.1);
 }
