@@ -1,8 +1,11 @@
-/* Remove all border radius */
-*,
-*::before,
-*::after {
-  border-radius: 0 !important;
+/* Slight border radius on boxes */
+.card,
+pre,
+#search-bar-entry,
+#topbar-cta-button,
+[data-component-part="code-block-root"],
+[role="tablist"] {
+  border-radius: 6px !important;
 }
 
 /* Smaller card icons */
