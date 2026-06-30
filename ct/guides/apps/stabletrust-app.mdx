@@ -1,44 +1,56 @@
 ---
 title: "Stabletrust App"
-description: "Browser-based interface for confidential stablecoin transfers"
+description: "Confidential stablecoins and transfers powered by Fairblock"
 ---
 
-Stabletrust is the browser-based interface for confidential stablecoin transfers across multiple blockchain networks.
 
-## Features
+Stabletrust is the unified browser-based interface for users, traders, businesses, and institutions. It works across major EVM chains, payment networks, with additional ecosystems expanding over time.
+Stabletrust includes:
 
-- **Wallet integration** with MetaMask, WalletConnect, and any EVM wallet
-- **Browser-based encryption** using local, lightweight homomorphic encryption and ZK proofs
-- **Balance decryption** visible only to you, privately in-browser
-- **Multi-chain support** across Ethereum, Arbitrum, Base, and more
+- Wallet integrations
+- Local, browser-based, lightweight homomorphic encryption and ZK proof generation
+- Balance decryption for users
+- Confidential transfers for major stablecoins
 
-## No Overhead
+Stabletrust can be used without the typical UX burdens of privacy systems: no volatile privacy coins, no bridging to isolated privacy chains, no long encryption/proof delays, and no need to switch wallets. It’s an all-in-one interface to start sending confidential transfers immediately without prior setup or cryptography knowledge.
 
-Stabletrust requires no volatile privacy tokens, no bridging to isolated chains, no wallet switching, and minimal encryption delays.
+**First-time onboarding is one-time**: Like linking a bank account in a neobank or completing a KYC process, Stabletrust setup is a one-time step. First-time users connect a wallet (creating a confidential account) and make an initial deposit to fund it. After that, sending and receiving confidential transfers works like normal without repeated setup. Deposits are only needed when adding funds. Redemptions are optional when redeeeming it back to the underlying token.
 
-## Getting Started
+## What you can do
 
-<Steps>
-  <Step title="Connect Wallet">
-    Visit [stabletrust.fairblock.network](https://stabletrust.fairblock.network) and connect your wallet.
-  </Step>
-  <Step title="Deposit">
-    Make a one-time deposit to set up your confidential account on FairyRing.
-  </Step>
-  <Step title="Transfer">
-    Send confidential transfers. Amounts and balances are encrypted, visible only to you and the recipient.
-  </Step>
-</Steps>
+- Send and receive stablecoins without leaking amounts and balances
+- Preserve composability and compliance
+- Disclose per-transaction details to finance, auditors, banks, or regulators only when needed (no single decrytion key for all transactions)
+- Access confidentiality from major chains without wrapping or bridging funds
 
-## Supported Assets
+## Who it’s for
 
-| Network | Assets |
+- Individuals: everyday spending and transfers without leaking amounts or relationships
+- Traders: reduce information leakage (order size, timing) while settling on public chains
+- Businesses and institutions: confidential payroll, commercial terms, and treasury moves with selective disclosure when required
+
+## Supported networks
+
+### Chains
+
+| Status | Networks |
 | --- | --- |
-| Ethereum | USDC, USDT |
-| Arbitrum | USDC, USDT |
-| Base | USDC |
-| FairyRing | USDC, USDT, USDG |
+| **Available** | Ethereum, Arbitrum, Base, Tempo, Arc, Noble AppLayer, Stable, FairyRing |
+| **Coming soon** | Solana, Stellar, and others |
 
-## Selective Disclosure
+### Deposit assets
 
-Reveal specific transaction details to auditors or regulators without exposing your complete financial history.
+| Status | Assets |
+| --- | --- |
+| **Available** | USDC, USDT, USDG, Confidential USD (Fairblock's yield-bearing stablecoin) |
+| **Coming soon** | RWAs, encrypted BTC and ETH, and more |
+
+<Note>
+  Additional assets can be added based on issuer and partner demand.
+</Note>
+
+## Getting started
+
+1. Open [Stabletrust](https://stabletrust.fairblock.network/)
+2. Learn how it works in the [Architecture](/ct/get-started/architecture) overview
+3. See the [Deposit, Transfer and Withdraw](/ct/how-it-works/deposit-transfer-withdraw) flow
