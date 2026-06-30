@@ -8,10 +8,12 @@ Your financial activity is private by default in the real world. You don’t bro
 
 When financial data leaks, it creates problems:
 
-- Competitors can see your volume, pricing, margins, and runway
-- Traders and bots can frontrun and copy your strategy
-- Attackers can map and target high-value wallets
-- You can run into legal and regulatory trouble because you failed to protect sensitive information about employees, customers, and partners
+<Warning>
+  - Competitors can see your volume, pricing, margins, and runway
+  - Traders and bots can frontrun and copy your strategy
+  - Attackers can map and target high-value wallets
+  - You can run into legal and regulatory trouble for failing to protect sensitive information about employees, customers, and partners
+</Warning>
 
 [Researchers](https://www.researchgate.net/publication/387041111_Decoding_blockchain_data_for_research_in_marketing_New_insights_through_an_analysis_of_share_of_wallet) have shown that block explorers can be abused as a surveillance tool. Onchain data can be used to decode transaction patterns, customer behavior, peak sales times, and share-of-wallet. That is not how finance or commerce operates today, and it’s why enterprises and institutions still hesitate to run their businesses fully onchain.
 
@@ -29,69 +31,75 @@ It is not a mixer and not an anonymity pool. It is programmable confidentiality 
 
 ## Core Applications
 
-**Payments & Payroll**
+<AccordionGroup>
+  <Accordion title="Payments & Payroll" icon="money-bill-transfer">
+    - Confidential salaries for employees, contractors, and KOLs
+    - Private peer-to-peer, cross-border, and merchant payments
+    - Integration with payment networks for compliant, confidential settlements
 
-- Confidential salaries for employees, contractors, and KOLs
-- Private peer-to-peer, cross-border, and merchant payments
-- Integration with payment networks for compliant, confidential settlements
+    No one wants comp, vendor rates, or partner payouts scraped and indexed. That’s HR liability, competitive intelligence leakage, and reputational risk.
+  </Accordion>
 
-No one wants comp, vendor rates, or partner payouts scraped and indexed. That’s HR liability, competitive intelligence leakage, and reputational risk.
+  <Accordion title="DeFi & Trading" icon="chart-line">
+    - Encrypted orderflow and resistant to manipulation (e.g. frontrunning)
+    - Confidential liquidity, collateral, and position management
 
-**DeFi & Trading**
+    If the market can see size and timing, you’re handing a competitive edge to competitors and bots. Confidential amounts stop your orders from working against you.
+  </Accordion>
 
-- Encrypted orderflow and resistant to manipulation (e.g. frontrunning)
-- Confidential liquidity, collateral, and position management
+  <Accordion title="Treasury & Institutional" icon="building-columns">
+    - Managing onchain VC liquid funds, corporate, DAO, and fund treasury operations
+    - Confidential inter-subsidiary and OTC settlements
 
-If the market can see size and timing, you’re handing a competitive edge to competitors and bots. Confidential amounts stop your orders from working against you.
+    Treasury activity is strategy. Get the benefits of moving funds onchain without broadcasting your strategy to the entire market.
+  </Accordion>
 
-**Treasury & Institutional**
+  <Accordion title="M&A and Strategic Deals" icon="handshake">
+    - Private acquisitions and token buyouts without market leaks
+    - Pre-announcement confidentiality and selective auditability
 
-- Managing onchain VC liquid funds, corporate, DAO, and fund treasury operations
-- Confidential inter-subsidiary and OTC settlements
+    Onchain corporate actions expose you to frontrunners. They also create legal and regulatory questions if markets react before disclosure windows.
+  </Accordion>
 
-Treasury activity is strategy. Get the benefits of moving funds onchain without broadcasting your strategy to the entire market.
+  <Accordion title="Real-World Assets (RWA)" icon="landmark">
+    - Tokenized securities trading (equities, bonds, funds)
+    - Institutional settlement workflows (custody, issuance, venues)
 
-**M&A and Strategic Deals**
+    Enable confidential trading and settlement of tokenized securities without exposing portfolio composition or execution terms on public chains. Designed to fit the operational needs of custodians, issuers, and market venues.
+  </Accordion>
 
-- Private acquisitions and token buyouts without market leaks
-- Pre-announcement confidentiality and selective auditability
+  <Accordion title="Compliance & Regulation" icon="scale-balanced">
+    - Selective disclosure and bad actor filtering
+    - Anti-money laundering (AML)-safe stablecoins and regulatory auditability
+    - Protection against GDPR/MiCA/CCPA/Clarity related data exposure risk for institutions
 
-Onchain corporate actions that expose you to frontrunners. It also creates legal and regulatory questions if markets react before disclosure windows.
+    Regulators increasingly expect two things: don’t expose everything to everyone, and do let authorized parties verify under lawful authority. Fairblock follows this exact model. You can disclose a specific transaction – and only that transaction – to a tax authority, regulator, or auditor without revealing your entire financial history. This maps to how financial supervisors describe acceptable digital asset systems and how TradFi already handles sensitive trade and payments data.
+  </Accordion>
 
-**Real-World Assets (RWA)**
+  <Accordion title="Infrastructure & Advanced Applications" icon="network-wired">
+    - Privacy-preserving credit, lending, and agentic payments
+    - Selective-disclosure rails for payment networks, issuers, and banks
 
-- Tokenized securities trading (equities, bonds, funds)
-- Institutional settlement workflows (custody, issuance, venues)
-
-Enable confidential trading and settlement of tokenized securities without exposing portfolio composition or execution terms on public chains. Designed to fit the operational needs of custodians, issuers, and market venues.
-
-**Compliance & Regulation**
-
-- Selective disclosure and bad actor filtering
-- Anti-money laundering (AML)-safe stablecoins and regulatory auditability
-- Protection against GDPR/MiCA/CCPA/Clarity related data exposure risk for institutions
-
-Regulators increasingly expect two things: don’t expose everything to everyone and do let authorized parties verify under lawful authority. Fairblock follows this exact model. You can disclose a specific transaction – and only that transaction – to a tax authority, regulator, or auditor without revealing your entire financial history. This maps to how financial supervisors describe acceptable digital asset systems and how TradFi already handles sensitive trade and payments data.
-
-**Infrastructure & Advanced Applications**
-
-- Privacy-preserving credit, lending, and agentic payments
-- Selective-disclosure rails for payment networks, issuers, and banks
-
-You can’t run credit or agent-to-agent payments if every invoice, fee, and settlement is globally visible. Confidential rails are the prerequisite. With selective disclosures, regulated parties settle onchain and can still produce per-transaction details for compliance.
+    You can’t run credit or agent-to-agent payments if every invoice, fee, and settlement is globally visible. Confidential rails are the prerequisite. With selective disclosures, regulated parties settle onchain and can still produce per-transaction details for compliance.
+  </Accordion>
+</AccordionGroup>
 
 ## Why Fairblock
 
-**1. Confidentiality where the liquidity already lives**: One-click confidentially on the chains and apps you already use. No extra cost or added security risks from forcing you to bridge your assets or loss of privacy when moving funds in/out of privacy chains. That means lower cost, lower risk, and you stay close to existing liquidity.
-
-**2. Low fees**: We don’t charge a fee on every sender just because you want privacy. Fees are capped and designed to be practical for invoices, payroll, and treasury ops. Our monetization is split across integrations, partners, and float, to minimize fees on transactions.
-Since the cryptography is lightweight, the gas required to verify and update confidential balances is significantly lower than systems that rely on heavy zero-knowledge (ZK) proofs or fully homomorphic encryption (FHE), which most payment use cases simply don’t need.
-
-**3. No black-box trust**: Users are not exposed to unnecessary security risks from single hardware setups (e.g. single-TEE), outsourced ZK provers, or centralized offchain coprocessors.
-
-**4. Fast enough for real usage**: ZK proofs are light enough to run in normal payment flow. User experience on other privacy systems remain poor because proofs take minutes on a phone or they require heavyweight off-chain computation.
-
-Throughput also scales: we can already handle significantly higher TPS than typical TFHE-style systems before hardware acceleration. We also work with specialized hardware teams (FPGA/GPU acceleration) for even more headroom, which keeps this system future-proof for high-volume partners like payment processors and trading venues.
+<CardGroup cols={2}>
+  <Card title="Confidentiality where liquidity already lives" icon="location-dot">
+    One-click confidentiality on the chains and apps you already use. No extra cost or security risk from bridging assets, and no loss of privacy when moving funds in and out of dedicated privacy chains. Lower cost, lower risk, and you stay close to existing liquidity.
+  </Card>
+  <Card title="Low fees" icon="coins">
+    We don’t charge a fee on every sender just because you want privacy. Fees are capped and practical for invoices, payroll, and treasury ops. Because the cryptography is lightweight, the gas to verify and update confidential balances is far lower than systems built on heavy ZK proofs or fully homomorphic encryption (FHE) — which most payment use cases don’t need.
+  </Card>
+  <Card title="No black-box trust" icon="shield-halved">
+    Users are not exposed to unnecessary security risks from single hardware setups (e.g. single-TEE), outsourced ZK provers, or centralized offchain coprocessors.
+  </Card>
+  <Card title="Fast enough for real usage" icon="bolt">
+    ZK proofs are light enough to run in a normal payment flow — no minutes-long waits on a phone or heavyweight off-chain computation. Throughput scales too: we already handle far higher TPS than typical TFHE-style systems before hardware acceleration, with FPGA/GPU teams adding headroom for high-volume partners.
+  </Card>
+</CardGroup>
 
 ![alt text](<Confidential Stablecoins.png>)
 

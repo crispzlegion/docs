@@ -21,9 +21,22 @@ The system is built with three layers:
 | **EVM Escrow** | Bridge endpoints | Minimal contracts that lock tokens and interface cross-chain |
 | **Fairyport Relayer** | Cross-chain transport | Off-chain relayer that moves messages between chains and FairyRing |
 
-At a high level: users deposit tokens into the EVM escrow, receive a confidential balance from FairyRing, perform confidential transactions with that balance, and optionally redeem back to the EVM chain when withdrawing.
+At a high level, the user journey runs through four stages:
 
-
+<Steps>
+  <Step title="Deposit">
+    Users deposit tokens into the EVM escrow contract, which locks the funds.
+  </Step>
+  <Step title="Receive a confidential balance">
+    FairyRing issues an encrypted balance visible only to the account owner.
+  </Step>
+  <Step title="Transact confidentially">
+    Users send and receive confidential transfers using that balance, with amounts kept encrypted.
+  </Step>
+  <Step title="Redeem (optional)">
+    Users redeem back to the EVM chain when withdrawing to the underlying token.
+  </Step>
+</Steps>
 
 ## Breaking Down the Layers
 
