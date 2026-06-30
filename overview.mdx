@@ -1,45 +1,84 @@
 ---
-title: "Overview"
-description: "Confidential computing for open finance"
+title: "Overview of Fairblock"
+description: "A privacy layer designed for enterprise adoption"
 ---
 
-Fairblock provides end-to-end confidential computing for blockchains. Amounts and balances are encrypted while addresses stay transparent, enabling compliance-friendly privacy across DeFi, payments, and institutional finance.
-
-The network operates as a decentralized cryptographic computer built on [FairyRing](/pep/how-it-works/network-flow), with native support for EVM chains, Cosmos, Solana, and major payment networks.
+Fairblock is the turnkey confidentiality layer for institutional onchain finance. As stablecoins and tokenized assets scale onchain, institutions need privacy solutions that are compliant, performant, and embedded in the infrastructure they already run. Fairblock delivers. Confidential assets and transactions, live on the chains where users and liquidity already are.
 
 ## Why Fairblock
 
+As stablecoins and tokenized assets move into the mainstream, enterprises and financial institutions need privacy to protect payroll, treasury operations, revenue flows, trading activity, and customer data. Public transactions create unnecessary compliance risks and expose sensitive business information to competitors.
+
+At the same time, AI adoption is accelerating, but businesses cannot share confidential data with public cloud models. They need AI systems that can access, process, and act on sensitive information without compromising privacy, security, or regulatory requirements.
+
+Privacy is no longer optional, it is a prerequisite for enterprise adoption. The challenge has been delivering it without sacrificing performance, usability, or interoperability.
+
+Fairblock is building the infrastructure for confidential finance and AI: performant, compliant, and cross-chain privacy for stablecoins, RWAs, AI agents, and enterprise applications.
+
+## Built to Be Used
+
 <CardGroup cols={2}>
-  <Card title="Product-First" icon="rocket">
-    High-performance confidential apps with cross-ecosystem accessibility.
+  <Card title="Performant" icon="gauge-high">
+    High throughput for large payments and institutional volume.
   </Card>
-  <Card title="Multimodal Cryptography" icon="shield-halved">
-    The right scheme for each use case. HE, IBE, MPC, and lightweight ZK.
+  <Card title="Compliant" icon="shield-check">
+    Zero compliance risk.
   </Card>
-  <Card title="Confidential by Default" icon="lock">
-    Selective disclosure for compliance. Compatible with OFAC, FinCEN, and MiCA.
+  <Card title="Cross-chain" icon="link">
+    Privacy without the bridge or wallet hassle.
   </Card>
-  <Card title="Onchain Verification" icon="circle-check">
-    No single-TEE or opaque off-chain designs. Everything is verifiable.
+  <Card title="Composable" icon="puzzle-piece">
+    Plug into any frontend, neobank, wallet, or agentic platform.
+  </Card>
+</CardGroup>
+
+## How Fairblock Works
+
+<Steps>
+  <Step title="Install the SDK">
+    Add Fairblock to your stack in minutes. Works with any frontend, neobank, wallet, or agentic platform.
+  </Step>
+  <Step title="Deploy Confidential Assets">
+    Issue cross-chain confidential stablecoins, RWAs, or connect your AI model with full privacy guarantees.
+  </Step>
+  <Step title="Users Just Use It">
+    End-users interact normally with no extra clicks. Privacy is invisible, compliance is built in.
+  </Step>
+</Steps>
+
+## Solutions
+
+<CardGroup cols={2}>
+  <Card title="Private Stablecoin Payments" icon="money-bill-transfer">
+    Send and receive stablecoins without exposing amounts, counterparties, or transaction history.
+  </Card>
+  <Card title="Private Assets" icon="file-shield">
+    Issue and manage tokenized assets with confidential ownership and portfolio data.
+  </Card>
+  <Card title="Private Agentic API" icon="robot">
+    Enable AI agents to transact and operate on sensitive data without revealing inputs, strategies, or outputs.
+  </Card>
+  <Card title="Private Token Issuance" icon="coins">
+    Launch tokens with encrypted allocations, vesting schedules, and investor distributions.
+  </Card>
+  <Card title="Private Lending" icon="handshake">
+    Power confidential lending with private credit assessments, collateral positions, and loan terms.
+  </Card>
+  <Card title="Private Payroll and Treasury" icon="building-columns">
+    Manage payroll and treasury operations onchain without exposing salaries, balances, or fund movements.
+  </Card>
+  <Card title="Private AI" icon="brain">
+    Enterprise AI that never sees your confidential data.
   </Card>
 </CardGroup>
 
 ## Get Started
 
 <CardGroup cols={2}>
-  <Card title="Confidential Transfers" icon="money-bill-transfer" href="/ct/overview">
+  <Card title="Confidential Transfers" icon="lock" href="/ct/overview">
     Encrypted amounts and balances on public blockchains using Twisted ElGamal HE.
   </Card>
-  <Card title="Pre-Execution Privacy" icon="lock" href="/pep/overview">
+  <Card title="Pre-Execution Privacy" icon="shield-halved" href="/pep/overview">
     Threshold IBE and MPC-DKG for sealed-bid auctions, private governance, and encrypted transactions.
   </Card>
 </CardGroup>
-
-## Supported Ecosystems
-
-| Ecosystem | Chains |
-| --- | --- |
-| **EVM** | Ethereum, Arbitrum, Base, Hyperliquid |
-| **Payments** | Tempo, Arc, Stable, Plasma, Noble |
-| **Other L1s** | Solana, Stellar |
-| **Trading** | CowSwap, Uniswap |
