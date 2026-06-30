@@ -32,19 +32,7 @@
       "weight": 400
     }
   },
-  "navbar": {
-    "primary": {
-      "type": "button",
-      "label": "Launch Stabletrust",
-      "href": "https://stabletrust.fairblock.network"
-    },
-    "links": [
-      {
-        "label": "Website",
-        "href": "https://www.fairblock.network"
-      }
-    ]
-  },
+  "navbar": {},
   "navigation": {
     "tabs": [
       {
@@ -201,8 +189,8 @@
     }
   },
   "feedback": {
-    "thumbsRating": true,
-    "suggestEdit": true
+    "thumbsRating": false,
+    "suggestEdit": false
   },
   "search": {
     "prompt": "Search Fairblock docs..."

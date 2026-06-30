@@ -8,6 +8,23 @@ pre,
   border-radius: 6px !important;
 }
 
+/* Smaller fonts */
+body {
+  font-size: 14px !important;
+}
+
+h1 {
+  font-size: 1.75rem !important;
+}
+
+h2 {
+  font-size: 1.25rem !important;
+}
+
+h3 {
+  font-size: 1.05rem !important;
+}
+
 /* Smaller card icons */
 [data-component-part="card-icon"] {
   width: 20px !important;
