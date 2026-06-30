@@ -1,91 +1,34 @@
 ---
 title: "Methods"
-description: "Complete SDK method reference for confidential transfers"
+description: "SDK method reference for confidential transfers"
 ---
 
-## Client Initialization
+### `new ConfidentialTransferClient(rpcUrl, chainId)`
 
-```typescript
-import { ConfidentialTransferClient } from "@fairblock/stabletrust";
+Initializes the client. The SDK resolves the Stabletrust contract from the chain ID automatically.
 
-const client = new ConfidentialTransferClient({
-  network: "ethereum-sepolia",
-  signer: walletSigner,
-});
+### `client.ensureAccount(signer)`
 
-await client.setupAccount();
-```
+Derives the user's HE keypair from a wallet signature and registers the public key onchain if not yet present. Required before any other operation.
 
-## Deposit
+### `client.confidentialDeposit(signer, tokenAddress, amount)`
 
-Convert public ERC20 tokens into encrypted confidential balances.
+Moves ERC20 tokens from the user's public balance into their encrypted confidential balance. `amount` must be a `BigInt` in token base units.
 
-```typescript
-const tx = await client.deposit({
-  token: "USDC",
-  amount: "1000",
-});
+### `client.confidentialTransfer(signer, recipientAddress, tokenAddress, amount)`
 
-console.log("Deposit tx:", tx.hash);
-```
+Sends tokens privately between two confidential accounts. `amount` must be a `number` in token base units. Recipient must have an initialized confidential account.
 
-### Parameters
+### `client.withdraw(signer, tokenAddress, amount)`
 
-| Parameter | Type | Description |
-| --- | --- | --- |
-| `token` | string | Token symbol (USDC, USDT, USDG) |
-| `amount` | string | Amount in token units |
+Moves tokens from the encrypted confidential balance back to the user's public ERC20 balance. `amount` must be a `number` in token base units.
 
-## Transfer
+### `client.getConfidentialBalance(address, privateKey, tokenAddress)`
 
-Execute private transfers that hide amounts and balances.
+Decrypts and returns the user's confidential balance. Returns `{ amount, available, pending }`. Requires the `privateKey` from `ensureAccount`.
 
-```typescript
-const tx = await client.transfer({
-  to: "0xRecipient",
-  amount: "250",
-});
-```
+### `client.getPublicBalance(address, tokenAddress)`
 
-### Parameters
+Returns the user's standard ERC20 token balance as a `BigInt`.
 
-| Parameter | Type | Description |
-| --- | --- | --- |
-| `to` | string | Recipient address or numeric account ID |
-| `amount` | string | Transfer amount |
-
-## Withdraw
-
-Move funds from the confidential layer back to public ERC20 tokens.
-
-```typescript
-const tx = await client.withdraw({
-  token: "USDC",
-  amount: "500",
-  destinationChain: "ethereum-sepolia",
-});
-```
-
-### Parameters
-
-| Parameter | Type | Description |
-| --- | --- | --- |
-| `token` | string | Token symbol |
-| `amount` | string | Withdrawal amount |
-| `destinationChain` | string | Target chain identifier |
-
-## Get Balance
-
-Query encrypted balance (decrypted locally).
-
-```typescript
-const balance = await client.getBalance("USDC");
-console.log("Balance:", balance.decrypted);
-```
-
-## Get Deposit Status
-
-```typescript
-const status = await client.getDepositStatus(tx.hash);
-// Returns: "pending" | "confirmed" | "credited"
-```
+---

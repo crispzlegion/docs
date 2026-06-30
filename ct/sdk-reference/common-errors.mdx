@@ -3,47 +3,10 @@ title: "Common Errors"
 description: "Troubleshooting common SDK errors"
 ---
 
-## Error Reference
-
-| Error Code | Message | Solution |
-| --- | --- | --- |
-| `INSUFFICIENT_BALANCE` | Encrypted balance too low | Check balance with `getBalance()` before transferring |
-| `ACCOUNT_NOT_SETUP` | Confidential account not initialized | Call `setupAccount()` before any operations |
-| `PROOF_FAILED` | ZK proof generation failed | Ensure amounts are within valid range |
-| `NETWORK_UNSUPPORTED` | Network not supported | Check supported networks list |
-| `ESCROW_APPROVAL` | Token approval insufficient | SDK handles approval automatically, retry the deposit |
-| `RELAY_TIMEOUT` | IBC relay timed out | Wait and retry, or check relay status |
-
-## Account Not Setup
-
-```typescript
-// Always call setupAccount() after creating the client
-const client = new ConfidentialTransferClient({
-  network: "ethereum-sepolia",
-  signer: walletSigner,
-});
-
-await client.setupAccount(); // Required before any operations
-```
-
-## Insufficient Balance
-
-```typescript
-// Check balance before transferring
-const balance = await client.getBalance("USDC");
-if (parseFloat(balance.decrypted) < transferAmount) {
-  console.log("Insufficient balance:", balance.decrypted);
-}
-```
-
-## Proof Generation Failures
-
-ZK proof generation can fail if:
-
-- Transfer amount exceeds the maximum range (2^64 - 1)
-- Transfer amount is zero or negative
-- System memory is insufficient for proof computation
-
-<Note>
-  Proof generation happens locally in the browser or Node.js environment. Ensure adequate memory is available.
-</Note>
+| Error                          | Cause                                    | Resolution                                         |
+| :----------------------------- | :--------------------------------------- | :------------------------------------------------- |
+| "Account does not exist"       | Recipient has not called `ensureAccount` | Recipient must initialize their account first      |
+| "Insufficient balance"         | Amount exceeds confidential balance      | Deposit more or reduce the amount                  |
+| "Account finalization timeout" | Account is still processing onchain      | Wait and retry after a few minutes                 |
+| "Proof generation failed"      | Invalid inputs or HE operation error     | Verify parameters and check available balance      |
+| "Not initialized"              | `client` or `signer` is null             | Ensure wallet is connected and SDK client is ready |

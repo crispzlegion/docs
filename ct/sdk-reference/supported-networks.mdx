@@ -1,39 +1,14 @@
 ---
 title: "Supported Networks"
-description: "Networks and assets available for confidential transfers"
+description: "Networks available for confidential transfers"
 ---
 
-## Networks
+## Supported Networks
 
-| Network | Chain ID | Status |
-| --- | --- | --- |
-| Ethereum Sepolia | 11155111 | Live |
-| Arbitrum Sepolia | 421614 | Live |
-| Base Sepolia | 84532 | Live |
-| Stable Testnet | - | Live |
-| Arc | - | Live |
-| Tempo | - | Live |
-
-## Supported Assets
-
-| Token | Networks |
-| --- | --- |
-| USDC | Ethereum, Arbitrum, Base |
-| USDT | Ethereum, Arbitrum |
-| USDG | FairyRing |
-
-## Network Configuration
-
-```typescript
-const client = new ConfidentialTransferClient({
-  network: "ethereum-sepolia", // or "arbitrum-sepolia", "base-sepolia"
-  signer: walletSigner,
-});
-```
-
-## RPC Endpoints
-
-| Network | Endpoint |
-| --- | --- |
-| FairyRing Testnet | `https://rpc-testnet.fairblock.network` |
-| FairyRing Mainnet | `https://rpc.fairblock.network` |
+| Network          | Chain ID |
+| :--------------- | :------- |
+| Base Sepolia     | 84532    |
+| Ethereum Sepolia | 11155111 |
+| Arbitrum Sepolia | 421614   |
+| Stable           | 2201     |
+| Arc              | 1244     |
