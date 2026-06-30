@@ -1,0 +1,54 @@
+---
+title: "FairyRing (native)"
+description: "Build directly on FairyRing with native access to all PEP primitives"
+---
+
+Building directly on FairyRing gives you native access to all cryptographic primitives without cross-chain communication.
+
+## Advantages
+
+- No IBC latency for encryption and decryption
+- Direct access to the PEP and Keyshare modules
+- Full CosmWasm support for complex applications
+- Lowest-cost confidential computation
+
+## CosmWasm Contract
+
+```rust
+use fairyring_sdk::{encrypt, decrypt, register_condition};
+
+#[entry_point]
+pub fn execute(
+    deps: DepsMut,
+    env: Env,
+    info: MessageInfo,
+    msg: ExecuteMsg,
+) -> Result<Response, ContractError> {
+    match msg {
+        ExecuteMsg::SubmitEncrypted { data, condition } => {
+            let encrypted = encrypt(data, condition)?;
+            // Store encrypted data onchain
+            Ok(Response::new())
+        }
+    }
+}
+```
+
+## Module Queries
+
+| Query | Description |
+| --- | --- |
+| `pep/encrypted_tx` | Get an encrypted transaction by ID |
+| `pep/all_encrypted_tx` | List all encrypted transactions |
+| `keyshare/pub_key` | Get the current Master Public Key |
+| `keyshare/keyshare` | Get keyshares for a condition |
+
+## CLI
+
+```bash
+# Submit an encrypted transaction
+fairyringd tx pep submit-encrypted-tx [encrypted-data] [target-block]
+
+# Query the current MPK
+fairyringd query keyshare pub-key
+```

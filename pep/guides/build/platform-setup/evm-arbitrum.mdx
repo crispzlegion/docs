@@ -1,0 +1,57 @@
+---
+title: "EVM / Arbitrum (Stylus + Pre-compiles)"
+description: "Integrate PEP on EVM chains using precompiles and Arbitrum Stylus"
+---
+
+EVM chains integrate PEP through precompiled contracts and, on Arbitrum, through Stylus smart contracts.
+
+## Precompiled Contracts
+
+| Precompile | Address | Function |
+| --- | --- | --- |
+| **FairyEncrypt** | `0x...` | Encrypt data with MPK |
+| **FairyDecrypt** | `0x...` | Verify and use decrypted data |
+| **FairyCondition** | `0x...` | Register custom conditions |
+
+## Solidity Integration
+
+```solidity
+interface IFairyEncrypt {
+    function encrypt(
+        bytes calldata data,
+        string calldata condition
+    ) external returns (bytes memory);
+
+    function isDecrypted(
+        bytes32 conditionId
+    ) external view returns (bool);
+
+    function getDecrypted(
+        bytes32 conditionId
+    ) external view returns (bytes memory);
+}
+```
+
+## Arbitrum Stylus
+
+For Arbitrum, you can use Stylus (Rust) for higher-performance encryption:
+
+```rust
+use fairykit_stylus::FairyKit;
+
+#[public]
+impl MyContract {
+    fn submit_sealed_bid(&mut self, encrypted_bid: Vec<u8>, auction_id: String) {
+        FairyKit::submit(encrypted_bid, auction_id);
+    }
+}
+```
+
+## Supported EVM Networks
+
+| Network | Method |
+| --- | --- |
+| Ethereum | Precompiles |
+| Arbitrum | Stylus + Precompiles |
+| Base | Precompiles |
+| Hyperliquid | Precompiles |

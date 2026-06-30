@@ -1,0 +1,41 @@
+---
+title: "Private Governance"
+description: "Encrypted voting for DAOs and onchain governance"
+---
+
+Private governance uses MPC-IBE to keep votes hidden until the voting period ends, preventing vote buying, last-minute manipulation, and bandwagon effects.
+
+## How It Works
+
+1. A governance proposal is created with a voting deadline
+2. Voters encrypt their votes using the MPK and proposal ID
+3. At deadline, validators derive the decryption key
+4. All votes reveal simultaneously and the tally is computed
+
+## Implementation
+
+```typescript
+import { PEPClient } from "@fairblock/pep";
+
+const client = new PEPClient({
+  network: "fairyring-testnet",
+  signer: walletSigner,
+});
+
+// Submit an encrypted vote
+const vote = await client.encrypt({
+  data: { choice: "yes", weight: votingPower },
+  condition: { type: "block_height", value: proposalDeadlineBlock },
+});
+
+await client.submitVote(proposalId, vote);
+```
+
+## Benefits
+
+| Problem | Solution |
+| --- | --- |
+| **Vote buying** | Votes are hidden, so buyers cannot verify compliance |
+| **Last-minute swings** | No one can see the current tally |
+| **Whale influence** | Large holders cannot signal to influence others |
+| **Coercion** | Voters cannot prove how they voted until reveal |

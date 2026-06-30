@@ -1,0 +1,41 @@
+---
+title: "Decryption Modes"
+description: "Public and private decryption modes"
+---
+
+FairyRing supports two decryption modes depending on the application's requirements.
+
+## Public Decryption
+
+Decrypted data is published onchain and visible to everyone. Used when the result should be publicly verifiable.
+
+**Use cases:** auction results, governance vote tallies, verifiable randomness.
+
+| Step | What happens |
+| --- | --- |
+| Condition met | Validators submit keyshares |
+| Key derived | Decryption key is published onchain |
+| Data revealed | Anyone can decrypt using the published key |
+
+## Private Decryption
+
+Decrypted data is revealed only to specific authorized parties. Used when the result should remain confidential.
+
+**Use cases:** private settlement, selective disclosure, confidential computation results.
+
+| Step | What happens |
+| --- | --- |
+| Condition met | Validators submit keyshares |
+| Targeted delivery | Decrypted data sent only to the designated recipient |
+| Access control | Only the recipient's key can read the result |
+
+## Choosing a Mode
+
+| Requirement | Mode |
+| --- | --- |
+| Public verifiability | Public |
+| Confidential results | Private |
+| Auction clearing price | Public |
+| Individual bid amounts | Private |
+| Vote tally | Public |
+| Individual votes | Private |

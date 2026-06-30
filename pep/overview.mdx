@@ -1,0 +1,50 @@
+---
+title: "Pre-Execution Privacy"
+description: "Threshold IBE and MPC-DKG for sealed-bid auctions, private governance, and encrypted transactions"
+---
+
+Pre-Execution Privacy (PEP) uses Multi-Party Computation Identity-Based Encryption (MPC-IBE) to keep data encrypted until a condition is met. No single party can decrypt before the condition triggers.
+
+## The Problem
+
+On public blockchains, transaction data is visible before execution. This enables front-running, sandwich attacks, bid sniping, and vote manipulation.
+
+## How It Works
+
+<Steps>
+  <Step title="Encrypt">
+    Users encrypt data using the Master Public Key (MPK) and a condition string (block height, auction ID, or custom event).
+  </Step>
+  <Step title="Submit">
+    Encrypted data is submitted onchain. Validators and searchers cannot read the contents.
+  </Step>
+  <Step title="Condition Met">
+    When the condition is satisfied, validators submit keyshares to derive the decryption key.
+  </Step>
+  <Step title="Decrypt and Execute">
+    Data decrypts and executes at fair price, simultaneously for all participants.
+  </Step>
+</Steps>
+
+## Applications
+
+<CardGroup cols={2}>
+  <Card title="Sealed-Bid Auctions" icon="gavel" href="/pep/guides/build/sealed-bid-auctions">
+    All bids decrypt simultaneously at auction close.
+  </Card>
+  <Card title="Private Governance" icon="check-to-slot" href="/pep/guides/build/private-governance">
+    Votes remain hidden until the voting period ends.
+  </Card>
+  <Card title="Encrypted Transactions" icon="lock" href="/pep/guides/build/encrypted-transactions">
+    Transaction contents hidden until block inclusion.
+  </Card>
+  <Card title="Verifiable Randomness" icon="dice" href="/pep/guides/build/verifiable-randomness">
+    Unbiasable random number generation from threshold decryption.
+  </Card>
+</CardGroup>
+
+## Security Properties
+
+- **No single point of failure**: requires a threshold of validators to decrypt
+- **Forward secrecy**: keys are regenerated each epoch via fresh DKG rounds
+- **Malicious validator tolerance**: incorrect keyshares are detected and slashed

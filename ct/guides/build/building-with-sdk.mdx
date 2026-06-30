@@ -1,0 +1,78 @@
+---
+title: "Building an App with the SDK"
+description: "Add confidential transfers to your application"
+---
+
+## Installation
+
+<CodeGroup>
+```bash npm
+npm install @fairblock/stabletrust
+```
+
+```bash yarn
+yarn add @fairblock/stabletrust
+```
+
+```bash pnpm
+pnpm add @fairblock/stabletrust
+```
+</CodeGroup>
+
+## Core Operations
+
+| Operation | Description |
+| --- | --- |
+| **Deposit** | Convert public ERC20 tokens into encrypted confidential balances |
+| **Transfer** | Execute private transfers that hide amounts and balances |
+| **Withdraw** | Move funds from the confidential layer back to public ERC20 tokens |
+
+## Initialize the Client
+
+```typescript
+import { ConfidentialTransferClient } from "@fairblock/stabletrust";
+
+const client = new ConfidentialTransferClient({
+  network: "ethereum-sepolia",
+  signer: walletSigner,
+});
+
+await client.setupAccount();
+```
+
+## Deposit
+
+```typescript
+await client.deposit({ token: "USDC", amount: "1000" });
+```
+
+## Transfer
+
+```typescript
+await client.transfer({ to: "0xRecipient", amount: "250" });
+```
+
+## Check Balance
+
+```typescript
+const balance = await client.getBalance("USDC");
+console.log("Balance:", balance.decrypted);
+```
+
+## Withdraw
+
+```typescript
+await client.withdraw({
+  token: "USDC",
+  amount: "500",
+  destinationChain: "ethereum-sepolia",
+});
+```
+
+## Use Cases
+
+- Confidential payroll
+- Token launchpads with private allocation
+- Privacy wallets
+- Micropayments
+- DAO treasury management

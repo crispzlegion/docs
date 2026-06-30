@@ -1,0 +1,55 @@
+---
+title: "Sealed-Bid Auctions"
+description: "Build auctions where bids remain hidden until close"
+---
+
+Sealed-bid auctions use MPC-IBE to keep all bids encrypted until the auction closes. No participant, validator, or operator can see any bid before the reveal.
+
+## How It Works
+
+1. Create an auction with a unique ID and close condition
+2. Bidders encrypt their bids using the MPK and auction ID
+3. At close, validators derive the decryption key
+4. All bids reveal simultaneously for fair price discovery
+
+## Implementation
+
+```typescript
+import { PEPClient } from "@fairblock/pep";
+
+const client = new PEPClient({
+  network: "fairyring-testnet",
+  signer: walletSigner,
+});
+
+// Create an auction
+const auction = await client.createAuction({
+  id: "nft-auction-001",
+  closeBlock: currentBlock + 100,
+  asset: "0xNFTContract",
+  tokenId: 42,
+});
+
+// Submit an encrypted bid
+const bid = await client.encrypt({
+  data: { amount: "5.5", currency: "ETH" },
+  condition: { type: "auction_id", value: auction.id },
+});
+
+await client.submitBid(auction.id, bid);
+```
+
+## Auction Types
+
+| Type | Description |
+| --- | --- |
+| **First-price** | Highest bid wins, pays their bid |
+| **Second-price** | Highest bid wins, pays second-highest price |
+| **Uniform-price** | All winners pay the same clearing price |
+
+## Use Cases
+
+- NFT auctions without bid sniping
+- Token sales with fair price discovery
+- Liquidation auctions without MEV extraction
+- Spectrum and resource allocation

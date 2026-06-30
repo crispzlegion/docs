@@ -1,0 +1,44 @@
+---
+title: "Verifiable Randomness"
+description: "Unbiasable random number generation from threshold decryption"
+---
+
+FairyRing's threshold decryption naturally produces verifiable random numbers. The randomness is unbiasable because no single validator can predict or influence the output.
+
+## How It Works
+
+1. Validators submit keyshares for the current block
+2. The aggregated decryption key serves as a verifiable random seed
+3. Applications derive random values from the seed
+
+## Usage
+
+```typescript
+import { PEPClient } from "@fairblock/pep";
+
+const client = new PEPClient({
+  network: "fairyring-testnet",
+  signer: walletSigner,
+});
+
+// Get verifiable randomness for a specific block
+const randomness = await client.getRandomness(blockHeight);
+console.log("Random seed:", randomness.seed);
+console.log("Proof:", randomness.proof);
+```
+
+## Properties
+
+| Property | Guarantee |
+| --- | --- |
+| **Unbiasable** | No single validator can influence the output |
+| **Verifiable** | Anyone can verify the randomness is correct |
+| **Unpredictable** | Cannot be known before the block is produced |
+| **Available** | Generated every block as part of normal operation |
+
+## Applications
+
+- Fair NFT minting and trait assignment
+- Lottery and raffle systems
+- Random validator selection
+- Gaming and prediction markets

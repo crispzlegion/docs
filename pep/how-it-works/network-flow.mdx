@@ -1,0 +1,47 @@
+---
+title: "Network Flow"
+description: "End-to-end flow of encrypted data through the FairyRing network"
+---
+
+## Transaction Lifecycle
+
+<Steps>
+  <Step title="User Encrypts">
+    The user fetches the current MPK from FairyRing and encrypts their data locally with a condition.
+  </Step>
+  <Step title="Chain Submission">
+    Encrypted data is submitted to the destination chain (EVM, Cosmos, or FairyRing native).
+  </Step>
+  <Step title="Relay to FairyRing">
+    If submitted to an external chain, the encrypted data is relayed to FairyRing via IBC or cross-chain messaging.
+  </Step>
+  <Step title="Condition Monitoring">
+    FairyRing monitors the condition. Block heights are tracked automatically, custom conditions are checked via oracles.
+  </Step>
+  <Step title="Keyshare Collection">
+    When the condition is met, validators submit keyshares to the Keyshare module.
+  </Step>
+  <Step title="Decryption">
+    The PEP module aggregates keyshares, derives the decryption key, and decrypts the data.
+  </Step>
+  <Step title="Execution">
+    Decrypted data is executed on FairyRing or relayed back to the destination chain for execution.
+  </Step>
+</Steps>
+
+## Cross-Chain Flow
+
+| Source | Relay Method | Execution |
+| --- | --- | --- |
+| **EVM** | Bridge contracts | Result sent back via bridge |
+| **Cosmos** | IBC | Result sent back via IBC |
+| **FairyRing** | Native | Executed directly |
+
+## Latency
+
+| Operation | Typical Time |
+| --- | --- |
+| Encryption (client-side) | < 100ms |
+| Block inclusion | ~6 seconds |
+| Keyshare collection | ~2 seconds after condition met |
+| Cross-chain relay | ~30 seconds (IBC) |

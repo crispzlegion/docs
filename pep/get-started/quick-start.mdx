@@ -1,0 +1,65 @@
+---
+title: "Quick Start"
+description: "Get started with pre-execution privacy"
+---
+
+## Install the SDK
+
+<CodeGroup>
+```bash npm
+npm install @fairblock/pep
+```
+
+```bash yarn
+yarn add @fairblock/pep
+```
+
+```bash pnpm
+pnpm add @fairblock/pep
+```
+</CodeGroup>
+
+## Encrypt a Transaction
+
+```typescript
+import { PEPClient } from "@fairblock/pep";
+
+const client = new PEPClient({
+  network: "fairyring-testnet",
+  signer: walletSigner,
+});
+
+// Encrypt a transaction to decrypt at a specific block height
+const encrypted = await client.encrypt({
+  data: txPayload,
+  condition: {
+    type: "block_height",
+    value: currentBlock + 10,
+  },
+});
+
+// Submit the encrypted transaction
+const tx = await client.submit(encrypted);
+console.log("Submitted:", tx.hash);
+```
+
+## Encrypt for an Auction
+
+```typescript
+const encryptedBid = await client.encrypt({
+  data: { amount: "1000", price: "50.25" },
+  condition: {
+    type: "auction_id",
+    value: "auction-42",
+  },
+});
+
+await client.submit(encryptedBid);
+```
+
+## Query Status
+
+```typescript
+const status = await client.getStatus(tx.hash);
+// Returns: "encrypted" | "pending_decryption" | "decrypted" | "executed"
+```

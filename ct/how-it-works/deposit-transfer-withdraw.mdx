@@ -1,0 +1,48 @@
+---
+title: "Deposit, Transfer and Withdraw"
+description: "Core operations for confidential transfers"
+---
+
+## Deposit
+
+Tokens lock in escrow contracts on the source chain. An encrypted balance is created on FairyRing, visible only to the account owner.
+
+<Steps>
+  <Step title="Approve">
+    Approve the escrow contract to spend your ERC20 tokens.
+  </Step>
+  <Step title="Lock">
+    Tokens lock in the escrow contract on the source chain.
+  </Step>
+  <Step title="Encrypt">
+    FairyRing creates an encrypted balance using Twisted ElGamal encryption.
+  </Step>
+</Steps>
+
+## Confidential Transfer
+
+FairyRing performs homomorphic operations on encrypted balances. The ZK proof ensures the transfer is valid without revealing amounts.
+
+| Step | What happens |
+| --- | --- |
+| **Encrypt amount** | Sender encrypts the transfer amount locally |
+| **Generate proof** | Lightweight ZK proof for authorization and range checks |
+| **Submit** | Encrypted transaction submitted to FairyRing |
+| **Verify** | Chain verifies the proof without decrypting |
+| **Update balances** | Homomorphic subtraction from sender, addition to receiver |
+
+## Withdrawal
+
+Users prove balance ownership, FairyRing burns the encrypted balance, and tokens unlock on the destination chain via IBC.
+
+<Steps>
+  <Step title="Request">
+    Submit a withdrawal request with a ZK proof of balance ownership.
+  </Step>
+  <Step title="Burn">
+    FairyRing verifies the proof and burns the encrypted balance.
+  </Step>
+  <Step title="Unlock">
+    Tokens unlock from the escrow contract on the destination chain.
+  </Step>
+</Steps>

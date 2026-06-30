@@ -1,0 +1,42 @@
+---
+title: "MPC-IBE"
+description: "Multi-Party Computation for distributed key generation and threshold decryption"
+---
+
+MPC-IBE combines Multi-Party Computation with Identity-Based Encryption to ensure no single party can decrypt data before a condition is met.
+
+## Distributed Key Generation (DKG)
+
+<Steps>
+  <Step title="Epoch Start">
+    A new DKG round begins at each epoch boundary.
+  </Step>
+  <Step title="Share Distribution">
+    Each validator generates and distributes secret shares to other validators using Shamir's Secret Sharing.
+  </Step>
+  <Step title="Verification">
+    Validators verify received shares using publicly committed values.
+  </Step>
+  <Step title="MPK Derivation">
+    The Master Public Key is derived from all validators' public commitments and published onchain.
+  </Step>
+</Steps>
+
+## Threshold Properties
+
+| Parameter | Description |
+| --- | --- |
+| **Threshold (t)** | Minimum keyshares needed to decrypt |
+| **Total (n)** | Total number of validators |
+| **Security** | Requires at least t+1 honest validators |
+| **Liveness** | System operates if at least t validators are online |
+
+## Keyshare Submission
+
+When a condition is met, each validator computes their keyshare for that specific condition and submits it onchain. The keyshare module aggregates submissions and derives the decryption key once the threshold is reached.
+
+## Security Guarantees
+
+- **Collusion resistance**: fewer than t validators cannot decrypt
+- **Forward secrecy**: new DKG each epoch means compromised keys don't affect future data
+- **Accountability**: incorrect keyshares are cryptographically detectable and validators are slashed

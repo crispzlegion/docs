@@ -1,0 +1,43 @@
+---
+title: "Architecture"
+description: "MPC-IBE system architecture and components"
+---
+
+## System Components
+
+| Component | Role |
+| --- | --- |
+| **FairyRing Validators** | Run DKG, generate keyshares, derive decryption keys |
+| **Master Public Key (MPK)** | Public key for encryption, regenerated each epoch |
+| **Condition Registry** | Tracks conditions and their satisfaction status |
+| **Keyshare Module** | Collects and aggregates validator keyshares |
+| **PEP Module** | Manages encrypted transactions and decryption flow |
+
+## Encryption Flow
+
+<Steps>
+  <Step title="DKG Round">
+    Validators run distributed key generation to produce the MPK and distribute secret keyshares.
+  </Step>
+  <Step title="User Encryption">
+    Users encrypt data using the MPK and a condition string. The condition acts as the IBE identity.
+  </Step>
+  <Step title="Onchain Submission">
+    Encrypted data is stored onchain. No party can decrypt without the condition being met.
+  </Step>
+  <Step title="Condition Trigger">
+    When the condition is satisfied (block height reached, auction closed, vote ended), validators submit keyshares.
+  </Step>
+  <Step title="Threshold Decryption">
+    Once enough keyshares are collected, the condition-specific private key is derived and data is decrypted.
+  </Step>
+</Steps>
+
+## Condition Types
+
+| Condition | Trigger | Use Case |
+| --- | --- | --- |
+| **Block height** | Specific block is reached | MEV-protected transactions |
+| **Auction ID** | Auction close time | Sealed-bid auctions |
+| **Vote tally** | Voting period ends | Private governance |
+| **Custom event** | Application-defined | General conditional encryption |

@@ -1,0 +1,35 @@
+---
+title: "Conditional Encryption (IBE)"
+description: "How Identity-Based Encryption enables condition-triggered decryption"
+---
+
+In IBE, any string can serve as a public key. Fairblock uses **conditions** as identities:
+
+- A block height ("decrypt at block 1000")
+- An auction ID ("decrypt when auction #42 closes")
+- A custom condition ("decrypt when event X occurs")
+
+The corresponding private key is derived by FairyRing validators through distributed key generation: no single party holds the full decryption key.
+
+## IBE vs Traditional Encryption
+
+| Property | Traditional PKE | Identity-Based Encryption |
+| --- | --- | --- |
+| **Public key** | Fixed key pair | Any string (condition) |
+| **Key generation** | Upfront | On-demand when condition met |
+| **Decryption trigger** | Key holder decides | Condition satisfaction |
+| **Multi-party** | Single key holder | Threshold of validators |
+
+## Encryption Process
+
+1. Fetch the current Master Public Key (MPK) from FairyRing
+2. Choose a condition string (block height, auction ID, etc.)
+3. Encrypt data using the MPK and condition
+4. Submit encrypted data onchain
+
+## Decryption Process
+
+1. Condition is satisfied (block reached, auction closed, etc.)
+2. Validators each submit their keyshare for that condition
+3. Threshold of keyshares aggregated into the condition-specific private key
+4. Data is decrypted and available for execution

@@ -1,0 +1,57 @@
+---
+title: "Quick Start"
+description: "Get started with confidential transfers in under 5 minutes"
+---
+
+## Install the SDK
+
+<CodeGroup>
+```bash npm
+npm install @fairblock/stabletrust
+```
+
+```bash yarn
+yarn add @fairblock/stabletrust
+```
+
+```bash pnpm
+pnpm add @fairblock/stabletrust
+```
+</CodeGroup>
+
+## Send a Confidential Transfer
+
+```typescript
+import { ConfidentialTransferClient } from "@fairblock/stabletrust";
+
+const client = new ConfidentialTransferClient({
+  network: "ethereum-sepolia",
+  signer: walletSigner,
+});
+
+await client.setupAccount();
+
+await client.deposit({
+  token: "USDC",
+  amount: "1000",
+});
+
+await client.transfer({
+  to: "0xRecipientAddress",
+  amount: "250",
+});
+
+const balance = await client.getBalance("USDC");
+console.log("Balance:", balance.decrypted);
+```
+
+## Supported Networks
+
+| Network | Status |
+| --- | --- |
+| Ethereum Sepolia | Live |
+| Arbitrum Sepolia | Live |
+| Base Sepolia | Live |
+| Stable Testnet | Live |
+| Arc | Live |
+| Tempo | Live |

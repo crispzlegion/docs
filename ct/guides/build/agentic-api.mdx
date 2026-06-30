@@ -1,0 +1,52 @@
+---
+title: "Agentic API"
+description: "Programmatic access to confidential transfers for AI agents and automated systems"
+---
+
+The Agentic API provides programmatic access to Fairblock's confidential transfer infrastructure, designed for AI agents, bots, and automated systems.
+
+## Overview
+
+Enable autonomous systems to execute confidential transfers without exposing transaction details. The API handles encryption, proof generation, and cross-chain settlement.
+
+## Authentication
+
+```typescript
+import { AgenticClient } from "@fairblock/stabletrust";
+
+const agent = new AgenticClient({
+  apiKey: process.env.FAIRBLOCK_API_KEY,
+  network: "ethereum-sepolia",
+});
+```
+
+## Endpoints
+
+| Endpoint | Method | Description |
+| --- | --- | --- |
+| `/agent/deposit` | POST | Create encrypted deposit |
+| `/agent/transfer` | POST | Execute confidential transfer |
+| `/agent/withdraw` | POST | Withdraw to public chain |
+| `/agent/balance` | GET | Query encrypted balance |
+| `/agent/status` | GET | Check transaction status |
+
+## Example
+
+```typescript
+const tx = await agent.transfer({
+  to: "0xRecipient",
+  token: "USDC",
+  amount: "100",
+});
+
+console.log("Transaction hash:", tx.hash);
+console.log("Status:", tx.status);
+```
+
+## Rate Limits
+
+| Plan | Requests/min | Concurrent |
+| --- | --- | --- |
+| Free | 60 | 5 |
+| Pro | 600 | 50 |
+| Enterprise | Custom | Custom |

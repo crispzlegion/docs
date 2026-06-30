@@ -1,0 +1,44 @@
+---
+title: "Anonymous Transfers"
+description: "How unlinkable transactions work under the hood"
+---
+
+Anonymous transfers separate confidential accounts from public wallet addresses, making it impossible to link transaction activity to a specific identity.
+
+## Architecture
+
+| Component | Role |
+| --- | --- |
+| **Fairycloak** | Relay layer that submits transactions without linking to user wallets |
+| **Fairyport** | Cross-chain message delivery |
+| **Numeric Account IDs** | Replace EVM addresses to break identity-activity links |
+
+## How It Works
+
+<Steps>
+  <Step title="Account Creation">
+    A numeric account ID is generated, disconnected from any public wallet address.
+  </Step>
+  <Step title="Relay Submission">
+    Transactions are submitted through Fairycloak, which strips sender metadata.
+  </Step>
+  <Step title="Execution">
+    FairyRing processes the transfer using the numeric account system.
+  </Step>
+  <Step title="Delivery">
+    Fairyport delivers the result cross-chain without exposing the sender.
+  </Step>
+</Steps>
+
+## Privacy Guarantees
+
+| Property | Guarantee |
+| --- | --- |
+| **Sender privacy** | Wallet address is never linked to the transaction |
+| **Amount privacy** | Transfer amounts are encrypted |
+| **Balance privacy** | Account balances are encrypted |
+| **Compliance** | Selective disclosure remains available for authorized parties |
+
+<Warning>
+  Anonymous transfers are in early access. Apply through the [Confidential Builders Program](https://build.fairblock.network).
+</Warning>

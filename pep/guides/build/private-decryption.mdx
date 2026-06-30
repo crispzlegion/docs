@@ -1,0 +1,47 @@
+---
+title: "Private Decryption and General Conditions"
+description: "Custom condition-based encryption and decryption"
+---
+
+Beyond block heights and auction IDs, PEP supports general conditions: any application-defined event can trigger decryption.
+
+## Condition Types
+
+| Type | Description | Example |
+| --- | --- | --- |
+| **Block height** | Decrypt at a specific block | MEV protection |
+| **Timestamp** | Decrypt at a specific time | Timed reveals |
+| **Oracle event** | Decrypt when oracle reports | Insurance payouts |
+| **Multi-sig** | Decrypt when M-of-N approve | Access control |
+| **Custom** | Application-defined trigger | Any business logic |
+
+## Private Decryption
+
+In private decryption mode, the decrypted data is revealed only to specific parties rather than publicly onchain.
+
+```typescript
+const encrypted = await client.encrypt({
+  data: sensitivePayload,
+  condition: {
+    type: "custom",
+    value: "insurance-claim-approved",
+  },
+  decryptionTarget: "0xInsuranceContract",
+});
+```
+
+## Registering Custom Conditions
+
+```typescript
+await client.registerCondition({
+  id: "my-custom-condition",
+  oracle: "0xOracleAddress",
+  description: "Triggers when price exceeds threshold",
+});
+```
+
+## Security Considerations
+
+- Custom conditions must be registered before encryption
+- Condition satisfaction is verified by the validator set
+- Private decryption requires the target to have a registered decryption key

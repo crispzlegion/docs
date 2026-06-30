@@ -48,141 +48,145 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Documentation",
+        "tab": "Overview",
         "groups": [
           {
-            "group": "Getting Started",
+            "group": "Overview",
             "pages": [
-              "introduction",
-              "architecture",
-              "quickstart"
+              "overview",
+              "high-level-architecture"
             ]
-          },
+          }
+        ]
+      },
+      {
+        "tab": "Confidential Transfers",
+        "groups": [
           {
             "group": "Confidential Transfers",
             "pages": [
-              "confidential-transfers/overview",
-              "confidential-transfers/technical-overview",
-              "confidential-transfers/stabletrust-sdk",
-              "confidential-transfers/stabletrust-app",
-              "confidential-transfers/anonymous-transfers"
+              "ct/overview"
             ]
           },
           {
-            "group": "Products",
+            "group": "Get Started",
             "pages": [
-              "products/stabletrust",
-              "products/fairates",
-              "products/protected-trading"
+              "ct/get-started/architecture",
+              "ct/get-started/quick-start"
             ]
           },
           {
-            "group": "Cryptography",
+            "group": "Guides",
             "pages": [
-              "cryptography/overview",
-              "cryptography/homomorphic-encryption",
-              "cryptography/identity-based-encryption",
-              "cryptography/multi-party-computation",
-              "cryptography/zero-knowledge-proofs"
+              {
+                "group": "Apps",
+                "pages": [
+                  "ct/guides/apps/stabletrust-app",
+                  "ct/guides/apps/cusd-app",
+                  "ct/guides/apps/private-yield"
+                ]
+              },
+              {
+                "group": "Build",
+                "pages": [
+                  "ct/guides/build/building-with-sdk",
+                  "ct/guides/build/anonymous-transfers",
+                  "ct/guides/build/agentic-api"
+                ]
+              }
             ]
           },
           {
-            "group": "Ecosystem",
+            "group": "How It Works",
             "pages": [
-              "ecosystem/supported-chains",
-              "ecosystem/partners",
-              "ecosystem/community"
+              "ct/how-it-works/deposit-transfer-withdraw",
+              "ct/how-it-works/anonymous-transfers",
+              "ct/how-it-works/integration-paths",
+              "ct/how-it-works/compliance"
             ]
           },
+          {
+            "group": "SDK Reference",
+            "pages": [
+              "ct/sdk-reference/methods",
+              "ct/sdk-reference/supported-networks",
+              "ct/sdk-reference/common-errors"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Pre-Execution Privacy",
+        "groups": [
+          {
+            "group": "Pre-Execution Privacy (MPC-IBE)",
+            "pages": [
+              "pep/overview"
+            ]
+          },
+          {
+            "group": "Get Started",
+            "pages": [
+              "pep/get-started/architecture",
+              "pep/get-started/quick-start"
+            ]
+          },
+          {
+            "group": "Guides",
+            "pages": [
+              {
+                "group": "Apps",
+                "pages": [
+                  "pep/guides/apps/fairates"
+                ]
+              },
+              {
+                "group": "Build",
+                "pages": [
+                  "pep/guides/build/sealed-bid-auctions",
+                  "pep/guides/build/private-governance",
+                  "pep/guides/build/encrypted-transactions",
+                  "pep/guides/build/private-decryption",
+                  "pep/guides/build/verifiable-randomness",
+                  {
+                    "group": "Platform Setup",
+                    "pages": [
+                      "pep/guides/build/platform-setup/cosmos-chains",
+                      "pep/guides/build/platform-setup/evm-arbitrum",
+                      "pep/guides/build/platform-setup/fairyring-native"
+                    ]
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "group": "How It Works",
+            "pages": [
+              "pep/how-it-works/conditional-encryption",
+              "pep/how-it-works/mpc-ibe",
+              "pep/how-it-works/decryption-modes",
+              "pep/how-it-works/network-flow"
+            ]
+          },
+          {
+            "group": "Module Reference",
+            "pages": [
+              "pep/module-reference/pep",
+              "pep/module-reference/keyshare"
+            ]
+          }
+        ]
+      },
+      {
+        "tab": "Resources",
+        "groups": [
           {
             "group": "Resources",
             "pages": [
-              "resources/glossary",
-              "resources/faq",
-              "resources/changelog"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Build",
-        "groups": [
-          {
-            "group": "Build on FairyRing",
-            "pages": [
-              "build/overview",
-              "build/start-a-capp",
-              "build/fairyring-native",
-              "build/evm-precompiles",
-              "build/cosmos-chains",
-              "build/rustvm-integration"
-            ]
-          },
-          {
-            "group": "Stabletrust SDK",
-            "pages": [
-              "build/sdk/installation",
-              "build/sdk/deposits",
-              "build/sdk/transfers",
-              "build/sdk/withdrawals",
-              "build/sdk/balance-queries",
-              "build/sdk/anonymous-transfers"
-            ]
-          },
-          {
-            "group": "FairyKit Integration",
-            "pages": [
-              "build/fairykit/overview",
-              "build/fairykit/evm",
-              "build/fairykit/cosmos",
-              "build/fairykit/solana"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "Protocol",
-        "groups": [
-          {
-            "group": "Protocol",
-            "pages": [
-              "protocol/overview",
-              "protocol/fairyring",
-              "protocol/distributed-key-generation",
-              "protocol/threshold-encryption",
-              "protocol/co-processing",
-              "protocol/consensus"
-            ]
-          },
-          {
-            "group": "Modules",
-            "pages": [
-              "protocol/modules/pep",
-              "protocol/modules/keyshare",
-              "protocol/modules/confidential-transfers"
-            ]
-          },
-          {
-            "group": "Running a Node",
-            "pages": [
-              "protocol/node/requirements",
-              "protocol/node/installation",
-              "protocol/node/testnet",
-              "protocol/node/validator",
-              "protocol/node/monitoring"
-            ]
-          }
-        ]
-      },
-      {
-        "tab": "API Reference",
-        "groups": [
-          {
-            "group": "API Reference",
-            "pages": [
-              "api-reference/overview",
-              "api-reference/rpc-endpoints",
-              "api-reference/rest-api"
+              "resources/community",
+              "resources/troubleshooting",
+              "resources/glossary"
             ]
           }
         ]

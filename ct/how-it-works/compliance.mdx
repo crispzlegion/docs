@@ -1,0 +1,33 @@
+---
+title: "Compliance and Regulation"
+description: "Selective disclosure and regulatory compatibility"
+---
+
+Fairblock's confidential transfers are designed for regulatory compliance from the ground up. Addresses stay transparent while amounts and balances are encrypted.
+
+## Selective Disclosure
+
+Reveal specific transaction details to authorized parties without exposing your complete financial history.
+
+| Disclosure Type | What is revealed | Who can access |
+| --- | --- | --- |
+| **Transaction audit** | Specific transaction amounts | Designated auditors |
+| **Balance proof** | Proof of sufficient funds | Counterparties |
+| **Full account** | Complete transaction history | Regulators with warrants |
+
+## Compliance Framework Compatibility
+
+| Framework | Status |
+| --- | --- |
+| **OFAC** | Compatible. Addresses are transparent for sanctions screening |
+| **FinCEN** | Compatible. Selective disclosure supports SAR filing |
+| **MiCA** | Compatible. Built-in audit capabilities |
+| **Travel Rule** | Compatible. Sender and receiver addresses are public |
+
+## How It Works
+
+Decryption keys are generated via distributed key generation (DKG), per-account and per-auditor. Auditors receive purpose-limited keys that decrypt only the data covered by their authorization.
+
+<Note>
+  Fairblock does not provide all-or-nothing privacy. The system is designed so that the right parties can see the right data, with cryptographic guarantees.
+</Note>

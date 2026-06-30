@@ -1,0 +1,28 @@
+---
+title: "Integration Paths"
+description: "How confidential transfers connect to different ecosystems"
+---
+
+## EVM Chains
+
+Precompiled contracts and escrow contracts serve as bridge endpoints. Tokens lock on EVM, encrypted balances appear on FairyRing.
+
+**Supported:** Ethereum, Arbitrum, Base, Hyperliquid, and any EVM-compatible chain.
+
+| Component | Role |
+| --- | --- |
+| **Escrow Contract** | Locks tokens on the source EVM chain |
+| **IBC Relayer** | Communicates between EVM and FairyRing |
+| **FairyRing Module** | Manages encrypted balances and ZK verification |
+
+## Cosmos Chains
+
+Native IBC integration. FairyKit modules plug directly into the chain's module system with light-client verification.
+
+## Solana
+
+Cross-chain messaging layer connecting Solana programs with FairyRing's confidential computing.
+
+## Payment Networks
+
+Direct integrations with payment-focused chains including Tempo, Arc, Stable, Plasma, and Noble.

@@ -1,0 +1,53 @@
+---
+title: "Encrypted Transactions"
+description: "MEV-protected transaction submission"
+---
+
+Encrypted transactions hide order contents until block inclusion, eliminating front-running and sandwich attacks.
+
+## How It Works
+
+<Steps>
+  <Step title="Encrypt Order">
+    Encrypt the transaction (type, amount, price) using FairyRing's Master Public Key and a target block height.
+  </Step>
+  <Step title="Block Inclusion">
+    The encrypted transaction is included in a block. Validators and MEV searchers cannot read the contents.
+  </Step>
+  <Step title="Decryption">
+    FairyRing validators derive the decryption key for the block height. The transaction decrypts and executes at fair price.
+  </Step>
+</Steps>
+
+## Implementation
+
+```typescript
+import { PEPClient } from "@fairblock/pep";
+
+const client = new PEPClient({
+  network: "fairyring-testnet",
+  signer: walletSigner,
+});
+
+const encrypted = await client.encrypt({
+  data: {
+    type: "swap",
+    tokenIn: "USDC",
+    tokenOut: "ETH",
+    amount: "10000",
+    minOut: "3.5",
+  },
+  condition: { type: "block_height", value: currentBlock + 1 },
+});
+
+await client.submit(encrypted);
+```
+
+## Applications
+
+| Use Case | Description |
+| --- | --- |
+| **Limit orders** | Hidden orders that cannot be front-run |
+| **Intent matching** | Confidential intent-based trading with optimal execution |
+| **Dark pools** | Institutional-grade confidential execution |
+| **DEX trades** | Protection from sandwich attacks |

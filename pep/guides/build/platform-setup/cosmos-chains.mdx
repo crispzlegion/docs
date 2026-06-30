@@ -1,0 +1,46 @@
+---
+title: "Cosmos Chains"
+description: "Integrate PEP on Cosmos chains via IBC"
+---
+
+Cosmos chains integrate PEP through native IBC and FairyKit modules.
+
+## Installation
+
+Add the FairyKit module to your Cosmos chain:
+
+```bash
+go get github.com/Fairblock/fairykit-cosmos
+```
+
+## Module Setup
+
+```go
+import (
+    fairykit "github.com/Fairblock/fairykit-cosmos"
+)
+
+func NewApp() *App {
+    app.FairyKitKeeper = fairykit.NewKeeper(
+        appCodec,
+        keys[fairykit.StoreKey],
+        app.IBCKeeper.ChannelKeeper,
+    )
+}
+```
+
+## IBC Configuration
+
+| Parameter | Value |
+| --- | --- |
+| **Port** | `fairykit` |
+| **Channel** | Create a channel to FairyRing |
+| **Version** | `fairykit-1` |
+
+## Encrypted Transaction Flow
+
+1. User encrypts transaction data using FairyRing's MPK
+2. Encrypted data is submitted to your Cosmos chain
+3. Your chain relays it to FairyRing via IBC
+4. FairyRing decrypts when the condition is met
+5. Result is sent back via IBC for execution
