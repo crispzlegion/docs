@@ -5,88 +5,31 @@
   border-radius: 0 !important;
 }
 
-/* ── Header / Navbar ── */
-
-/* Navbar dark background */
-#navbar {
-  background: #0f1117 !important;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+/* Smaller card icons */
+[data-component-part="card-icon"] {
+  width: 20px !important;
+  height: 20px !important;
 }
 
-/* Tab bar line below */
-nav-tabs {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+[data-component-part="card-icon"] svg {
+  width: 16px !important;
+  height: 16px !important;
 }
 
-/* Search bar styling */
-#search-bar-entry {
-  background: rgba(255, 255, 255, 0.06) !important;
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+/* Subtle card borders */
+.card {
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
-/* ── Sidebar ── */
-
-sidebar-group + sidebar-group {
-  border-top: 1px solid rgba(255, 255, 255, 0.08);
-  padding-top: 8px;
-  margin-top: 8px;
+:root:not(.dark) .card {
+  border-color: rgba(0, 0, 0, 0.06) !important;
 }
 
-/* ── Content ── */
-
-/* Cards */
-card {
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
+/* Code block borders */
+pre {
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
 }
 
-/* Code blocks */
-pre,
-code-block {
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-}
-
-/* Table rows */
-table tr + tr {
-  border-top: 1px solid rgba(255, 255, 255, 0.06);
-}
-
-table thead {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-/* ── Light mode overrides ── */
-
-:root:not(.dark) #navbar {
-  background: #ffffff !important;
-  border-bottom-color: rgba(0, 0, 0, 0.08) !important;
-}
-
-:root:not(.dark) nav-tabs {
-  border-bottom-color: rgba(0, 0, 0, 0.08) !important;
-}
-
-:root:not(.dark) #search-bar-entry {
-  background: rgba(0, 0, 0, 0.04) !important;
-  border-color: rgba(0, 0, 0, 0.1) !important;
-}
-
-:root:not(.dark) sidebar-group + sidebar-group {
-  border-top-color: rgba(0, 0, 0, 0.08);
-}
-
-:root:not(.dark) card {
-  border-color: rgba(0, 0, 0, 0.08) !important;
-}
-
-:root:not(.dark) pre,
-:root:not(.dark) code-block {
-  border-color: rgba(0, 0, 0, 0.08) !important;
-}
-
-:root:not(.dark) table tr + tr {
-  border-top-color: rgba(0, 0, 0, 0.06);
-}
-
-:root:not(.dark) table thead {
-  border-bottom-color: rgba(0, 0, 0, 0.1);
+:root:not(.dark) pre {
+  border-color: rgba(0, 0, 0, 0.06) !important;
 }
