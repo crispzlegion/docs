@@ -1,6 +1,6 @@
-/* Border radius — override Mintlify's rounded-2xl */
+/* Border radius */
 .card {
-  border-radius: 10px !important;
+  border-radius: 8px !important;
 }
 
 pre,
@@ -80,14 +80,14 @@ p, li, td, th {
   font-size: 12px !important;
 }
 
-/* Cards — flat Tempo style, no hover effects at all */
+/* Cards — Tempo style */
 .card {
-  border: 1px solid rgba(255, 255, 255, 0.1) !important;
-  background: transparent !important;
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: rgba(255, 255, 255, 0.02) !important;
   box-shadow: none !important;
   transition: none !important;
   transform: none !important;
-  ring: none !important;
+  padding: 20px !important;
 }
 
 .card,
@@ -105,18 +105,18 @@ p, li, td, th {
 }
 
 .card:hover {
-  border-color: rgba(255, 255, 255, 0.1) !important;
-  background: transparent !important;
+  border-color: rgba(255, 255, 255, 0.08) !important;
+  background: rgba(255, 255, 255, 0.02) !important;
 }
 
 :root:not(.dark) .card {
-  border-color: rgba(0, 0, 0, 0.08) !important;
-  background: transparent !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+  background: rgba(0, 0, 0, 0.01) !important;
 }
 
 :root:not(.dark) .card:hover {
-  border-color: rgba(0, 0, 0, 0.08) !important;
-  background: transparent !important;
+  border-color: rgba(0, 0, 0, 0.06) !important;
+  background: rgba(0, 0, 0, 0.01) !important;
 }
 
 .card [data-component-part="card-title"] {
@@ -130,24 +130,25 @@ p, li, td, th {
   opacity: 0.6 !important;
 }
 
-/* Card icons */
+/* Card icons — rounded square like Tempo */
 [data-component-part="card-icon"] {
-  width: 32px !important;
-  height: 32px !important;
-  border-radius: 6px !important;
-  background: rgba(255, 255, 255, 0.06) !important;
+  width: 36px !important;
+  height: 36px !important;
+  border-radius: 8px !important;
+  background: rgba(255, 255, 255, 0.07) !important;
   display: flex !important;
   align-items: center !important;
   justify-content: center !important;
 }
 
 [data-component-part="card-icon"] svg {
-  width: 16px !important;
-  height: 16px !important;
+  width: 18px !important;
+  height: 18px !important;
+  opacity: 0.8 !important;
 }
 
 :root:not(.dark) [data-component-part="card-icon"] {
-  background: rgba(0, 0, 0, 0.04) !important;
+  background: rgba(0, 0, 0, 0.05) !important;
 }
 
 /* Code blocks */
