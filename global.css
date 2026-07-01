@@ -288,18 +288,47 @@ article > h2 {
   opacity: 0.3 !important;
 }
 
-/* Hide AI assistant — navbar button, floating chat, and all related UI */
-.chat-assistant-floating-input,
-#chat-assistant-textarea,
-.chat-assistant-send-button,
-[data-component-name="assistant"],
-[data-component-name="ask-assistant"],
-button[aria-label*="assistant" i],
-button[aria-label*="Ask" i],
-[class*="assistant-bar"],
-[class*="assistant-trigger"],
-[class*="chat-assistant"] {
+/* Hide Ask Assistant button from NAVBAR only */
+#navbar [data-component-name="assistant"],
+#navbar [data-component-name="ask-assistant"],
+#navbar button[aria-label*="assistant" i],
+#navbar button[aria-label*="Ask" i],
+#navbar [class*="assistant-trigger"] {
   display: none !important;
+}
+
+/* Show floating AI chat — Tempo style: compact bottom-right */
+.chat-assistant-floating-input {
+  max-width: 220px !important;
+  right: 24px !important;
+  bottom: 24px !important;
+  left: auto !important;
+  position: fixed !important;
+  z-index: 50 !important;
+}
+
+.chat-assistant-floating-input > div {
+  padding: 0 !important;
+}
+
+.chat-assistant-floating-input .rounded-2xl {
+  border-radius: 10px !important;
+  padding: 6px 12px !important;
+  border-color: rgba(255, 255, 255, 0.12) !important;
+  background: rgba(20, 20, 22, 0.9) !important;
+  backdrop-filter: blur(8px) !important;
+}
+
+#chat-assistant-textarea {
+  font-size: 12px !important;
+  min-height: unset !important;
+  height: 20px !important;
+  padding: 0 !important;
+}
+
+.chat-assistant-send-button {
+  width: 18px !important;
+  height: 18px !important;
 }
 
 /* Hide "Copy page for AI" and "Was this helpful?" feedback */
@@ -308,6 +337,15 @@ button[aria-label*="Ask" i],
 [class*="page-feedback"],
 [class*="helpful"] {
   display: none !important;
+}
+
+/* Tab bottom line — extend to full width for clean connection */
+.nav-tabs {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+}
+
+:root:not(.dark) .nav-tabs {
+  border-bottom-color: rgba(0, 0, 0, 0.06) !important;
 }
 
 /* Clean "On this page" sidebar — Tempo style */
