@@ -195,5 +195,7 @@
   "search": {
     "prompt": "Search Fairblock docs..."
   },
-  "ai": false
+  "contextual": {
+    "options": []
+  }
 }

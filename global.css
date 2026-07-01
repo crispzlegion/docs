@@ -199,17 +199,50 @@ article > h2 {
   margin-top: 2rem !important;
 }
 
-/* Hide AI chat widget completely */
-.chat-assistant-floating-input {
+/* Hide AI assistant — navbar button, floating chat, and all related UI */
+.chat-assistant-floating-input,
+#chat-assistant-textarea,
+.chat-assistant-send-button,
+[data-component-name="assistant"],
+[data-component-name="ask-assistant"],
+button[aria-label*="assistant" i],
+button[aria-label*="Ask" i],
+[class*="assistant-bar"],
+[class*="assistant-trigger"],
+[class*="chat-assistant"] {
   display: none !important;
 }
 
-/* Hide AI chat textarea fallback */
-#chat-assistant-textarea {
+/* Hide "Copy page for AI" and "Was this helpful?" feedback */
+[data-component-name="copy-page-for-ai"],
+[class*="copy-page"],
+[class*="page-feedback"],
+[class*="helpful"] {
   display: none !important;
 }
 
-/* Hide the Ask AI navbar button if present */
-.chat-assistant-send-button {
-  display: none !important;
+/* Clean "On this page" sidebar — Tempo style */
+nav[aria-label="On this page"] h2,
+nav[aria-label="On this page"] button {
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  opacity: 0.5 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+}
+
+nav[aria-label="On this page"] a {
+  font-size: 12.5px !important;
+  font-weight: 400 !important;
+  opacity: 0.55 !important;
+  transition: opacity 0.15s ease !important;
+}
+
+nav[aria-label="On this page"] a:hover {
+  opacity: 1 !important;
+}
+
+nav[aria-label="On this page"] li {
+  margin: 0 !important;
+  padding: 3px 0 !important;
 }
