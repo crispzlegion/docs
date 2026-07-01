@@ -87,7 +87,7 @@ p, li, td, th {
   box-shadow: none !important;
   transition: none !important;
   transform: none !important;
-  padding: 20px !important;
+  padding: 14px 16px !important;
 }
 
 .card,
