@@ -136,12 +136,18 @@ p, li, td, th {
 .card:hover *,
 .card:focus,
 .card:focus-within,
-.card:active {
+.card:focus-visible,
+.card:active,
+a:focus .card,
+a:focus-visible .card,
+a:hover .card {
   --tw-ring-color: transparent !important;
-  --tw-ring-shadow: none !important;
+  --tw-ring-shadow: 0 0 0 0 transparent !important;
   --tw-shadow: none !important;
   box-shadow: none !important;
   transform: none !important;
+  outline: none !important;
+  ring-color: transparent !important;
 }
 
 .card:hover {
@@ -171,9 +177,17 @@ p, li, td, th {
 .card [data-component-part="card-content"] span,
 .card p {
   font-size: 11.5px !important;
-  opacity: 0.45 !important;
+  color: rgba(255, 255, 255, 0.55) !important;
+  opacity: 1 !important;
   margin: 0 !important;
   line-height: 1.45 !important;
+}
+
+:root:not(.dark) .card [data-component-part="card-description"],
+:root:not(.dark) .card [data-component-part="card-content"],
+:root:not(.dark) .card [data-component-part="card-content"] span,
+:root:not(.dark) .card p {
+  color: rgba(0, 0, 0, 0.55) !important;
 }
 
 /* Tighten card internal spacing */
