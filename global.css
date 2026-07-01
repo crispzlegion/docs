@@ -13,7 +13,7 @@ pre,
   padding-bottom: 8px !important;
 }
 
-/* Fonts — Tempo-sized */
+/* Fonts */
 body {
   font-size: 13px !important;
   line-height: 1.65 !important;
@@ -42,21 +42,19 @@ p, li, td, th {
   line-height: 1.65 !important;
 }
 
-/* Sidebar — compact and muted */
+/* Sidebar — group labels smaller than page links */
 #sidebar a,
 #sidebar span {
   font-size: 13px !important;
 }
 
-.sidebar-group > div:first-child,
-#sidebar [class*="group-label"],
-#sidebar [class*="divider"] + span,
-.sidebar-nav-group-divider + div {
+#sidebar-content > div > div > div:first-child,
+.sidebar-group > div:first-child {
   font-size: 11px !important;
   font-weight: 500 !important;
   text-transform: uppercase !important;
-  letter-spacing: 0.05em !important;
-  opacity: 0.5 !important;
+  letter-spacing: 0.06em !important;
+  opacity: 0.45 !important;
 }
 
 /* Nav tabs */
@@ -71,18 +69,24 @@ p, li, td, th {
   font-size: 12px !important;
 }
 
-/* Cards — Tempo style: clean border, no background, no hover effect */
+/* Cards — Tempo style: clean, no hover, no glow */
 .card {
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
   background: transparent !important;
+  box-shadow: none !important;
   transition: none !important;
+  transform: none !important;
 }
 
-.card:hover {
+.card:hover,
+.card:focus,
+.card:active,
+.card:focus-within {
   border-color: rgba(255, 255, 255, 0.1) !important;
   background: transparent !important;
-  transform: none !important;
   box-shadow: none !important;
+  transform: none !important;
+  outline: none !important;
 }
 
 :root:not(.dark) .card {
@@ -90,9 +94,12 @@ p, li, td, th {
   background: transparent !important;
 }
 
-:root:not(.dark) .card:hover {
+:root:not(.dark) .card:hover,
+:root:not(.dark) .card:focus,
+:root:not(.dark) .card:active {
   border-color: rgba(0, 0, 0, 0.08) !important;
   background: transparent !important;
+  box-shadow: none !important;
 }
 
 .card [data-component-part="card-title"] {
@@ -106,7 +113,7 @@ p, li, td, th {
   opacity: 0.6 !important;
 }
 
-/* Card icons — small rounded square like Tempo */
+/* Card icons */
 [data-component-part="card-icon"] {
   width: 32px !important;
   height: 32px !important;
@@ -140,7 +147,7 @@ code {
   font-size: 12.5px !important;
 }
 
-/* Tables — compact */
+/* Tables */
 th, td {
   padding: 8px 12px !important;
 }
@@ -153,7 +160,7 @@ th {
   font-weight: 500 !important;
 }
 
-/* Breadcrumb / page label */
+/* Breadcrumb */
 [class*="breadcrumb"] {
   font-size: 11.5px !important;
   text-transform: uppercase !important;
@@ -166,11 +173,21 @@ th {
   font-size: 13px !important;
 }
 
-/* Tighter content spacing */
+/* Content spacing */
 article > * + * {
   margin-top: 1.25rem !important;
 }
 
 article > h2 {
   margin-top: 2rem !important;
+}
+
+/* Hide AI chat widget */
+[id*="chat"],
+[class*="chat-widget"],
+[class*="ai-chat"],
+[class*="ask-ai"],
+[data-testid*="chat"],
+iframe[src*="chat"] {
+  display: none !important;
 }
