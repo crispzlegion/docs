@@ -36,10 +36,10 @@
   "navigation": {
     "tabs": [
       {
-        "tab": "Overview",
+        "tab": "Get Started",
         "groups": [
           {
-            "group": "Overview",
+            "group": "Start Here",
             "pages": [
               "overview",
               "high-level-architecture"
