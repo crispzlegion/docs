@@ -1,4 +1,4 @@
-/* Slight border radius on boxes */
+/* Border radius */
 .card,
 pre,
 #search-bar-entry,
@@ -8,24 +8,98 @@ pre,
   border-radius: 6px !important;
 }
 
-/* Smaller fonts */
+/* Fonts — Tempo-sized */
 body {
-  font-size: 14px !important;
+  font-size: 13px !important;
+  line-height: 1.65 !important;
+  letter-spacing: 0.01em !important;
 }
 
 h1 {
-  font-size: 1.75rem !important;
+  font-size: 1.55rem !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.02em !important;
 }
 
 h2 {
-  font-size: 1.25rem !important;
+  font-size: 1.1rem !important;
+  font-weight: 600 !important;
+  letter-spacing: -0.01em !important;
 }
 
 h3 {
-  font-size: 1.05rem !important;
+  font-size: 0.95rem !important;
+  font-weight: 600 !important;
 }
 
-/* Smaller card icons */
+p, li, td, th {
+  font-size: 13px !important;
+  line-height: 1.65 !important;
+}
+
+/* Sidebar — compact and muted like Tempo */
+#sidebar a,
+#sidebar span {
+  font-size: 13px !important;
+}
+
+.sidebar-group > div:first-child,
+#sidebar [class*="group-label"],
+#sidebar [class*="divider"] + span,
+.sidebar-nav-group-divider + div {
+  font-size: 11px !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.05em !important;
+  opacity: 0.5 !important;
+}
+
+/* Nav tabs — Tempo style */
+.nav-tabs-item {
+  font-size: 13px !important;
+  font-weight: 400 !important;
+}
+
+/* On this page sidebar */
+[class*="toc"] a,
+[class*="on-this-page"] a {
+  font-size: 12px !important;
+}
+
+/* Card styling — Tempo-like */
+.card {
+  border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  background: rgba(255, 255, 255, 0.03) !important;
+  transition: border-color 0.15s ease, background 0.15s ease !important;
+}
+
+.card:hover {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  background: rgba(255, 255, 255, 0.05) !important;
+}
+
+:root:not(.dark) .card {
+  border-color: rgba(0, 0, 0, 0.06) !important;
+  background: rgba(0, 0, 0, 0.02) !important;
+}
+
+:root:not(.dark) .card:hover {
+  border-color: rgba(0, 0, 0, 0.12) !important;
+  background: rgba(0, 0, 0, 0.04) !important;
+}
+
+.card [data-component-part="card-title"] {
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+}
+
+.card [data-component-part="card-description"],
+.card p {
+  font-size: 12.5px !important;
+  opacity: 0.7 !important;
+}
+
+/* Card icons — smaller */
 [data-component-part="card-icon"] {
   width: 20px !important;
   height: 20px !important;
@@ -36,20 +110,51 @@ h3 {
   height: 16px !important;
 }
 
-/* Subtle card borders */
-.card {
-  border: 1px solid rgba(255, 255, 255, 0.08) !important;
-}
-
-:root:not(.dark) .card {
-  border-color: rgba(0, 0, 0, 0.06) !important;
-}
-
-/* Code block borders */
+/* Code blocks */
 pre {
   border: 1px solid rgba(255, 255, 255, 0.08) !important;
+  font-size: 12.5px !important;
 }
 
 :root:not(.dark) pre {
   border-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+code {
+  font-size: 12.5px !important;
+}
+
+/* Tables — compact */
+th, td {
+  padding: 8px 12px !important;
+}
+
+th {
+  font-size: 11.5px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  opacity: 0.6 !important;
+  font-weight: 500 !important;
+}
+
+/* Breadcrumb / page label */
+[class*="breadcrumb"] {
+  font-size: 11.5px !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.04em !important;
+  opacity: 0.5 !important;
+}
+
+/* Search bar */
+#search-bar-entry {
+  font-size: 13px !important;
+}
+
+/* Tighter content spacing */
+article > * + * {
+  margin-top: 1.25rem !important;
+}
+
+article > h2 {
+  margin-top: 2rem !important;
 }
