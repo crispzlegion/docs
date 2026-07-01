@@ -1,5 +1,8 @@
-/* Border radius */
-.card,
+/* Border radius — override Mintlify's rounded-2xl */
+.card {
+  border-radius: 10px !important;
+}
+
 pre,
 #search-bar-entry,
 #topbar-cta-button,
@@ -42,19 +45,27 @@ p, li, td, th {
   line-height: 1.65 !important;
 }
 
-/* Sidebar — group labels smaller than page links */
-#sidebar a,
-#sidebar span {
+/* Sidebar group headers — smaller than page links */
+.sidebar-group-header {
+  font-size: 10px !important;
+  font-weight: 500 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 0.08em !important;
+  opacity: 0.4 !important;
+}
+
+.sidebar-group-header .sidebar-title {
+  font-size: 10px !important;
+  font-weight: 500 !important;
+}
+
+/* Sidebar page links — normal size */
+.sidebar-group a {
   font-size: 13px !important;
 }
 
-#sidebar-content > div > div > div:first-child,
-.sidebar-group > div:first-child {
-  font-size: 11px !important;
-  font-weight: 500 !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.06em !important;
-  opacity: 0.45 !important;
+.sidebar-group a span {
+  font-size: 13px !important;
 }
 
 /* Nav tabs */
@@ -69,24 +80,33 @@ p, li, td, th {
   font-size: 12px !important;
 }
 
-/* Cards — Tempo style: clean, no hover, no glow */
+/* Cards — flat Tempo style, no hover effects at all */
 .card {
   border: 1px solid rgba(255, 255, 255, 0.1) !important;
   background: transparent !important;
   box-shadow: none !important;
   transition: none !important;
   transform: none !important;
+  ring: none !important;
 }
 
+.card,
+.card *,
 .card:hover,
+.card:hover *,
 .card:focus,
-.card:active,
-.card:focus-within {
-  border-color: rgba(255, 255, 255, 0.1) !important;
-  background: transparent !important;
+.card:focus-within,
+.card:active {
+  --tw-ring-color: transparent !important;
+  --tw-ring-shadow: none !important;
+  --tw-shadow: none !important;
   box-shadow: none !important;
   transform: none !important;
-  outline: none !important;
+}
+
+.card:hover {
+  border-color: rgba(255, 255, 255, 0.1) !important;
+  background: transparent !important;
 }
 
 :root:not(.dark) .card {
@@ -94,12 +114,9 @@ p, li, td, th {
   background: transparent !important;
 }
 
-:root:not(.dark) .card:hover,
-:root:not(.dark) .card:focus,
-:root:not(.dark) .card:active {
+:root:not(.dark) .card:hover {
   border-color: rgba(0, 0, 0, 0.08) !important;
   background: transparent !important;
-  box-shadow: none !important;
 }
 
 .card [data-component-part="card-title"] {
@@ -182,12 +199,17 @@ article > h2 {
   margin-top: 2rem !important;
 }
 
-/* Hide AI chat widget */
-[id*="chat"],
-[class*="chat-widget"],
-[class*="ai-chat"],
-[class*="ask-ai"],
-[data-testid*="chat"],
-iframe[src*="chat"] {
+/* Hide AI chat widget completely */
+.chat-assistant-floating-input {
+  display: none !important;
+}
+
+/* Hide AI chat textarea fallback */
+#chat-assistant-textarea {
+  display: none !important;
+}
+
+/* Hide the Ask AI navbar button if present */
+.chat-assistant-send-button {
   display: none !important;
 }
