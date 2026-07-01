@@ -196,6 +196,6 @@
     "prompt": "Search Fairblock docs..."
   },
   "contextual": {
-    "options": ["assistant"]
+    "options": []
   }
 }

@@ -167,6 +167,8 @@ p, li, td, th {
 }
 
 .card [data-component-part="card-description"],
+.card [data-component-part="card-content"],
+.card [data-component-part="card-content"] span,
 .card p {
   font-size: 11.5px !important;
   opacity: 0.45 !important;
