@@ -339,13 +339,9 @@ article > h2 {
   display: none !important;
 }
 
-/* Tab bottom line — extend to full width for clean connection */
+/* Remove extra tab border — use the existing navbar divider line */
 .nav-tabs {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
-}
-
-:root:not(.dark) .nav-tabs {
-  border-bottom-color: rgba(0, 0, 0, 0.06) !important;
+  border-bottom: none !important;
 }
 
 /* Clean "On this page" sidebar — Tempo style */
