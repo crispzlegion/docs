@@ -324,7 +324,7 @@ const confidentialDeposit = async (humanAmount: string) => {
 **Returns:** A transaction receipt once the deposit is confirmed and finalized onchain.
 
 <Warning>
-  Always use `ethers.parseUnits(humanAmount, decimals)` to convert. Never pass a raw decimal number directly — the SDK expects base units as a `BigInt`.
+  Always use `ethers.parseUnits(humanAmount, decimals)` to convert. Never pass a raw decimal number directly - the SDK expects base units as a `BigInt`.
 </Warning>
 
 ### 5.5 Withdraw: Move Tokens Back to Public
@@ -857,10 +857,10 @@ Open [http://localhost:3000](http://localhost:3000).
 
 <Steps>
   <Step title="Connect Wallet">
-    Click **Connect Wallet** — Privy opens a modal.
+    Click **Connect Wallet** - Privy opens a modal.
   </Step>
   <Step title="Initialize Confidential Account">
-    Click **Initialize Confidential Account** — the wallet prompts a signature. Wait approximately 45 seconds for onchain finalization.
+    Click **Initialize Confidential Account** - the wallet prompts a signature. Wait approximately 45 seconds for onchain finalization.
   </Step>
   <Step title="Account becomes active">
     The balance display and action forms appear once the account is active.
