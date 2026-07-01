@@ -87,7 +87,8 @@ p, li, td, th {
   box-shadow: none !important;
   transition: none !important;
   transform: none !important;
-  padding: 14px 16px !important;
+  padding: 12px 14px !important;
+  gap: 0 !important;
 }
 
 .card,
@@ -120,21 +121,32 @@ p, li, td, th {
 }
 
 .card [data-component-part="card-title"] {
-  font-size: 13.5px !important;
+  font-size: 13px !important;
   font-weight: 600 !important;
+  margin-top: 6px !important;
+  margin-bottom: 2px !important;
 }
 
 .card [data-component-part="card-description"],
 .card p {
-  font-size: 12.5px !important;
-  opacity: 0.6 !important;
+  font-size: 12px !important;
+  opacity: 0.5 !important;
+  margin: 0 !important;
+  line-height: 1.4 !important;
 }
 
-/* Card icons — rounded square like Tempo */
+/* Tighten card internal spacing */
+.card > div,
+.card > a > div {
+  gap: 4px !important;
+  padding: 0 !important;
+}
+
+/* Card icons */
 [data-component-part="card-icon"] {
-  width: 36px !important;
-  height: 36px !important;
-  border-radius: 8px !important;
+  width: 28px !important;
+  height: 28px !important;
+  border-radius: 6px !important;
   background: rgba(255, 255, 255, 0.07) !important;
   display: flex !important;
   align-items: center !important;
@@ -142,8 +154,8 @@ p, li, td, th {
 }
 
 [data-component-part="card-icon"] svg {
-  width: 18px !important;
-  height: 18px !important;
+  width: 14px !important;
+  height: 14px !important;
   opacity: 0.8 !important;
 }
 
