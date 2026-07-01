@@ -251,6 +251,43 @@ article > h2 {
   margin-top: 2rem !important;
 }
 
+/* Space between prev/next nav and footer */
+#footer {
+  margin-top: 2rem !important;
+  border-top: 1px solid rgba(255, 255, 255, 0.06) !important;
+  padding-top: 1.5rem !important;
+  padding-bottom: 1.5rem !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  gap: 12px !important;
+}
+
+:root:not(.dark) #footer {
+  border-top-color: rgba(0, 0, 0, 0.06) !important;
+}
+
+/* Center social icons */
+#footer > div:first-child {
+  justify-content: center !important;
+}
+
+/* Smaller social icons */
+#footer svg {
+  width: 16px !important;
+  height: 16px !important;
+  opacity: 0.4 !important;
+}
+
+#footer svg:hover {
+  opacity: 0.7 !important;
+}
+
+/* Smaller "Powered by" text */
+#footer > a {
+  font-size: 11px !important;
+  opacity: 0.3 !important;
+}
+
 /* Hide AI assistant — navbar button, floating chat, and all related UI */
 .chat-assistant-floating-input,
 #chat-assistant-textarea,
