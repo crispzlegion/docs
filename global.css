@@ -68,10 +68,49 @@ p, li, td, th {
   font-size: 13px !important;
 }
 
-/* Nav tabs */
+/* Nav tabs — Tempo style */
 .nav-tabs-item {
   font-size: 13px !important;
   font-weight: 400 !important;
+  color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.nav-tabs-item[data-active="true"] {
+  color: rgba(255, 255, 255, 0.95) !important;
+  font-weight: 500 !important;
+}
+
+:root:not(.dark) .nav-tabs-item {
+  color: rgba(0, 0, 0, 0.45) !important;
+}
+
+:root:not(.dark) .nav-tabs-item[data-active="true"] {
+  color: rgba(0, 0, 0, 0.9) !important;
+}
+
+/* Remove hover underline from tabs */
+.nav-tabs-item div,
+.nav-tabs-item > div {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+.nav-tabs-item:hover div,
+.nav-tabs-item:hover > div {
+  background: transparent !important;
+  background-color: transparent !important;
+}
+
+/* Keep active tab underline */
+.nav-tabs-item[data-active="true"] > div,
+.nav-tabs-item[aria-current] > div {
+  background-color: rgba(255, 255, 255, 0.9) !important;
+  height: 2px !important;
+}
+
+:root:not(.dark) .nav-tabs-item[data-active="true"] > div,
+:root:not(.dark) .nav-tabs-item[aria-current] > div {
+  background-color: rgba(0, 0, 0, 0.85) !important;
 }
 
 /* On this page sidebar */
