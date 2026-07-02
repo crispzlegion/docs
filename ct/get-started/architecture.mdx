@@ -9,7 +9,7 @@ This page describes the high-level architecture for our cross-chain confidential
 
 This system enables confidential balances and transactions for tokens (e.g., stablecoins) issued or circulating on EVM chains without requiring changes to the underlying token contracts and without changing user wallet behavior. Confidentiality is achieved by offloading privacy-sensitive logic to FairyRing, while settlement and liquidity remain on the originating EVM chain.
 
-Confidential transfers use lightweight additive homomorphic calculations and fast zero-knowledge (ZK)-proof verification, executed within the protocol flow. The system does not rely on fully homomorphic encryption over the discretized Torus (TFHE) from an off-chain coprocessor. All homomorphic calculations and ZK proof verification are extremely lightweight, and execution runs on FairyRing.
+Confidential transfers use lightweight additive homomorphic calculations and fast zero-knowledge (ZK)-proof verification, executed within the protocol flow. The system does not rely on fully homomorphic encryption over the discretized Torus (TFHE) from an offchain coprocessor. All homomorphic calculations and ZK proof verification are extremely lightweight, and execution runs on FairyRing.
 
 ## System at a Glance
 
@@ -19,7 +19,7 @@ The system is built with three layers:
 | --- | --- | --- |
 | **FairyRing** | Confidentiality execution | CosmWasm contracts, homomorphic calculations, ZK verification |
 | **EVM Escrow** | Bridge endpoints | Minimal contracts that lock tokens and interface cross-chain |
-| **Fairyport Relayer** | Cross-chain transport | Off-chain relayer that moves messages between chains and FairyRing |
+| **Fairyport Relayer** | Cross-chain transport | Offchain relayer that moves messages between chains and FairyRing |
 
 At a high level, the user journey runs through four stages:
 
