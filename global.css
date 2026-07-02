@@ -7,8 +7,14 @@ pre,
 #search-bar-entry,
 #topbar-cta-button,
 [data-component-part="code-block-root"],
-[role="tablist"] {
+[role="tablist"],
+.callout {
   border-radius: 6px !important;
+}
+
+/* Hide callout icons */
+[data-component-part="callout-icon"] {
+  display: none !important;
 }
 
 /* Space between navbar and tabs */
