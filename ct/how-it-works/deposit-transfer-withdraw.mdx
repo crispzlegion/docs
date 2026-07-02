@@ -10,7 +10,7 @@ To enter the confidential system, a user submits a standard EVM transaction to t
 A relayer observes the deposit event on the EVM side and forwards it to FairyRing. A CosmWasm contract receives the message, verifies it, and credits the user with an encrypted balance representing the deposited amount. Only encrypted values are recorded on FairyRing. No plaintext balances are visible onchain.
 
 FairyRing returns a response back to the EVM chain through the relayer. On receiving the response, the escrow contract updates its internal state so the user’s confidential position is accurately reflected on the EVM side. The user can query the EVM escrow contract to view their confidential balance, without interacting with FairyRing directly.
-![Token Deposit](token-deposit-diagram.svg)
+![alt text](image2.png)
 
 ### Transfer
 Once the user has an encrypted balance, they can transfer to other confidential accounts while still transacting on the EVM chain. To initiate a transfer, the user submits a transaction to the escow contract that includes a ciphertext of the transfer amount along with the necessary ZK proofs. The proofs confirm that the ciphertext is well formed, the amount is in a valid range, and the sender has sufficient balance. The plaintext transfer amount is never included in the transaction.
