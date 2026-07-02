@@ -2,22 +2,11 @@
 title: "Confidential Transfers"
 ---
 
-**Moving money onchain leaks sensitive financial data.**
+Fairblock enables confidential transfers on public blockchains where transaction amounts and balances are encrypted by default, while preserving performance, usability, and compliance requirements.
 
-Your financial activity is private by default in the real world. You don’t broadcast what you pay a merchant or supplier. Employers don't publish salaries. Traders don’t reveal position size in the middle of a trade. Treasuries don’t expose how much cash is left. On public blockchains, all of that is transparent by design: payment amounts, wallet balances, timing, and even trading strategies are public for anyone to see. That’s exactly the kind of exposure banks, SWIFT, and policy bodies have been sounding alarm about.
+The system is designed to support financial institutions, neobanks, payroll providers, and trading firms that require privacy without introducing operational complexity or new trust assumptions.
 
-When financial data leaks, it creates problems:
-
-<Warning>
-  - Competitors can see your volume, pricing, margins, and runway
-  - Traders and bots can frontrun and copy your strategy
-  - Attackers can map and target high-value wallets
-  - You can run into legal and regulatory trouble for failing to protect sensitive information about employees, customers, and partners
-</Warning>
-
-[Researchers](https://www.researchgate.net/publication/387041111_Decoding_blockchain_data_for_research_in_marketing_New_insights_through_an_analysis_of_share_of_wallet) have shown that block explorers can be abused as a surveillance tool. Onchain data can be used to decode transaction patterns, customer behavior, peak sales times, and share-of-wallet. That is not how finance or commerce operates today, and it’s why enterprises and institutions still hesitate to run their businesses fully onchain.
-
-**Our thesis**: Confidential by default is the only sustainable model for open finance.
+The design separates confidentiality from anonymity. Confidentiality is always enabled and ensures that transaction amounts and balances remain encrypted. Anonymity is optional and can be enabled for partners or flows that require it in KYB/KYC-scoped environments. This mirrors how encryption is universally used on the internet, while stronger privacy tools are applied selectively.
 
 ## Defining Confidential Transactions
 
