@@ -263,12 +263,10 @@ th {
   font-weight: 500 !important;
 }
 
-/* Breadcrumb */
-[class*="breadcrumb"] {
-  font-size: 11.5px !important;
-  text-transform: uppercase !important;
-  letter-spacing: 0.04em !important;
-  opacity: 0.5 !important;
+/* Hide breadcrumb and page eyebrow (duplicate group name above title) */
+[class*="breadcrumb"],
+.eyebrow {
+  display: none !important;
 }
 
 /* Search bar */
