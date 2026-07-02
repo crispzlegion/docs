@@ -1,0 +1,114 @@
+<svg width="1200" height="675" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="1600" height="900" fill="#F4F4F3"></rect>
+
+  
+  <text x="40" y="70" font-family="Georgia, &#39;Times New Roman&#39;, serif" font-size="32" font-weight="600" fill="#161616">Confidential Stablecoins</text>
+
+  
+  <rect x="40" y="110" width="430" height="750" rx="18" fill="#E8E8E6"></rect>
+  <rect x="940" y="110" width="430" height="750" rx="18" fill="#E8E8E6"></rect>
+
+  
+  <g fill="#B2B2AE">
+    <rect x="64" y="140" width="5" height="5"></rect>
+    <rect x="71" y="140" width="5" height="5"></rect>
+    <rect x="64" y="147" width="5" height="5"></rect>
+    <rect x="71" y="147" width="5" height="5"></rect>
+  </g>
+  <text x="83" y="151" font-family="Arial, Helvetica, sans-serif" font-size="14" font-style="italic" fill="#8B8B87">User 1</text>
+
+  <g fill="#B2B2AE">
+    <rect x="964" y="140" width="5" height="5"></rect>
+    <rect x="971" y="140" width="5" height="5"></rect>
+    <rect x="964" y="147" width="5" height="5"></rect>
+    <rect x="971" y="147" width="5" height="5"></rect>
+  </g>
+  <text x="983" y="151" font-family="Arial, Helvetica, sans-serif" font-size="14" font-style="italic" fill="#8B8B87">User 2</text>
+
+  
+  <text x="64" y="182" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" letter-spacing="1" fill="#9C9C97">PUBLIC</text>
+  <text x="64" y="676" font-family="Arial, Helvetica, sans-serif" font-size="11" font-weight="700" letter-spacing="1" fill="#9C9C97">CONFIDENTIAL</text>
+
+  
+  <rect x="64" y="190" width="382" height="140" rx="14" fill="#FFFFFF" stroke="rgba(0,0,0,0.14)" stroke-width="1.5" stroke-dasharray="6 4"></rect>
+  <text x="92" y="252" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#161616">Public balance</text>
+  <text x="92" y="276" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="500" fill="#9C9C97">Visible</text>
+
+  <rect x="964" y="190" width="382" height="140" rx="14" fill="#FFFFFF" stroke="rgba(0,0,0,0.14)" stroke-width="1.5" stroke-dasharray="6 4"></rect>
+  <text x="992" y="252" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#161616">Available balance</text>
+  <text x="992" y="276" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="500" fill="#9C9C97">Encrypted</text>
+
+  
+  <rect x="64" y="690" width="382" height="140" rx="14" fill="#FFFFFF" stroke="rgba(0,0,0,0.14)" stroke-width="1.5" stroke-dasharray="6 4"></rect>
+  <text x="92" y="752" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#161616">Pending Balance</text>
+  <text x="92" y="776" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="500" fill="#9C9C97">Encrypted</text>
+
+  <rect x="964" y="690" width="382" height="140" rx="14" fill="#FFFFFF" stroke="rgba(0,0,0,0.14)" stroke-width="1.5" stroke-dasharray="6 4"></rect>
+  <text x="992" y="752" font-family="Arial, Helvetica, sans-serif" font-size="19" font-weight="700" fill="#161616">Pending Balance</text>
+  <text x="992" y="776" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="500" fill="#9C9C97">Encrypted</text>
+
+  
+  <rect x="165" y="460" width="180" height="100" rx="12" fill="#161616"></rect>
+  <text x="255" y="505" text-anchor="middle" font-family="&#39;Courier New&#39;, monospace" font-size="13" font-weight="600" fill="#FFFFFF">deposit</text>
+  <text x="255" y="523" text-anchor="middle" font-family="&#39;Courier New&#39;, monospace" font-size="10" fill="rgba(255,255,255,0.55)">encrypt</text>
+
+  
+  <rect x="615" y="210" width="180" height="100" rx="12" fill="#FFFFFF" stroke="rgba(0,0,0,0.16)" stroke-width="1.5"></rect>
+  <text x="705" y="255" text-anchor="middle" font-family="&#39;Courier New&#39;, monospace" font-size="13" font-weight="600" fill="#161616">withdraw</text>
+  <text x="705" y="273" text-anchor="middle" font-family="&#39;Courier New&#39;, monospace" font-size="10" fill="#9C9C97">decrypt</text>
+
+  
+  <rect x="605" y="460" width="200" height="100" rx="12" fill="#FFFFFF" stroke="rgba(0,0,0,0.16)" stroke-width="1.5"></rect>
+  <text x="705" y="505" text-anchor="middle" font-family="&#39;Courier New&#39;, monospace" font-size="13" font-weight="600" fill="#161616">apply balance</text>
+  <text x="705" y="523" text-anchor="middle" font-family="&#39;Courier New&#39;, monospace" font-size="10" fill="#9C9C97">owner-authorized</text>
+
+  
+  <rect x="1055" y="460" width="200" height="100" rx="12" fill="#161616"></rect>
+  <text x="1155" y="498" text-anchor="middle" font-family="&#39;Courier New&#39;, monospace" font-size="13" font-weight="600" fill="#FFFFFF">transfer</text>
+  <text x="1155" y="516" text-anchor="middle" font-family="&#39;Courier New&#39;, monospace" font-size="10" fill="rgba(255,255,255,0.55)">ZK proofs verify</text>
+  <text x="1155" y="530" text-anchor="middle" font-family="&#39;Courier New&#39;, monospace" font-size="10" fill="rgba(255,255,255,0.55)">encrypted amount</text>
+
+  
+  <rect x="1420" y="460" width="130" height="100" rx="12" fill="#161616"></rect>
+  <text x="1485" y="497" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="600" fill="#FFFFFF">Transparent</text>
+  <text x="1485" y="513" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="600" fill="#FFFFFF">MPC</text>
+  <text x="1485" y="529" text-anchor="middle" font-family="Arial, Helvetica, sans-serif" font-size="12.5" font-weight="600" fill="#FFFFFF">compliance</text>
+
+  
+  <g stroke="#C7C7C3" stroke-width="2">
+    <line x1="964" y1="260" x2="803" y2="260"></line>
+    <line x1="615" y1="260" x2="454" y2="260"></line>
+    <line x1="255" y1="330" x2="255" y2="452"></line>
+    <line x1="255" y1="560" x2="255" y2="682"></line>
+    <line x1="446" y1="760" x2="705" y2="760"></line>
+    <line x1="705" y1="760" x2="705" y2="568"></line>
+    <line x1="705" y1="460" x2="705" y2="420"></line>
+    <line x1="705" y1="420" x2="1120" y2="420"></line>
+    <line x1="1120" y1="420" x2="1120" y2="338"></line>
+    <line x1="1155" y1="330" x2="1155" y2="452"></line>
+    <line x1="1155" y1="560" x2="1155" y2="682"></line>
+    <line x1="1255" y1="510" x2="1412" y2="510"></line>
+  </g>
+
+  
+  <g fill="#C7C7C3">
+    <polygon points="795,260 803,254 803,266"></polygon>
+    <polygon points="446,260 454,254 454,266"></polygon>
+    <polygon points="255,460 249,452 261,452"></polygon>
+    <polygon points="255,690 249,682 261,682"></polygon>
+    <polygon points="705,560 699,568 711,568"></polygon>
+    <polygon points="1120,330 1114,338 1126,338"></polygon>
+    <polygon points="1155,460 1149,452 1161,452"></polygon>
+    <polygon points="1155,690 1149,682 1161,682"></polygon>
+    <polygon points="1420,510 1412,504 1412,516"></polygon>
+  </g>
+
+  
+  <text x="275" y="626" font-family="&#39;Courier New&#39;, monospace" font-size="10" fill="#A3A39E">IBE+HE</text>
+
+  
+  <rect x="439" y="253" width="14" height="14" rx="4" fill="#FFFFFF" stroke="#C9C9C4" stroke-width="2"></rect>
+  <rect x="957" y="253" width="14" height="14" rx="4" fill="#2ED88E"></rect>
+  <rect x="1148" y="323" width="14" height="14" rx="4" fill="#2ED88E"></rect>
+  <rect x="439" y="753" width="14" height="14" rx="4" fill="#2ED88E"></rect>
+</svg>
