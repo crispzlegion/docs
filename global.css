@@ -163,29 +163,22 @@ a:focus .card * {
   outline: none !important;
 }
 
-.card:hover {
+/* Override Tailwind hover:!border-primary on cards */
+.card.card.card:hover,
+.card.card.card:focus,
+.card.card.card:active {
   border-color: rgba(255, 255, 255, 0.08) !important;
   background: rgba(255, 255, 255, 0.02) !important;
 }
 
-/* Kill ring on card parent links */
-a:has(> .card),
-a:has(> .card):hover,
-a:has(> .card):focus,
-a:has(> .card):focus-visible {
-  --tw-ring-color: transparent !important;
-  --tw-ring-shadow: 0 0 0 0 transparent !important;
-  --tw-ring-offset-shadow: 0 0 0 0 transparent !important;
-  box-shadow: none !important;
-  outline: none !important;
-}
-
-:root:not(.dark) .card {
+:root:not(.dark) .card.card.card:hover,
+:root:not(.dark) .card.card.card:focus,
+:root:not(.dark) .card.card.card:active {
   border-color: rgba(0, 0, 0, 0.06) !important;
   background: rgba(0, 0, 0, 0.01) !important;
 }
 
-:root:not(.dark) .card:hover {
+:root:not(.dark) .card {
   border-color: rgba(0, 0, 0, 0.06) !important;
   background: rgba(0, 0, 0, 0.01) !important;
 }
