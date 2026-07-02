@@ -1,0 +1,166 @@
+<svg width="1200" height="675" viewBox="0 0 1200 675" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    
+  </defs>
+  
+  
+  <rect width="1200" height="675" fill="#F4F4F3"></rect>
+  
+  
+  <text x="40" y="65" font-family="Source Serif 4, Georgia, serif" font-size="32" font-weight="600" fill="#161616">Token Deposit</text>
+  
+  
+  <rect x="187.5" y="82.5" width="390" height="502.5" rx="13.5" fill="#E8E8E6"></rect>
+  <rect x="772.5" y="82.5" width="390" height="502.5" rx="13.5" fill="#E8E8E6"></rect>
+  
+  
+  <g>
+    <rect x="205.5" y="99" width="9" height="9" fill="#B2B2AE"></rect>
+    <rect x="216" y="99" width="9" height="9" fill="#B2B2AE"></rect>
+    <rect x="205.5" y="109.5" width="9" height="9" fill="#B2B2AE"></rect>
+    <rect x="216" y="109.5" width="9" height="9" fill="#B2B2AE"></rect>
+    <text x="235" y="113" font-family="Inter" font-size="12" font-weight="700" fill="#6E6E69">EVM Chain</text>
+  </g>
+  
+  <g>
+    <rect x="790.5" y="99" width="9" height="9" fill="#B2B2AE"></rect>
+    <rect x="801" y="99" width="9" height="9" fill="#B2B2AE"></rect>
+    <rect x="790.5" y="109.5" width="9" height="9" fill="#B2B2AE"></rect>
+    <rect x="801" y="109.5" width="9" height="9" fill="#B2B2AE"></rect>
+    <text x="820" y="113" font-family="Inter" font-size="12" font-weight="700" fill="#6E6E69">Fairyring Chain</text>
+  </g>
+  
+  
+  <g>
+    <rect x="30" y="367.5" width="127.5" height="75" rx="10.5" fill="#FFFFFF" stroke="#000000" stroke-width="1.125" stroke-dasharray="3.75,3.75" opacity="0.14"></rect>
+    <text x="93.75" y="411.5" font-family="Inter" font-size="14" font-weight="700" fill="#161616" text-anchor="middle">User</text>
+  </g>
+  
+  
+  <g>
+    <rect x="217.5" y="131.25" width="330" height="75" rx="10.5" fill="#FFFFFF" stroke="#000000" stroke-width="1.125" stroke-dasharray="3.75,3.75" opacity="0.14"></rect>
+    <text x="245" y="162.5" font-family="Inter" font-size="14" font-weight="700" fill="#161616">Account Balance</text>
+    <text x="245" y="178.75" font-family="Inter" font-size="9.375" font-weight="500" fill="#9C9C97">in stable coin</text>
+  </g>
+  
+  
+  <rect x="202.5" y="225" width="360" height="330" rx="10.5" fill="#F0F0EE" stroke="#000000" stroke-width="1.125" stroke-dasharray="3.75,3.75" opacity="0.12"></rect>
+  <text x="221" y="243.75" font-family="Inter" font-size="10.5" font-weight="700" fill="#8B8B87">Escrow Contract</text>
+  
+  <g>
+    <rect x="232.5" y="270" width="300" height="82.5" rx="10.5" fill="#FFFFFF" stroke="#000000" stroke-width="1.125" stroke-dasharray="3.75,3.75" opacity="0.14"></rect>
+    <text x="252" y="301.75" font-family="Inter" font-size="12.75" font-weight="700" fill="#161616">Escrow Account</text>
+    <text x="252" y="318" font-family="Inter" font-size="9" font-weight="500" fill="#9C9C97">Lock / unlock stable coins</text>
+  </g>
+  
+  <g>
+    <rect x="300" y="465" width="165" height="67.5" rx="9" fill="#FFFFFF" stroke="#000000" stroke-width="1.2" opacity="0.16"></rect>
+    <text x="382.5" y="501" font-family="IBM Plex Mono" font-size="9.75" font-weight="600" fill="#161616" text-anchor="middle">ibc interface</text>
+    <text x="382.5" y="513.75" font-family="IBM Plex Mono" font-size="7.5" fill="#9C9C97" text-anchor="middle">relay</text>
+  </g>
+  
+  
+  <rect x="787.5" y="131.25" width="360" height="423.75" rx="10.5" fill="#F0F0EE" stroke="#000000" stroke-width="1.125" stroke-dasharray="3.75,3.75" opacity="0.12"></rect>
+  <text x="806" y="150" font-family="Inter" font-size="10.5" font-weight="700" fill="#8B8B87">Cosmwasm Contract</text>
+  
+  <g>
+    <rect x="810" y="168.75" width="315" height="67.5" rx="10.5" fill="#FFFFFF" stroke="#000000" stroke-width="1.125" stroke-dasharray="3.75,3.75" opacity="0.14"></rect>
+    <rect x="810" y="168.75" width="3.75" height="67.5" fill="#2ED88E"></rect>
+    <text x="835" y="195.5" font-family="Inter" font-size="12.75" font-weight="700" fill="#161616">Confidential Ledger</text>
+    <text x="835" y="210" font-family="Inter" font-size="8.625" font-weight="500" fill="#9C9C97">Homomorphically encrypted balances</text>
+  </g>
+  
+  <g>
+    <rect x="810" y="300" width="315" height="82.5" rx="10.5" fill="#FFFFFF" stroke="#000000" stroke-width="1.125" stroke-dasharray="3.75,3.75" opacity="0.14"></rect>
+    <rect x="810" y="300" width="3.75" height="82.5" fill="#2ED88E"></rect>
+    <text x="835" y="329.75" font-family="Inter" font-size="12" font-weight="700" fill="#161616" line-height="1.2">Confidential Balance &amp;</text>
+    <text x="835" y="343" font-family="Inter" font-size="12" font-weight="700" fill="#161616">Transfer Logic</text>
+    <text x="835" y="356.25" font-family="Inter" font-size="9.375" font-weight="500" fill="#9C9C97">Encrypted</text>
+  </g>
+  
+  <g>
+    <rect x="885" y="465" width="165" height="67.5" rx="9" fill="#FFFFFF" stroke="#000000" stroke-width="1.2" opacity="0.16"></rect>
+    <text x="967.5" y="501" font-family="IBM Plex Mono" font-size="9.75" font-weight="600" fill="#161616" text-anchor="middle">ibc interface</text>
+    <text x="967.5" y="513.75" font-family="IBM Plex Mono" font-size="7.5" fill="#9C9C97" text-anchor="middle">relay</text>
+  </g>
+  
+  
+  <g>
+    <rect x="612" y="457.5" width="127.5" height="82.5" rx="9" fill="#FFFFFF" stroke="#000000" stroke-width="1.2" opacity="0.16"></rect>
+    <text x="675.75" y="492" font-family="IBM Plex Mono" font-size="9.75" font-weight="600" fill="#161616" text-anchor="middle">relayer</text>
+    <text x="675.75" y="504.75" font-family="IBM Plex Mono" font-size="7.5" fill="#9C9C97" text-anchor="middle">route</text>
+  </g>
+  
+  
+  
+  <line x1="157.5" y1="405" x2="232.5" y2="315" stroke="#3A3A38" stroke-width="1.5"></line>
+  <polygon points="232.5,315 228,320 230,310" fill="#3A3A38"></polygon>
+  <text x="45" y="468" font-family="Inter" font-size="9.375" fill="#6E6E69" line-height="1.35">1. Deposit tokens to</text>
+  <text x="45" y="479" font-family="Inter" font-size="9.375" fill="#6E6E69">Confidential Balance</text>
+  
+  
+  <line x1="285" y1="206.25" x2="382.5" y2="270" stroke="#3A3A38" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.7"></line>
+  <polygon points="382.5,270 378,275 380,265" fill="#3A3A38"></polygon>
+  <text x="315" y="165" font-family="Inter" font-size="9.375" fill="#6E6E69">2. Check Available Funds</text>
+  
+  
+  <line x1="382.5" y1="270" x2="285" y2="206.25" stroke="#3A3A38" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.7"></line>
+  <polygon points="285,206.25 282,216 290,210" fill="#3A3A38"></polygon>
+  <text x="255" y="228" font-family="Inter" font-size="9.375" fill="#6E6E69">3. Deduct tokens from acc. and add</text>
+  <text x="255" y="239" font-family="Inter" font-size="9.375" fill="#6E6E69">to escrow</text>
+  
+  
+  <line x1="382.5" y1="352.5" x2="382.5" y2="465" stroke="#3A3A38" stroke-width="1.5"></line>
+  <polygon points="382.5,465 377.5,460 387.5,460" fill="#3A3A38"></polygon>
+  <text x="250" y="390" font-family="Inter" font-size="9.375" fill="#6E6E69" text-anchor="end">4. Relay info to</text>
+  <text x="250" y="401" font-family="Inter" font-size="9.375" fill="#6E6E69" text-anchor="end">Fairyring</text>
+  
+  
+  <line x1="465" y1="498.75" x2="612" y2="498.75" stroke="#3A3A38" stroke-width="1.5"></line>
+  <polygon points="612,498.75 607,503.75 607,493.75" fill="#3A3A38"></polygon>
+  <text x="510" y="522" font-family="Inter" font-size="9.375" fill="#6E6E69">5. Relay Deposit</text>
+  
+  
+  <line x1="739.5" y1="498.75" x2="885" y2="498.75" stroke="#3A3A38" stroke-width="1.5"></line>
+  <polygon points="885,498.75 880,503.75 880,493.75" fill="#3A3A38"></polygon>
+  <text x="795" y="522" font-family="Inter" font-size="9.375" fill="#6E6E69">6. Relay Deposit</text>
+  
+  
+  <line x1="967.5" y1="382.5" x2="967.5" y2="423.75" stroke="#3A3A38" stroke-width="1.5" opacity="0.55"></line>
+  <polygon points="967.5,423.75 962.5,418.75 972.5,418.75" fill="#3A3A38" opacity="0.55"></polygon>
+  <text x="1020" y="405" font-family="Inter" font-size="9.375" fill="#6E6E69">7. Update Confidential</text>
+  <text x="1020" y="416" font-family="Inter" font-size="9.375" fill="#6E6E69">balance (homomorphically)</text>
+  
+  
+  <line x1="937.5" y1="300" x2="937.5" y2="236.25" stroke="#3A3A38" stroke-width="1.5" opacity="0.55"></line>
+  <polygon points="937.5,236.25 932.5,241.25 942.5,241.25" fill="#3A3A38" opacity="0.55"></polygon>
+  <text x="1000" y="270" font-family="Inter" font-size="9.375" fill="#6E6E69">8. Update Balance</text>
+  
+  
+  <line x1="997.5" y1="236.25" x2="997.5" y2="300" stroke="#3A3A38" stroke-width="1.5" opacity="0.55"></line>
+  <polygon points="997.5,300 992.5,295 1002.5,295" fill="#3A3A38" opacity="0.55"></polygon>
+  <text x="850" y="270" font-family="Inter" font-size="9.375" fill="#6E6E69" text-anchor="end">9. Return Updated</text>
+  <text x="850" y="281" font-family="Inter" font-size="9.375" fill="#6E6E69" text-anchor="end">Balance</text>
+  
+  
+  <line x1="997.5" y1="382.5" x2="997.5" y2="423.75" stroke="#3A3A38" stroke-width="1.5" opacity="0.55"></line>
+  <polygon points="997.5,423.75 992.5,418.75 1002.5,418.75" fill="#3A3A38" opacity="0.55"></polygon>
+  <text x="850" y="405" font-family="Inter" font-size="9.375" fill="#6E6E69" text-anchor="end">10. Return updated</text>
+  <text x="850" y="416" font-family="Inter" font-size="9.375" fill="#6E6E69" text-anchor="end">Confidential Balance</text>
+  
+  
+  <line x1="885" y1="532.5" x2="739.5" y2="532.5" stroke="#3A3A38" stroke-width="1.5"></line>
+  <polygon points="739.5,532.5 744.5,527.5 744.5,537.5" fill="#3A3A38"></polygon>
+  <text x="795" y="555" font-family="Inter" font-size="9.375" fill="#6E6E69">11. Relay updated Balance</text>
+  
+  
+  <line x1="612" y1="532.5" x2="465" y2="532.5" stroke="#3A3A38" stroke-width="1.5"></line>
+  <polygon points="465,532.5 470,527.5 470,537.5" fill="#3A3A38"></polygon>
+  <text x="510" y="555" font-family="Inter" font-size="9.375" fill="#6E6E69">12. Relay updated Balance</text>
+  
+  
+  <line x1="157.5" y1="432.5" x2="232.5" y2="352.5" stroke="#3A3A38" stroke-width="1.5"></line>
+  <polygon points="157.5,432.5 160,422 152,428" fill="#3A3A38"></polygon>
+  <text x="45" y="555" font-family="Inter" font-size="9.375" fill="#6E6E69">13. Return updated Confidential</text>
+  <text x="45" y="566" font-family="Inter" font-size="9.375" fill="#6E6E69">Balance to User</text>
+</svg>
