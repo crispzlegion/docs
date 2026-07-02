@@ -199,15 +199,6 @@ const status = await client.getRequestStatus(result.request_id);
 const history = await client.getRequestEvents(result.request_id);
 ```
 
-## Error handling
-
-| Issue | Cause | Solution |
-| :--- | :--- | :--- |
-| "Insufficient prepaid fee balance" | Prepaid fee reserve is below the per-transfer fee | Call `depositFees(wallet, accountId, amount)` to top up; check with `getFeeToken()`/`getFeeAmount()` |
-| Fairycloak HTTP error | Relay unreachable or request rejected | Check the relay URL, API key, and account authorization |
-| "Account finalization timeout" | Account creation is still processing | Wait a few minutes and retry |
-| "Insufficient balance" | Transfer amount exceeds available balance | Deposit more tokens or reduce the amount |
-| "Amount too small" | Amount rounds to 0 in contract scale | Use a larger amount (minimum depends on token decimals) |
 
 ## Security considerations
 
