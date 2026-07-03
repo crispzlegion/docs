@@ -46,7 +46,7 @@ Pre-execution privacy moves an encrypted *transaction* through a condition gate:
 
 `x/pep` runs on **both** FairyRing and the integrated chain. It accepts encrypted transactions, stores them locally against their condition ID, and triggers decryption and execution once the derived key arrives. Encrypted transactions stay on their originating chain they are not relayed to FairyRing and are executed there, not on FairyRing.
 
-### `x/keyshare`: Threshold IBE Key Generation
+### `x/keyshare`: MPC-IBE Key Generation
 
 `x/keyshare` runs **only** on FairyRing and is the cryptographic heart of the system:
 
