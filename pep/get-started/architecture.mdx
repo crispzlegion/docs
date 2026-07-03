@@ -33,7 +33,7 @@ Pre-execution privacy moves an encrypted *transaction* through a condition gate:
     FairyRing waits for the condition tied to that ID. By default this is a target FairyRing block height, but it can also be a price trigger, a zero-knowledge proof, or a specific contract call.
   </Step>
   <Step title="Generate and aggregate keyshares">
-    Once the condition is met, each validator derives a private key share for that condition ID. When the threshold (currently `2/3N + 1`) is reached, FairyRing aggregates the shares into the derived private key.
+    Once the condition is met, each validator derives a private key share for that condition ID. When the threshold (currently `2/3N + 1`) is reached, FairyRing aggregates the shares into the derived decryption key.
   </Step>
   <Step title="Deliver, decrypt, and execute">
     FairyPort observes the state change and delivers the derived key to the destination chain, which decrypts the transaction and executes it at the **beginning of the block** before any other mempool transactions can act on it.
