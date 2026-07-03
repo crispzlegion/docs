@@ -17,7 +17,7 @@ The system is built with four layers:
 | --- | --- | --- |
 | **Encryption SDK** | Encrypts the transaction locally under the Master Public Key (MPK) and a chosen condition ID | Offchain client SDK |
 | **Gateway** | Receives and stores encrypted transactions on the integrated chain, then triggers execution | `x/pep` module, FairyKit |
-| **FairyPort Relayer** | Delivers the derived private key from FairyRing to the destination chain once the condition is met | inter-chain relayer, IBC |
+| **FairyPort Relayer** | Delivers the derived private key from FairyRing to the destination chain once the condition is met | inter-chain relayer |
 | **FairyRing** | Generates and aggregates threshold key shares into the decryption key | `x/keyshare` module, MPC-IBE |
 
 Pre-execution privacy moves an encrypted *transaction* through a condition gate:
