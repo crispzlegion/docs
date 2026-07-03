@@ -418,3 +418,12 @@ button[aria-label*="Ask" i],
   color: rgba(0, 0, 0, 0.9) !important;
   border-left-color: rgba(0, 0, 0, 0.85) !important;
 }
+
+/* Steps: larger titles, smaller body */
+[data-component-part="step-title"] {
+  font-size: 18px !important;
+}
+
+[data-component-part="step-content"] {
+  font-size: 14px !important;
+}
