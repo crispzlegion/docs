@@ -173,7 +173,6 @@
             "group": "Resources",
             "pages": [
               "resources/community",
-              "resources/troubleshooting",
               "resources/glossary"
             ]
           }

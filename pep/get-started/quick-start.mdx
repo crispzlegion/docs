@@ -7,16 +7,12 @@ This page walks you through building a Confidential App (cApp) on FairyRing. A c
 
 Most of our integration guides and tutorials focus on applications built using **MPC** and **IBE**, such as frontrunning protection, auctions, prediction markets, limit orders, decentralized selective disclosure, and access control.
 
-For confidential stablecoin transfers, we use Homomorphic Encryption (HE). This application does not require special integrations or developer setup. It works seamlessly across all Fairblock-integrated chains, including EVM chains, Solana, Cosmos chains, and FairyRing itself. Developers **do not need to deploy or install any precompiles, modules, or smart contracts**; everything is handled automatically by Fairblock’s simple smart contracts on each supported chain, and the cryptographic computation is abstracted away in FairyRing, without bridging user's funds.
-
 This quick start covers two examples:
 
 1. [Starting a cApp on FairyRing](#fairyring-capp)
 2. [Starting a cApp on an EVM](#evm-capp)
 
-These examples offer a quick taste of the new paradigm with confidential computation.
-
-Developers looking to build with FairyRing, either natively or within another chain, are encouraged to reference the respective tutorials in the [build guides](/pep/guides/build/encrypted-transactions).
+Developers looking to build with FairyRing, either natively or within another chain, are encouraged to reference the respective tutorials in the build guides.
 
 Let's get started!
 
@@ -66,9 +62,7 @@ Upon running the `./bankMsgWithMemoAndDecryption.sh` script, you will be prompte
 3. Submit the encrypted transaction to the blockchain,
 4. Monitor the network for transaction processing, and show the decrypted result
 
-Once you have gone through the prompts, you will have successfully ran your first cApp where you've sent a simple message, encrypted it, and awaited the condition (block height in this case) for it be decrypted!
-
-Using this simple concept, many interesting apps can be built. Make sure to join our [discord](https://discord.gg/fairblock) to discuss new ideas. A list of interesting ideas, currently worked on and to be worked on, will be available soon.
+Once you have gone through the prompts, you will have successfully run your first cApp where you've sent a simple message, encrypted it, and awaited the condition (block height in this case) for it to be decrypted!
 
 ## EVM cApp
 
@@ -76,9 +70,7 @@ What if you want to run a cApp on an EVM network?
 
 As mentioned throughout the docs, FairyRing and its power of confidential computation can be used within many other networks, not limited to but including: EVMs, Cosmos chains, and RustVM chains.
 
-So let's start simple, and run your first cApp with an EVM leveraging FairyRing and its dynamic confidential computation. In this tutorial, you will run a Simple Sealed Bid Auction where encrypted bids are made, and once the auction is complete, are decrypted and assessed for the winning bid. The tutorial is ran using an testnet Arbitrum Orbit L3 Chain that has already been deployed for purely educational purposes.
-
-Most of our integration guides and tutorials focus on applications built using MPC and IBE, such as frontrunning protection, auctions, prediction markets, limit orders, and access control. For confidential stablecoin transfers, developers **do not need to deploy or install any precompiles, modules, or smart contracts**; everything is handled automatically by Fairblock’s simple smart contracts on each supported chain, and the cryptographic computation is abstracted away in FairyRing, without bridging user's funds.
+So let's start simple, and run your first cApp with an EVM leveraging FairyRing and its dynamic confidential computation. In this tutorial, you will run a Simple Sealed Bid Auction where encrypted bids are made, and once the auction is complete, are decrypted and assessed for the winning bid. The tutorial is run using a testnet Arbitrum Orbit L3 Chain that has already been deployed for purely educational purposes.
 
 <Note>
   This demo is expanded on in more detail within this [EVM tutorial in the build section](/pep/guides/build/platform-setup/evm-arbitrum). The scripts alongside the tutorial README in the repo can be accessed further to help understand the workflow of integrating into an EVM.
