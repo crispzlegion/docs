@@ -96,11 +96,17 @@ p, li, td, th {
   font-weight: 500 !important;
 }
 
-:root:not(.dark) .nav-tabs-item {
+:root:not(.dark) .nav-tabs-item,
+:root:not(.dark) .nav-tabs-item *,
+:root:not(.dark) .nav-tabs-item a,
+:root:not(.dark) .nav-tabs-item span {
   color: rgba(0, 0, 0, 0.45) !important;
 }
 
-:root:not(.dark) .nav-tabs-item[data-active="true"] {
+:root:not(.dark) .nav-tabs-item[data-active="true"],
+:root:not(.dark) .nav-tabs-item[data-active="true"] *,
+:root:not(.dark) .nav-tabs-item[data-active="true"] a,
+:root:not(.dark) .nav-tabs-item[data-active="true"] span {
   color: rgba(0, 0, 0, 0.9) !important;
 }
 
@@ -240,6 +246,10 @@ a:focus .card * {
 
 :root:not(.dark) [data-component-part="card-icon"] {
   background: rgba(0, 0, 0, 0.05) !important;
+}
+
+:root:not(.dark) [data-component-part="card-icon"] svg {
+  color: rgba(0, 0, 0, 0.45) !important;
 }
 
 /* Code blocks */
