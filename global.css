@@ -427,3 +427,145 @@ button[aria-label*="Ask" i],
 [data-component-part="step-content"] {
   font-size: 14px !important;
 }
+
+/* ========== LIGHT MODE COMPREHENSIVE FIXES ========== */
+
+/* Step number circles: primary is white, so force dark in light mode */
+:root:not(.dark) [data-component-part="step-indicator"],
+:root:not(.dark) [data-component-part="step-number"] {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+  border-color: #000000 !important;
+}
+
+/* Step connector line */
+:root:not(.dark) [data-component-part="step-connector"],
+:root:not(.dark) [data-component-part="step-line"] {
+  background-color: rgba(0, 0, 0, 0.1) !important;
+  border-color: rgba(0, 0, 0, 0.1) !important;
+}
+
+/* Step title color */
+:root:not(.dark) [data-component-part="step-title"] {
+  color: #000000 !important;
+}
+
+/* Force all primary-colored text to black in light mode */
+:root:not(.dark) .text-primary,
+:root:not(.dark) [class*="text-primary"] {
+  color: #000000 !important;
+}
+
+/* Force all primary backgrounds to black in light mode */
+:root:not(.dark) .bg-primary,
+:root:not(.dark) [class*="bg-primary"]:not(.card):not(pre) {
+  background-color: #000000 !important;
+}
+
+/* Force primary borders to black in light mode */
+:root:not(.dark) .border-primary,
+:root:not(.dark) [class*="border-primary"] {
+  border-color: #000000 !important;
+}
+
+/* Sidebar link icons / arrows */
+:root:not(.dark) .sidebar-group svg,
+:root:not(.dark) [data-component-part="sidebar"] svg {
+  color: rgba(0, 0, 0, 0.4) !important;
+  opacity: 1 !important;
+}
+
+/* Card arrow / external link icons in light mode */
+:root:not(.dark) .card svg {
+  color: rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Card title text in light mode */
+:root:not(.dark) .card [data-component-part="card-title"],
+:root:not(.dark) .card h3,
+:root:not(.dark) .card h4 {
+  color: #000000 !important;
+}
+
+/* Navbar icons and buttons */
+:root:not(.dark) #navbar svg {
+  color: rgba(0, 0, 0, 0.6) !important;
+}
+
+/* Search icon */
+:root:not(.dark) #search-bar-entry svg {
+  color: rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Inline code in light mode */
+:root:not(.dark) :not(pre) > code {
+  background: rgba(0, 0, 0, 0.05) !important;
+  color: #000000 !important;
+}
+
+/* Callout light mode */
+:root:not(.dark) .callout {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  background: rgba(0, 0, 0, 0.02) !important;
+}
+
+/* Links in light mode - ensure visible */
+:root:not(.dark) article a:not(.card) {
+  color: #000000 !important;
+  text-decoration-color: rgba(0, 0, 0, 0.3) !important;
+}
+
+:root:not(.dark) article a:not(.card):hover {
+  text-decoration-color: rgba(0, 0, 0, 0.8) !important;
+}
+
+/* Tab content panels */
+:root:not(.dark) [role="tabpanel"] {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Tab buttons */
+:root:not(.dark) [role="tab"] {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+:root:not(.dark) [role="tab"][aria-selected="true"],
+:root:not(.dark) [role="tab"][data-state="active"] {
+  color: #000000 !important;
+}
+
+/* Accordion / expandable sections */
+:root:not(.dark) [data-component-part="accordion-trigger"] svg {
+  color: rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Prev/Next navigation links */
+:root:not(.dark) [data-component-part="prev-next"] a {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+  color: #000000 !important;
+}
+
+:root:not(.dark) [data-component-part="prev-next"] a svg {
+  color: rgba(0, 0, 0, 0.4) !important;
+}
+
+/* Theme toggle and other header buttons */
+:root:not(.dark) #navbar button svg {
+  color: rgba(0, 0, 0, 0.5) !important;
+}
+
+/* Horizontal rules */
+:root:not(.dark) hr {
+  border-color: rgba(0, 0, 0, 0.08) !important;
+}
+
+/* Scrollbar */
+:root:not(.dark) ::-webkit-scrollbar-thumb {
+  background: rgba(0, 0, 0, 0.15) !important;
+}
+
+/* Any remaining white SVG icons that need to be dark */
+:root:not(.dark) [data-component-part="card-icon"] svg {
+  color: rgba(0, 0, 0, 0.7) !important;
+  opacity: 1 !important;
+}
