@@ -250,6 +250,7 @@ a:focus .card * {
 
 :root:not(.dark) [data-component-part="card-icon"] svg {
   color: rgba(0, 0, 0, 0.45) !important;
+  background: rgba(0, 0, 0, 0.45) !important;
 }
 
 /* Code blocks */
