@@ -430,6 +430,16 @@ button[aria-label*="Ask" i],
   border-left-color: rgba(0, 0, 0, 0.85) !important;
 }
 
+/* Content tabs (Tabs component) — active tab text and underline invisible in light mode */
+:root:not(.dark) [data-component-part="tab-button"][data-active="true"] {
+  color: #000000 !important;
+  border-color: #000000 !important;
+}
+
+:root:not(.dark) [data-component-part="tab-button"]:not([data-active="true"]) {
+  color: rgba(0, 0, 0, 0.45) !important;
+}
+
 /* Steps: larger titles, smaller body */
 [data-component-part="step-title"] {
   font-size: 18px !important;
