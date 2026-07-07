@@ -67,6 +67,12 @@
             "group": "Guides",
             "pages": [
               {
+                "group": "CUSD",
+                "pages": [
+                  "ct/guides/cusd/overview"
+                ]
+              },
+              {
                 "group": "Apps",
                 "pages": [
                   "ct/guides/apps/stabletrust-app",
