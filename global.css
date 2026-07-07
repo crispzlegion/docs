@@ -370,8 +370,13 @@ article > h2 {
 button[aria-label*="assistant" i],
 button[aria-label*="Ask" i],
 [class*="assistant-trigger"],
+[class*="assistant-panel"],
+[class*="assistant-chat"],
+[class*="contextual"],
 .chat-assistant-floating-input,
-#chat-assistant-textarea {
+#chat-assistant-textarea,
+[id*="assistant"],
+aside[class*="assistant"] {
   display: none !important;
 }
 
