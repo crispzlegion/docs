@@ -84,33 +84,56 @@ p, li, td, th {
   background-color: rgba(0, 0, 0, 0.06) !important;
 }
 
-/* Nav tabs — Tempo style */
+/* Nav tabs — Tempo style: bold, prominent top navigation */
+.nav-tabs {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  gap: 0 !important;
+}
+
+:root:not(.dark) .nav-tabs {
+  border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+}
+
 .nav-tabs-item {
-  font-size: 13px !important;
-  font-weight: 400 !important;
-  color: rgba(255, 255, 255, 0.5) !important;
+  font-size: 14px !important;
+  font-weight: 500 !important;
+  color: rgba(255, 255, 255, 0.4) !important;
+  padding: 0 16px !important;
+}
+
+.nav-tabs-item:hover {
+  color: rgba(255, 255, 255, 0.8) !important;
 }
 
 .nav-tabs-item[data-active="true"] {
   color: rgba(255, 255, 255, 0.95) !important;
-  font-weight: 500 !important;
+  font-weight: 600 !important;
 }
 
 :root:not(.dark) .nav-tabs-item,
 :root:not(.dark) .nav-tabs-item *,
 :root:not(.dark) .nav-tabs-item a,
 :root:not(.dark) .nav-tabs-item span {
-  color: rgba(0, 0, 0, 0.45) !important;
+  color: rgba(0, 0, 0, 0.4) !important;
+  font-weight: 500 !important;
+}
+
+:root:not(.dark) .nav-tabs-item:hover,
+:root:not(.dark) .nav-tabs-item:hover *,
+:root:not(.dark) .nav-tabs-item:hover a,
+:root:not(.dark) .nav-tabs-item:hover span {
+  color: rgba(0, 0, 0, 0.7) !important;
 }
 
 :root:not(.dark) .nav-tabs-item[data-active="true"],
 :root:not(.dark) .nav-tabs-item[data-active="true"] *,
 :root:not(.dark) .nav-tabs-item[data-active="true"] a,
 :root:not(.dark) .nav-tabs-item[data-active="true"] span {
-  color: rgba(0, 0, 0, 0.9) !important;
+  color: rgba(0, 0, 0, 0.95) !important;
+  font-weight: 600 !important;
 }
 
-/* Remove hover underline from tabs */
+/* Remove hover underline from inactive tabs */
 .nav-tabs-item div,
 .nav-tabs-item > div {
   background: transparent !important;
@@ -123,7 +146,7 @@ p, li, td, th {
   background-color: transparent !important;
 }
 
-/* Keep active tab underline */
+/* Active tab underline — 2px solid */
 .nav-tabs-item[data-active="true"] > div,
 .nav-tabs-item[aria-current] > div {
   background-color: rgba(255, 255, 255, 0.9) !important;
@@ -132,7 +155,7 @@ p, li, td, th {
 
 :root:not(.dark) .nav-tabs-item[data-active="true"] > div,
 :root:not(.dark) .nav-tabs-item[aria-current] > div {
-  background-color: rgba(0, 0, 0, 0.85) !important;
+  background-color: rgba(0, 0, 0, 0.9) !important;
 }
 
 /* On this page sidebar — general */
