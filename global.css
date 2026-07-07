@@ -364,27 +364,16 @@ article > h2 {
   opacity: 0.3 !important;
 }
 
-/* Hide Mintlify AI Assistant panel */
-#chat-assistant-sheet,
-#chat-assistant-sheet.chat-assistant-sheet,
-div#chat-assistant-sheet,
-div.chat-assistant-sheet,
-.chat-assistant-sheet-header,
-.chat-assistant-sheet-content,
-#chat-content,
-div#chat-content {
+/* Hide Mintlify AI Assistant panel and trigger button */
+#chat-assistant-sheet {
   display: none !important;
-  width: 0 !important;
-  max-width: 0 !important;
-  min-width: 0 !important;
-  height: 0 !important;
-  max-height: 0 !important;
-  overflow: hidden !important;
-  visibility: hidden !important;
-  opacity: 0 !important;
-  position: fixed !important;
-  left: -9999px !important;
-  pointer-events: none !important;
+}
+
+button[aria-label*="assistant" i],
+button[aria-label*="Ask" i],
+[data-component-name="assistant"],
+[data-component-name="ask-assistant"] {
+  display: none !important;
 }
 
 /* Hide "Copy page for AI" and "Was this helpful?" feedback */
