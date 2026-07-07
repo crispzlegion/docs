@@ -84,37 +84,40 @@ p, li, td, th {
   background-color: rgba(0, 0, 0, 0.06) !important;
 }
 
-/* Nav tabs — Tempo style: bold, prominent top navigation */
+/* Nav tabs — match Tempo exactly */
 .nav-tabs {
-  border-bottom: 1px solid rgba(255, 255, 255, 0.08) !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
   gap: 0 !important;
+  padding: 0 !important;
 }
 
 :root:not(.dark) .nav-tabs {
-  border-bottom-color: rgba(0, 0, 0, 0.08) !important;
+  border-bottom-color: rgba(0, 0, 0, 0.1) !important;
 }
 
 .nav-tabs-item {
-  font-size: 14px !important;
+  font-size: 15px !important;
   font-weight: 500 !important;
-  color: rgba(255, 255, 255, 0.4) !important;
-  padding: 0 16px !important;
+  color: rgba(255, 255, 255, 0.45) !important;
+  padding: 10px 20px !important;
+  position: relative !important;
 }
 
 .nav-tabs-item:hover {
-  color: rgba(255, 255, 255, 0.8) !important;
+  color: rgba(255, 255, 255, 0.75) !important;
 }
 
 .nav-tabs-item[data-active="true"] {
-  color: rgba(255, 255, 255, 0.95) !important;
+  color: #ffffff !important;
   font-weight: 600 !important;
 }
 
+/* Light mode */
 :root:not(.dark) .nav-tabs-item,
 :root:not(.dark) .nav-tabs-item *,
 :root:not(.dark) .nav-tabs-item a,
 :root:not(.dark) .nav-tabs-item span {
-  color: rgba(0, 0, 0, 0.4) !important;
+  color: rgba(0, 0, 0, 0.45) !important;
   font-weight: 500 !important;
 }
 
@@ -122,18 +125,18 @@ p, li, td, th {
 :root:not(.dark) .nav-tabs-item:hover *,
 :root:not(.dark) .nav-tabs-item:hover a,
 :root:not(.dark) .nav-tabs-item:hover span {
-  color: rgba(0, 0, 0, 0.7) !important;
+  color: rgba(0, 0, 0, 0.75) !important;
 }
 
 :root:not(.dark) .nav-tabs-item[data-active="true"],
 :root:not(.dark) .nav-tabs-item[data-active="true"] *,
 :root:not(.dark) .nav-tabs-item[data-active="true"] a,
 :root:not(.dark) .nav-tabs-item[data-active="true"] span {
-  color: rgba(0, 0, 0, 0.95) !important;
+  color: #000000 !important;
   font-weight: 600 !important;
 }
 
-/* Remove hover underline from inactive tabs */
+/* Remove all default underlines */
 .nav-tabs-item div,
 .nav-tabs-item > div {
   background: transparent !important;
@@ -146,16 +149,17 @@ p, li, td, th {
   background-color: transparent !important;
 }
 
-/* Active tab underline — 2px solid */
+/* Active tab — thick underline like Tempo */
 .nav-tabs-item[data-active="true"] > div,
 .nav-tabs-item[aria-current] > div {
-  background-color: rgba(255, 255, 255, 0.9) !important;
-  height: 2px !important;
+  background-color: #ffffff !important;
+  height: 3px !important;
+  border-radius: 0 !important;
 }
 
 :root:not(.dark) .nav-tabs-item[data-active="true"] > div,
 :root:not(.dark) .nav-tabs-item[aria-current] > div {
-  background-color: rgba(0, 0, 0, 0.9) !important;
+  background-color: #000000 !important;
 }
 
 /* On this page sidebar — general */
