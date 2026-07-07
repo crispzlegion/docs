@@ -199,8 +199,5 @@
   },
   "search": {
     "prompt": "Search Fairblock docs..."
-  },
-  "contextual": {
-    "options": []
   }
 }
