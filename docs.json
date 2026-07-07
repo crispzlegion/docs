@@ -42,8 +42,7 @@
             "group": "Start Here",
             "pages": [
               "overview",
-              "high-level-architecture",
-              "ct/overview"
+              "high-level-architecture"
             ]
           }
         ]
